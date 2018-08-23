@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Contributing Guide - Auto-Keras</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Contributing Guide";
+    var mkdocs_page_input_path = "temp/contribute.md";
+    var mkdocs_page_url = "/temp/contribute/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44322747-3', 'autokeras.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Auto-Keras</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../start/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Contributing Guide</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#contributing-guide">Contributing Guide</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#implement-new-task-modules">Implement New Task Modules</a></li>
+        
+            <li><a class="toctree-l3" href="#other-contributions">Other Contributions</a></li>
+        
+            <li><a class="toctree-l3" href="#pull-request-guide">Pull Request Guide</a></li>
+        
+            <li><a class="toctree-l3" href="#code-style-guide">Code Style Guide</a></li>
+        
+            <li><a class="toctree-l3" href="#documentation-guide">Documentation Guide:</a></li>
+        
+            <li><a class="toctree-l3" href="#testing-guide">Testing Guide</a></li>
+        
+            <li><a class="toctree-l3" href="#developer-tools-guide">Developer Tools Guide</a></li>
+        
+            <li><a class="toctree-l3" href="#reusable-code-guide">Reusable Code Guide</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../supervised/">supervised</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../image_supervised/">image_supervised</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bayesian/">bayesian</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../search/">search</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../graph/">graph</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../preprocessor/">preprocessor</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../utils/">utils</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../generator/">generator</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../about/">About</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Auto-Keras</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Contributing Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/jhfjhfj1/autokeras/blob/master/mkdocs/docs/temp/contribute.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="contributing-guide">Contributing Guide</h1>
+<p>Contributions are welcome, and greatly appreciated! Every little bit helps, and credit will always be given.
+We recommend you to check our <a href="#developer-tools-guide">Developer Tools Guide</a> 
+to make the development process easier and standard.
+<strong>The type of contribution we would be most happy to see is new task modules, e.g. TextClassifier, VideoClassifier.</strong></p>
+<h2 id="implement-new-task-modules">Implement New Task Modules</h2>
+<p>A task module is a comparatively separate module which can handle a specify task.
+For example, ImageClassifier is the only task module we have for now.
+The list of task modules we are seeking is all the issues with label "new task module" (in progress).</p>
+<p>The new task module should be submitted by pull request from the first day you start to develop the module.
+Make sure your pull request follow the <a href="#pull-request-guide">Pull Request Guideline</a>.
+Your module will be run against our reserved datasets to test the performance.
+If your module's performance meets our expectation,
+the new task module will be merged into Auto-Keras package.</p>
+<p>In general, all new task module should inherit their objects from the <code>Classifier</code> class in <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/classifier.py"><code>autokeras/classifier.py</code></a>.
+Reach out to us if you feel there is a special requirement.
+For every new feature, a new directory should be created inside the /autokeras directory, e.g. text_classifier.
+All the code contributed should be within the directory.
+The details of the functions to inherit is in the documentation of <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/classifier.py"><code>autokeras/classifier.py</code></a></p>
+<p>Please also read
+<a href="#code-style-guide">Code Style Guide</a>,
+<a href="#documentation-guide">Documentation Guide</a>,
+<a href="#reusable-code-guide">Reusable Code Guide</a>,
+and
+<a href="https://github.com/jhfjhfj1/autokeras/blob/master/CONTRIBUTING.md#testing-guide">Testing Guide</a>
+to ensure your merge request meet our requirements.</p>
+<h2 id="other-contributions">Other Contributions</h2>
+<p>There are many other ways to contribute to Auto-Keras,
+including submit feedback, fix bugs, implement features, and write documentation.
+The guide for each type of contribution is as follows.</p>
+<h4 id="submit-feedback">Submit Feedback</h4>
+<p>The feedback should be submitted by creating an issue at <a href="https://github.com/jhfjhfj1/autokeras/issues">GitHub issues</a>.
+Select the related template (bug report, feature request, or custom) and add the corresponding labels.</p>
+<h4 id="fix-bugs">Fix Bugs:</h4>
+<p>You may look through the <a href="https://github.com/jhfjhfj1/autokeras/issues">GitHub issues</a> for bugs.
+Anything tagged with "bug report" is open to whoever wants to implement it.
+Please follow the 
+<a href="#pull-request-guide">Pull Request Guide</a> to submit your pull request. 
+Please also read
+<a href="#code-style-guide">Code Style Guide</a>,
+and
+<a href="#documentation-guide">Documentation Guide</a>
+to ensure your merge request meet our requirements.</p>
+<h4 id="implement-features">Implement Features</h4>
+<p>You may look through the <a href="https://github.com/jhfjhfj1/autokeras/issues">GitHub issues</a> for feature requests.
+Anything tagged with "feature request" is open to whoever wants to implement it.
+Please follow the 
+<a href="#pull-request-guide">Pull Request Guide</a> to submit your pull request. 
+Please also read
+<a href="#code-style-guide">Code Style Guide</a>,
+<a href="#documentation-guide">Documentation Guide</a>,
+and
+<a href="https://github.com/jhfjhfj1/autokeras/blob/master/CONTRIBUTING.md#testing-guide">Testing Guide</a>
+to ensure your merge request meet our requirements.</p>
+<h4 id="write-documentation">Write Documentation</h4>
+<p>The documentation of Auto-Keras is either directly written into the Markdown files in
+<a href="https://github.com/jhfjhfj1/autokeras/tree/master/mkdocs/docs">mkdocs directory</a>,
+or automatically extracted from the docstrings by executing the <a href="https://github.com/jhfjhfj1/autokeras/blob/master/mkdocs/autogen.py">autogen.py</a>.
+In the first situation, you only need to change the markdown file.
+In the second situation, you need to change the docstrings and execute <a href="https://github.com/jhfjhfj1/autokeras/blob/master/mkdocs/autogen.py">autogen.py</a> to update the Markdown files.
+Please follow the 
+<a href="#pull-request-guide">Pull Request Guide</a> to submit your pull request. 
+Please also read
+<a href="#documentation-guide">Documentation Guide</a>
+to ensure your merge request meet our requirements.</p>
+<h2 id="pull-request-guide">Pull Request Guide</h2>
+<p>Before you submit a pull request, check that it meets these guidelines:
+1. Submit the pull request from the first day when you started your development and mark it as <strong>[WIP]</strong>
+2. Give your pull request a <strong>helpful title</strong> that summarizing your contribution.
+3. Give your branch a <strong>helpful name</strong> summarizing your contribution (fork the repo and create a new branch for pull request).
+4. Also, <strong>add the issue number</strong> which it addresses.
+If there is no associated issue, feel free to <a href="https://github.com/jhfjhfj1/autokeras/issues">create one</a>.
+5. Often pull requests resolve one or more other issues.
+If merging your pull request means that some issues should be closed,
+you should use keywords to link to them by following <a href="https://blog.github.com/2013-05-14-closing-issues-via-pull-requests/">this tutorial</a>.
+6. For the case of bug fixes, at the time of the PR,
+the test case should fail for the code base in the master branch and pass for the PR code.
+7. Please prefix the title of your pull request with [MRG] if the contribution is complete and should be subjected to a detailed review.
+ An incomplete contribution – where you expect to do more work before receiving a full review – should be prefixed [WIP] (to indicate a work in progress) and changed to [MRG] when it matures. 
+8. When the status change from WIP to MRG, assign the reviewer to 
+<a href="https://github.com/jhfjhfj1">@jhfjhfj1</a>
+9. Checkout from and pull request to the right branch. 
+If it is a very urgent bug fix, checkout from master and pull request to both master and develop.
+Otherwise, checkout from develop and pull request to develop.</p>
+<h2 id="code-style-guide">Code Style Guide</h2>
+<p>This project tries to closely follow the official Python Style Guide detailed in <a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>.
+The docstrings follow the <a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#381-docstrings">Google Python Style Guide</a>.
+Please follow these style guide closely, especially for the docstrings,
+which would be extracted automatically to generate the documentation.</p>
+<h2 id="documentation-guide">Documentation Guide:</h2>
+<p>The documentation should be provided in two ways, docstring, tutorial, and readme file.
+We prefer the documentation to be as complete as possible.</p>
+<h3 id="docstring">Docstring</h3>
+<p>All the methods and classes may directly be called by the user need to be documented with docstrings.
+The docstrings should contain all the fields required by the <a href="https://github.com/google/styleguide/blob/gh-pages/pyguide.md#381-docstrings">Google Python Style Guide</a>.</p>
+<h3 id="tutorial">Tutorial</h3>
+<p>You only need to add tutorials to your code if you are contributing or updating a new task module,
+e.g. TextClassifier, VideoClassifier,
+or a new function could be directly called by the user.
+You can modify <code>mkdocs/docs/start.md</code> to add your tutorial.
+The code example of your new task module should be added to the <code>examples</code> directory.</p>
+<h3 id="readme-file">Readme File</h3>
+<p>You only need to add tutorials to your code if you are contributing or updating a new task module,
+e.g. TextClassifier, VideoClassifier.
+The readme file should be named as <code>README.md</code>.
+It should be written in Markdown.
+The content should contain your name, affiliation, and any reference to the method you use.</p>
+<h2 id="testing-guide">Testing Guide</h2>
+<p><a href="https://docs.pytest.org/en/latest/">Pytest</a> is used to write the unit tests of Auto-Keras.
+You should test your code by writing unit testing code in <code>tests</code> directory.
+The testing file name should be the <code>.py</code> file with a prefix of <code>test_</code> in the corresponding directory,
+e.g., the name should be <code>test_layers.py</code> if the code of which is to test <code>layer.py</code>.
+The tests should be run in the root directory of the project by executing the <code>cov.sh</code> file.
+It would output the coverage information into a directory named <code>htmlcov</code>.
+Please make sure the code coverage percentage does not decrease after your contribution,
+otherwise, the code will not be merged.</p>
+<h2 id="developer-tools-guide">Developer Tools Guide</h2>
+<p>We highly recommend you to use <a href="https://www.jetbrains.com/pycharm/">Pycharm</a> 
+and <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a>.</p>
+<h3 id="pycharm">Pycharm</h3>
+<p>Pycharm is the best IDE for large project development in Python.
+We recommend you <a href="https://www.jetbrains.com/help/pycharm/running-inspections.html">inspect the code</a>
+before you pull request to fix any error and warning suggested by the inspection.</p>
+<h3 id="virtualenvwrapper">Virtualenvwrapper</h3>
+<p>Virtualenvwrapper is a tool to build separated Python environment for each project.
+In this way, you can install a different version of Tensorflow, Pytorch, or any other package for each project.
+We recommend you to create a virtualenv for autokeras development with virtualenvwrapper,
+and only install the packages required by autokeras with the corresponding version.
+The virtualenv should be created based on Python 3.6 interpreter.
+Use pycharm to select the 
+<a href="https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html">virtualenv as interpreter</a>.</p>
+<h2 id="reusable-code-guide">Reusable Code Guide</h2>
+<p>Other than the base classes you have to extend,
+there are some other classes you can extend.</p>
+<h3 id="modeltrainer">ModelTrainer</h3>
+<p><code>autokeras.utils.ModelTrainer</code> is a class for training Pytorch models.
+If needed a new metric or loss function, you can add your own to <code>loss_function.py</code> and <code>metric.py</code>.
+You can follow its documentation to use it.
+Make sure your loss function, metric, Pytorch model, and Dataloader are compatible with each other.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../supervised/" class="btn btn-neutral float-right" title="supervised">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../start/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/jhfjhfj1/autokeras/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../start/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../supervised/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
