@@ -138,6 +138,23 @@
         
             <li><a class="toctree-l4" href="#get_best_model_id">get_best_model_id</a></li>
         
+            <li><a class="toctree-l4" href="#export_keras_model">export_keras_model</a></li>
+        
+            <li><a class="toctree-l4" href="#export_autokeras_model">export_autokeras_model</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#portableimagesupervised">PortableImageSupervised</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#init_1">init</a></li>
+        
+            <li><a class="toctree-l4" href="#predict_1">predict</a></li>
+        
+            <li><a class="toctree-l4" href="#evaluate_1">evaluate</a></li>
+        
         </ul>
     
 
@@ -356,6 +373,22 @@ Based on the given dataset, the function will find the best neural architecture 
 </ul>
 <h3 id="get_best_model_id">get_best_model_id</h3>
 <p>Return an integer indicating the id of the best model.</p>
+<h3 id="export_keras_model">export_keras_model</h3>
+<p>Exports the best Keras model to the given filename.</p>
+<h3 id="export_autokeras_model">export_autokeras_model</h3>
+<p>Creates and Exports the AutoKeras model to the given filename.</p>
+<h2 id="portableimagesupervised">PortableImageSupervised</h2>
+<h3 id="init_1"><strong>init</strong></h3>
+<p>Initialize the instance. Args: graph: The graph form of the learned model</p>
+<h3 id="predict_1">predict</h3>
+<p>Return predict results for the testing data.</p>
+<h5 id="args_7">Args</h5>
+<ul>
+<li><strong>x_test</strong>: An instance of numpy.ndarray containing the testing data.</li>
+</ul>
+<h5 id="returns_3">Returns</h5>
+<h3 id="evaluate_1">evaluate</h3>
+<p>Return the accuracy score between predict value and <code>y_test</code>.</p>
               
             </div>
           </div>
