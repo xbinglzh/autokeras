@@ -302,7 +302,8 @@ It is used for image classification. It searches convolutional neural network ar
 <p><strong>searcher_args</strong>: A dictionary containing the parameters for the searcher's <strong>init</strong> function.</p>
 </li>
 <li>
-<p><strong>augment</strong>: A boolean value indicating whether the data needs augmentation.</p>
+<p><strong>augment</strong>: A boolean value indicating whether the data needs augmentation.  If not define, then it
+        will use the value of Constant.DATA_AUGMENTATION which is True by default.</p>
 </li>
 </ul>
 <h3 id="init"><strong>init</strong></h3>
@@ -321,7 +322,8 @@ The classifier will be loaded from the files in 'path' if parameter 'resume' is 
     Otherwise, the classifier will start a new search.</p>
 </li>
 <li>
-<p><strong>augment</strong>: A boolean value indicating whether the data needs augmentation.</p>
+<p><strong>augment</strong>: A boolean value indicating whether the data needs augmentation. If not define, then it
+    will use the value of Constant.DATA_AUGMENTATION which is True by default.</p>
 </li>
 </ul>
 <h3 id="fit">fit</h3>
