@@ -3,11 +3,9 @@ import time
 import os
 from keras.datasets import cifar10
 from autokeras.constant import Constant
-from autokeras.generator import CnnGenerator
 from autokeras.image_supervised import run_searcher_once
 from autokeras.loss_function import classification_loss
 from autokeras.metric import Accuracy
-from autokeras.net_transformer import default_transform
 from autokeras.preprocessor import DataTransformer, OneHotEncoder
 from autokeras.search import train, Searcher
 from autokeras.utils import temp_folder_generator, pickle_from_file, pickle_to_file
