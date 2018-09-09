@@ -35,7 +35,7 @@ def main():
     # Constant.SEARCH_MAX_ITER = 5
     # Constant.MAX_ITER_NUM = 5
 
-    time_limit = 2 * 60
+    time_limit = 12 * 60 * 60
 
     start_time = time.time()
     time_remain = time_limit
