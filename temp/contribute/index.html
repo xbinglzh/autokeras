@@ -443,6 +443,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#main-contributor-list" title="Main Contributor List" class="md-nav__link">
+    Main Contributor List
+  </a>
+  
+</li>
+      
       
       
       
@@ -541,6 +548,18 @@
   <li class="md-nav__item">
     <a href="../preprocessor/" title="preprocessor" class="md-nav__link">
       preprocessor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_trainer/" title="model_trainer" class="md-nav__link">
+      model_trainer
     </a>
   </li>
 
@@ -756,6 +775,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#main-contributor-list" title="Main Contributor List" class="md-nav__link">
+    Main Contributor List
+  </a>
+  
+</li>
+      
       
       
       
@@ -793,6 +819,7 @@ The one performs better in the evaluation will be merged.</p>
 Reach out to us if you feel there is a special requirement.
 For every new feature, a new directory should be created inside the /autokeras directory, e.g. text_classifier.
 All the code contributed should be within the directory.
+You may put a README.md file in your directory to describe your work. 
 The details of the functions to inherit is in the documentation of <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/supervised.py"><code>autokeras/supervised.py</code></a></p>
 <p>Please also read
 <a href="#code-style-guide">Code Style Guide</a>,
@@ -930,10 +957,19 @@ Use pycharm to select the
 <p>Other than the base classes you have to extend,
 there are some other classes you can extend.</p>
 <h3 id="modeltrainer">ModelTrainer</h3>
-<p><code>autokeras.utils.ModelTrainer</code> is a class for training Pytorch models.
-If needed a new metric or loss function, you can add your own to <code>loss_function.py</code> and <code>metric.py</code>.
-You can follow its documentation to use it.
+<p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/model_trainer.py"><code>autokeras.model_trainer.ModelTrainer</code></a> is a class for training Pytorch models.
+If needed a new metric or loss function other than the ones we have, you can add your own to <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/loss_function.py"><code>loss_function.py</code></a> and <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/metric.py"><code>metric.py</code></a>.
+You can follow its <a href="">documentation</a> to use it.
 Make sure your loss function, metric, Pytorch model, and Dataloader are compatible with each other.</p>
+<h2 id="main-contributor-list">Main Contributor List</h2>
+<p>We really appreciate all the contributions.
+To show our appreciation to those who contributed most,
+we would like to maintain a list of main contributors.
+To be in the list, you need to meet the following requirments.
+1. Be on campus of Texas A&amp;M University.
+2. Constantly present in our meetings.
+3. Constantly contribute code to our repository.
+4. Keep the above for over 6 months.</p>
                 
                   
                 
