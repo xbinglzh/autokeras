@@ -109,14 +109,14 @@ class Searcher:
     def replace_model(self, graph, model_id):
         pickle_to_file(graph, os.path.join(self.path, str(model_id) + '.h5'))
 
-    def add_model(self, metric_value, loss, graph, model_id):
+    def add_model(self, metric_value, loss, graph, model_id, current_time):
         if self.verbose:
             print('\nSaving model.')
 
         pickle_to_file(graph, os.path.join(self.path, str(model_id) + '.h5'))
 
         # Update best_model text file
-        ret = {'model_id': model_id, 'loss': loss, 'metric_value': metric_value}
+        ret = {'model_id': model_id, 'loss': loss, 'metric_value': metric_value, 'time': current_time}
         self.history.append(ret)
         if model_id == self.get_best_model_id():
             file = open(os.path.join(self.path, 'best_model.txt'), 'w')
@@ -218,7 +218,7 @@ class Searcher:
                     print('|' + line + '|')
                 print('+' + '-' * len(line) + '+')
 
-            self.add_model(metric_value, loss, graph, model_id)
+            self.add_model(metric_value, loss, graph, model_id, time.time() - start_time)
             self.search_tree.add_child(father_id, model_id)
             self.bo.fit(self.x_queue, self.y_queue)
             self.x_queue = []
