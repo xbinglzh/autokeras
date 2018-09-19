@@ -16,7 +16,7 @@ from autokeras.metric import Accuracy
 from autokeras.preprocessor import DataTransformer, OneHotEncoder
 from autokeras.search import train, Searcher
 from autokeras.utils import pickle_from_file, pickle_to_file, ensure_dir
-from examples.other_searcher import RandomSearcher, GridSearcher, SeasSearcher, BoSearcher
+from examples.other_searcher import RandomSearcher, GridSearcher, SeasSearcher, BoSearcher, BfsSearcher
 
 
 def load_searcher(path):
@@ -103,8 +103,9 @@ def main(searcher, path):
 
 
 if __name__ == '__main__':
-    # main(Searcher, '~/ak-searcher-mnist')
+    main(Searcher, '~/ak-searcher-mnist')
     # main(RandomSearcher, '~/ak-random-mnist')
     # main(GridSearcher, '~/ak-grid-mnist')
     # main(SeasSearcher, '~/ak-seas-mnist')
-    main(BoSearcher, '~/ak-bo-mnist')
+    # main(BoSearcher, '~/ak-bo-mnist')
+    # main(BfsSearcher, '~/ak-bfs-mnist')
