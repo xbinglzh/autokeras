@@ -100,4 +100,4 @@ def main(searcher, path):
 
 
 if __name__ == '__main__':
-    main(Searcher, '~/ak/searcher-cifar10')
+    main(Searcher, '/home/haifeng/ak/searcher-cifar10')
