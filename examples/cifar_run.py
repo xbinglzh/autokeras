@@ -15,7 +15,7 @@ from autokeras.loss_function import classification_loss
 from autokeras.metric import Accuracy
 from autokeras.preprocessor import DataTransformer, OneHotEncoder
 from autokeras.search import train, Searcher
-from autokeras.utils import temp_folder_generator, pickle_from_file, pickle_to_file
+from autokeras.utils import temp_folder_generator, pickle_from_file, pickle_to_file, ensure_dir
 
 
 def load_searcher(path):
@@ -26,7 +26,7 @@ def save_searcher(path, searcher):
     pickle.dump(searcher, open(os.path.join(path, 'searcher'), 'wb'))
 
 
-def main():
+def main(searcher, path):
     (x_final, y_final), (x_eval, y_eval) = cifar10.load_data()
 
     # graphs = default_transform(CnnGenerator(10, (32, 32, 3)).generate())
@@ -39,13 +39,13 @@ def main():
 
     start_time = time.time()
     time_remain = time_limit
-    path = temp_folder_generator()
+    ensure_dir(path)
     print(path)
 
     input_shape = x_final.shape[1:]
     searcher_args = {'n_output_node': 10, 'input_shape': input_shape, 'path': path,
                      'metric': Accuracy, 'loss': classification_loss, 'verbose': True}
-    searcher = Searcher(**searcher_args)
+    searcher = searcher(**searcher_args)
     save_searcher(path, searcher)
 
     x_train, x_test, y_train, y_test = train_test_split(x_final, y_final,
@@ -100,4 +100,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main(Searcher, '~/ak/searcher-cifar10')
