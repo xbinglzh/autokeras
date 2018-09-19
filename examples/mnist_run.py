@@ -16,6 +16,7 @@ from autokeras.metric import Accuracy
 from autokeras.preprocessor import DataTransformer, OneHotEncoder
 from autokeras.search import train, Searcher
 from autokeras.utils import pickle_from_file, pickle_to_file, ensure_dir
+from examples.other_searcher import RandomSearcher, GridSearcher, SeasSearcher, BoSearcher
 
 
 def load_searcher(path):
@@ -26,7 +27,7 @@ def save_searcher(path, searcher):
     pickle.dump(searcher, open(os.path.join(path, 'searcher'), 'wb'))
 
 
-def main():
+def main(searcher, path):
     (x_final, y_final), (x_eval, y_eval) = mnist.load_data()
     x_final = x_final.reshape(x_final.shape[0], 28, 28, 1)
     x_eval = x_eval.reshape(x_eval.shape[0], 28, 28, 1)
@@ -34,22 +35,20 @@ def main():
     Constant.MAX_BATCH_SIZE = 64
     Constant.DENSE_DROPOUT_RATE = 0.0
     Constant.CONV_DROPOUT_RATE = 0.0
-    # Constant.SEARCH_MAX_ITER = 5
-    # Constant.MAX_ITER_NUM = 5
+    Constant.SEARCH_MAX_ITER = 1
+    Constant.MAX_ITER_NUM = 1
 
     time_limit = 12 * 60 * 60
 
     start_time = time.time()
     time_remain = time_limit
-    # path = temp_folder_generator()
-    path = '~/tmp/autokeras'
     ensure_dir(path)
     print(path)
 
     input_shape = x_final.shape[1:]
     searcher_args = {'n_output_node': 10, 'input_shape': input_shape, 'path': path,
                      'metric': Accuracy, 'loss': classification_loss, 'verbose': True}
-    searcher = Searcher(**searcher_args)
+    searcher = searcher(**searcher_args)
     save_searcher(path, searcher)
 
     x_train, x_test, y_train, y_test = train_test_split(x_final, y_final,
@@ -104,4 +103,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main(Searcher, '~/ak-searcher-mnist')
+    # main(RandomSearcher, '~/ak-random-mnist')
+    # main(GridSearcher, '~/ak-grid-mnist')
+    # main(SeasSearcher, '~/ak-seas-mnist')
+    main(BoSearcher, '~/ak-bo-mnist')

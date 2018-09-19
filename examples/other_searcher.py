@@ -135,13 +135,13 @@ class SeasSearcher(Searcher):
                 searched = True
                 best_graph = self.load_best_model()
                 new_graphs = transform(best_graph)
-                # Did not found a new architecture
-                if len(new_graphs) == 0:
-                    return
-                new_model_id = self.model_count
-                self.model_count += 1
-                self.training_queue.append((new_graph, new_father_id, new_model_id))
-                self.descriptors.append(new_graph.extract_descriptor())
+                while len(new_graphs) == 0:
+                    new_graphs = transform(best_graph)
+                for new_graph in new_graphs:
+                    new_model_id = self.model_count
+                    self.model_count += 1
+                    self.training_queue.append((new_graph, new_father_id, new_model_id))
+                    self.descriptors.append(new_graph.extract_descriptor())
 
             remaining_time = timeout - (time.time() - start_time)
             if remaining_time <= 0:
@@ -166,13 +166,8 @@ class SeasSearcher(Searcher):
                 print('+' + '-' * len(line) + '+')
 
             self.add_model(metric_value, loss, graph, model_id, time.time() - start_time)
-            self.search_tree.add_child(father_id, model_id)
-            self.bo.fit(self.x_queue, self.y_queue)
-            self.x_queue = []
-            self.y_queue = []
 
             pickle_to_file(self, os.path.join(self.path, 'searcher'))
-            self.export_json(os.path.join(self.path, 'history.json'))
 
         except (mp.TimeoutError, TimeoutError) as e:
             raise TimeoutError from e
@@ -217,12 +212,12 @@ class BoSearcher(Searcher):
             new_father_id = None
             if not self.training_queue:
                 searched = True
-                new_graph, new_father_id = self.bo.optimize_acq(self.search_tree.adj_list.keys(),
-                                                                self.descriptors,
-                                                                timeout)
-                # Did not found a new architecture
-                if new_father_id is None:
-                    return
+
+                while new_father_id is None:
+                    remaining_time = timeout - (time.time() - start_time)
+                    new_graph, new_father_id = self.bo.optimize_acq(self.search_tree.adj_list.keys(),
+                                                                    self.descriptors,
+                                                                    remaining_time)
                 new_model_id = self.model_count
                 self.model_count += 1
                 self.training_queue.append((new_graph, new_father_id, new_model_id))
@@ -301,17 +296,13 @@ class BfsSearcher(Searcher):
             new_father_id = None
             if not self.training_queue:
                 searched = True
-                new_graph, new_father_id = self.bo.optimize_acq(self.search_tree.adj_list.keys(),
-                                                                self.descriptors,
-                                                                timeout)
-                new_graphs =
-                # Did not found a new architecture
-                if new_father_id is None:
-                    return
-                new_model_id = self.model_count
-                self.model_count += 1
-                self.training_queue.append((new_graph, new_father_id, new_model_id))
-                self.descriptors.append(new_graph.extract_descriptor())
+                new_graphs = transform(graph)
+                new_father_id = model_id
+                for new_graph in new_graphs:
+                    new_model_id = self.model_count
+                    self.model_count += 1
+                    self.training_queue.append((new_graph, new_father_id, new_model_id))
+                    self.descriptors.append(new_graph.extract_descriptor())
 
             remaining_time = timeout - (time.time() - start_time)
             if remaining_time <= 0:
@@ -336,13 +327,8 @@ class BfsSearcher(Searcher):
                 print('+' + '-' * len(line) + '+')
 
             self.add_model(metric_value, loss, graph, model_id, time.time() - start_time)
-            self.search_tree.add_child(father_id, model_id)
-            self.bo.fit(self.x_queue, self.y_queue)
-            self.x_queue = []
-            self.y_queue = []
 
             pickle_to_file(self, os.path.join(self.path, 'searcher'))
-            self.export_json(os.path.join(self.path, 'history.json'))
 
         except (mp.TimeoutError, TimeoutError) as e:
             raise TimeoutError from e
