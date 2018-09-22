@@ -16,6 +16,7 @@ from autokeras.metric import Accuracy
 from autokeras.preprocessor import DataTransformer, OneHotEncoder
 from autokeras.search import train, Searcher
 from autokeras.utils import temp_folder_generator, pickle_from_file, pickle_to_file, ensure_dir
+from examples.other_searcher import RandomSearcher, GridSearcher, SeasSearcher, BoSearcher, BfsSearcher
 
 
 def load_searcher(path):
@@ -100,4 +101,9 @@ def main(searcher, path):
 
 
 if __name__ == '__main__':
-    main(Searcher, '/home/haifeng/ak/searcher-cifar10')
+    # main(Searcher, '/home/haifeng/ak/searcher-cifar10')
+    main(RandomSearcher, '/home/haifeng/ak/random-cifar10')
+    # main(GridSearcher, '/home/haifeng/ak/grid-cifar10')
+    # main(SeasSearcher, '/home/haifeng/ak/seas-cifar10')
+    # main(BoSearcher, '/home/haifeng/ak/bo-cifar10')
+    # main(BfsSearcher, '/home/haifeng/ak/bfs-cifar10')

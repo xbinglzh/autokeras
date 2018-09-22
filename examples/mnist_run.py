@@ -103,9 +103,9 @@ def main(searcher, path):
 
 
 if __name__ == '__main__':
-    main(Searcher, '~/ak-searcher-mnist')
-    # main(RandomSearcher, '~/ak-random-mnist')
-    # main(GridSearcher, '~/ak-grid-mnist')
-    # main(SeasSearcher, '~/ak-seas-mnist')
-    # main(BoSearcher, '~/ak-bo-mnist')
-    # main(BfsSearcher, '~/ak-bfs-mnist')
+    main(Searcher, '/home/haifeng/ak/searcher-mnist')
+    main(RandomSearcher, '/home/haifeng/ak/random-mnist')
+    main(GridSearcher, '/home/haifeng/ak/grid-mnist')
+    main(SeasSearcher, '/home/haifeng/ak/seas-mnist')
+    main(BoSearcher, '/home/haifeng/ak/bo-mnist')
+    main(BfsSearcher, '/home/haifeng/ak/bfs-mnist')

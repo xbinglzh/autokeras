@@ -12,27 +12,44 @@ def load_searcher(path):
 def get_data(path):
     searcher = load_searcher(path)
 
-    model_num_rate = []
-    time_rate = []
+    indices = []
+    times = []
+    metric_values = []
 
     for index, item in enumerate(searcher.history):
-        model_num_rate.append((index, item['metric_value']))
-        time_rate.append((item['time'], item['metric_value']))
+        indices.append(index)
+        metric_values.append(1 - item['metric_value'])
+        times.append(item['time'])
 
-    return model_num_rate, time_rate
+    for i in range(1, len(times)):
+        times[i] = times[i - 1] + times[i]
+        metric_values[i] = min(metric_values[i], metric_values[i - 1])
+
+    return indices, times, metric_values
 
 
-def main():
-    n_rates = []
-    t_rates = []
-    paths = []
-
+def main(paths):
+    indices = []
+    times = []
+    metric_values = []
+    for path in paths:
+        a, b, c = get_data(path)
+        indices.append(a)
+        times.append(b)
+        metric_values.append(c)
     # evenly sampled time at 200ms intervals
-    t = np.arange(0., 5., 0.2)
+    # t = np.arange(0., 5., 0.2)
 
     # red dashes, blue squares and green triangles
-    plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
+    for i in range(len(paths)):
+        plt.plot(indices[i], metric_values[i], 'r--')
+    plt.show()
+
+    print(times)
+    for i in range(len(paths)):
+        plt.plot(times[i], metric_values[i], 'b--')
     plt.show()
 
 
-main()
+if __name__ == '__main__':
+    main([''])
