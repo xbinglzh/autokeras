@@ -48,6 +48,9 @@ class RandomSearcher(Searcher):
             # terminate and join the subprocess to prevent any resource leak
             pass
 
+    def export_json(self, path):
+        pass
+
 
 class GridSearcher(Searcher):
     def init_search(self):
@@ -103,6 +106,9 @@ class GridSearcher(Searcher):
         finally:
             # terminate and join the subprocess to prevent any resource leak
             pass
+
+    def export_json(self, path):
+        pass
 
 
 class SeasSearcher(Searcher):
@@ -182,6 +188,9 @@ class SeasSearcher(Searcher):
             # terminate and join the subprocess to prevent any resource leak
             pool.close()
             pool.join()
+
+    def export_json(self, path):
+        pass
 
 
 class BoSearcher(Searcher):
