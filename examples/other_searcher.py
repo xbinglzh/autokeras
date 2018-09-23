@@ -10,7 +10,7 @@ class RandomSearcher(Searcher):
         torch.cuda.empty_cache()
         model_id = self.model_count
 
-        model_len = randint(3, 10)
+        model_len = randint(3, 5)
         model_width = randint(32, 2048)
         graph = CnnGenerator(self.n_classes,
                              self.input_shape).generate(model_len,

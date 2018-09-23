@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 def load_searcher(path):
-    return pickle_from_file(os.path.join(path, 'searcher'))
+    return pickle_from_file(path)
 
 
 def get_data(path):
@@ -40,16 +40,26 @@ def main(paths):
     # evenly sampled time at 200ms intervals
     # t = np.arange(0., 5., 0.2)
 
+    _, ax = plt.subplots()
     # red dashes, blue squares and green triangles
+    colors = 'rgb'
+    label = ['BFS', 'BO', 'AK']
     for i in range(len(paths)):
-        plt.plot(indices[i], metric_values[i], 'r--')
+        ax.plot(indices[i], metric_values[i], colors[i] + ':', label=label[i])
+
+    ax.legend(loc='upper right', fontsize='x-large')
+    ax.set_xlabel('Number of Models', fontsize='x-large')
+    ax.set_ylabel('Error Rate', fontsize='x-large')
     plt.show()
 
-    print(times)
+    _, ax = plt.subplots()
     for i in range(len(paths)):
-        plt.plot(times[i], metric_values[i], 'b--')
+        ax.plot(times[i], metric_values[i], colors[i] + '--', label=label[i])
+    ax.legend(loc='upper right', fontsize='x-large')
+    ax.set_xlabel('Seconds', fontsize='x-large')
+    ax.set_ylabel('Error Rate', fontsize='x-large')
     plt.show()
 
 
 if __name__ == '__main__':
-    main([''])
+    main(['bfs_searcher', 'bo_searcher', 'searcher'])
