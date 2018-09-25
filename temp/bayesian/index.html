@@ -100,7 +100,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#bayesianoptimizer" tabindex="1" class="md-skip">
+      <a href="../../#to_nearest_pd" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -347,6 +347,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#to_nearest_pd" title="to_nearest_pd" class="md-nav__link">
+    to_nearest_pd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_pd" title="is_pd" class="md-nav__link">
+    is_pd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bayesianoptimizer" title="BayesianOptimizer" class="md-nav__link">
     BayesianOptimizer
   </a>
@@ -472,6 +486,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#to_nearest_pd" title="to_nearest_pd" class="md-nav__link">
+    to_nearest_pd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_pd" title="is_pd" class="md-nav__link">
+    is_pd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bayesianoptimizer" title="BayesianOptimizer" class="md-nav__link">
     BayesianOptimizer
   </a>
@@ -497,7 +525,12 @@
                 
                   <h1>bayesian</h1>
                 
-                <h2 id="bayesianoptimizer">BayesianOptimizer</h2>
+                <h3 id="to_nearest_pd">to_nearest_pd</h3>
+<p>Find the nearest positive-definite matrix to input
+A Python/Numpy port of John D'Errico's <code>nearestSPD</code> MATLAB code [1], which credits [2].  [1] https://www.mathworks.com/matlabcentral/fileexchange/42885-nearestspd  [2] N.J. Higham, "Computing a nearest symmetric positive semidefinite matrix" (1988): https://doi.org/10.1016/0024-3795(88)90223-6</p>
+<h3 id="is_pd">is_pd</h3>
+<p>Returns true when input is positive-definite, via Cholesky</p>
+<h2 id="bayesianoptimizer">BayesianOptimizer</h2>
 <p>gpr: A GaussianProcessRegressor for bayesian optimization.</p>
                 
                   
