@@ -6,7 +6,7 @@ import torch
 import numpy as np
 
 import os
-from keras.datasets import mnist
+from keras.datasets import mnist, fashion_mnist
 from sklearn.model_selection import train_test_split
 
 from autokeras.constant import Constant
@@ -28,7 +28,7 @@ def save_searcher(path, searcher):
 
 
 def main(searcher, path):
-    (x_final, y_final), (x_eval, y_eval) = mnist.load_data()
+    (x_final, y_final), (x_eval, y_eval) = fashion_mnist.load_data()
     x_final = x_final.reshape(x_final.shape[0], 28, 28, 1)
     x_eval = x_eval.reshape(x_eval.shape[0], 28, 28, 1)
 
@@ -103,9 +103,9 @@ def main(searcher, path):
 
 
 if __name__ == '__main__':
-    main(Searcher, '/home/haifeng/ak/searcher-mnist')
-    main(RandomSearcher, '/home/haifeng/ak/random-mnist')
-    main(GridSearcher, '/home/haifeng/ak/grid-mnist')
-    main(SeasSearcher, '/home/haifeng/ak/seas-mnist')
-    main(BoSearcher, '/home/haifeng/ak/bo-mnist')
-    main(BfsSearcher, '/home/haifeng/ak/bfs-mnist')
+    main(Searcher, '/tmp/haifeng/ak/searcher-fashion')
+    # main(RandomSearcher, '/home/haifeng/ak/random-mnist')
+    # main(GridSearcher, '/home/haifeng/ak/grid-mnist')
+    # main(SeasSearcher, '/home/haifeng/ak/seas-mnist')
+    # main(BoSearcher, '/home/haifeng/ak/bo-mnist')
+    # main(BfsSearcher, '/home/haifeng/ak/bfs-mnist')

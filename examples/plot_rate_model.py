@@ -1,5 +1,7 @@
 import os
 
+import matplotlib
+
 from autokeras.utils import pickle_from_file
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,7 +21,7 @@ def get_data(path):
     for index, item in enumerate(searcher.history):
         indices.append(index)
         metric_values.append(1 - item['metric_value'])
-        times.append(item['time'])
+        times.append(item['time'] / 60.0 / 60.0)
 
     for i in range(1, len(times)):
         times[i] = times[i - 1] + times[i]
@@ -40,24 +42,33 @@ def main(paths):
     # evenly sampled time at 200ms intervals
     # t = np.arange(0., 5., 0.2)
 
-    _, ax = plt.subplots()
     # red dashes, blue squares and green triangles
     colors = 'rgb'
     label = ['BFS', 'BO', 'AK']
-    for i in range(len(paths)):
-        ax.plot(indices[i], metric_values[i], colors[i] + ':', label=label[i])
 
-    ax.legend(loc='upper right', fontsize='x-large')
-    ax.set_xlabel('Number of Models', fontsize='x-large')
-    ax.set_ylabel('Error Rate', fontsize='x-large')
+    font = {'size': 18}
+
+    matplotlib.rc('font', **font)
+    # matplotlib.rcParams['figure.figsize'] = 2, 5
+
+    _, ax = plt.subplots()
+    for i in range(len(paths)):
+        ax.plot(indices[i], metric_values[i], colors[i] + '--', label=label[i])
+    ax.legend(loc='upper right')
+    ax.set_xlabel('Number of Models')
+    ax.set_ylabel('Error Rate')
+    plt.ylim((0.15, 0.25))
+    plt.xlim(0, 70)
     plt.show()
 
     _, ax = plt.subplots()
     for i in range(len(paths)):
         ax.plot(times[i], metric_values[i], colors[i] + '--', label=label[i])
-    ax.legend(loc='upper right', fontsize='x-large')
-    ax.set_xlabel('Seconds', fontsize='x-large')
-    ax.set_ylabel('Error Rate', fontsize='x-large')
+    ax.legend(loc='upper right')
+    ax.set_xlabel('Hours')
+    ax.set_ylabel('Error Rate')
+    plt.ylim((0.15, 0.25))
+    plt.xlim(0, 12)
     plt.show()
 
 
