@@ -871,38 +871,26 @@ to ensure your merge request meet our requirements.</p>
 <p>Before you submit a pull request, check that it meets these guidelines:</p>
 <ol>
 <li>
-<p>Submit the pull request from the first day when you started your development and mark it as <strong>[WIP]</strong></p>
+<p>Submit the pull request from the first day when you started your development and prefix the title of the pull request with <strong>[WIP]</strong></p>
 </li>
 <li>
-<p>Give your pull request a <strong>helpful title</strong> that summarizing your contribution.</p>
+<p>Give your pull request title and branch name should contain <strong>helpful</strong> information summarizing your contribution.</p>
 </li>
 <li>
-<p>Give your branch a <strong>helpful name</strong> summarizing your contribution (fork the repo and create a new branch for pull request).</p>
-</li>
-<li>
-<p>Also, <strong>add the issue number</strong> which it addresses.
-If there is no associated issue, feel free to <a href="https://github.com/jhfjhfj1/autokeras/issues">create one</a>.</p>
-</li>
-<li>
-<p>If merging the pull requests resolve one or more other issues.
-In both the title and the description of the pull request, write "resolves #issue_number" to link the issue.</p>
+<p>Include "resolves #issue_number" in the title and the description of the pull request.</p>
 </li>
 <li>
 <p>For the case of bug fixes, at the time of the PR,
 the test case should fail for the code base in the master branch and pass for the PR code.</p>
 </li>
 <li>
-<p>Please prefix the title of your pull request with [MRG] if the contribution is complete and should be subjected to a detailed review.
- An incomplete contribution – where you expect to do more work before receiving a full review – should be prefixed [WIP] (to indicate a work in progress) and changed to [MRG] when it matures. </p>
+<p>The contribution is complete, change the <strong>[WIP]</strong> to <strong>[MRG]</strong>,
+set the reviewer to 
+<a href="https://github.com/jhfjhfj1">@jhfjhfj1</a>.</p>
 </li>
 <li>
-<p>When the status change from WIP to MRG, set the reviewer to 
-<a href="https://github.com/jhfjhfj1">@jhfjhfj1</a>. After the code review, @jhfjhfj1 will set the assign the assignee back to the contributor. The assignee will be set back to @jhfjhfj1 after the contributor has addressed all the code review comments and ready to be merged. This may go back and forth for several times.</p>
-</li>
-<li>
-<p>Checkout from and pull request to the right branch. 
-If it is a very urgent bug fix, checkout from master and pull request to both master and develop.
-Otherwise, checkout from develop and pull request to develop.</p>
+<p>Checkout from and pull request to the develop branch. 
+If it is a very urgent bug fix, checkout from master and pull request to both master and develop.</p>
 </li>
 </ol>
 <h2 id="code-style-guide">Code Style Guide</h2>
