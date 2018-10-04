@@ -378,6 +378,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#final_fit" title="final_fit" class="md-nav__link">
+    final_fit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_2" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#predict" title="predict" class="md-nav__link">
     predict
   </a>
@@ -386,7 +406,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_2" title="Args" class="md-nav__link">
+  <a href="#args_3" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -433,7 +453,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_3" title="Args" class="md-nav__link">
+  <a href="#args_4" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -453,7 +473,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_4" title="Args" class="md-nav__link">
+  <a href="#args_5" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -681,6 +701,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#final_fit" title="final_fit" class="md-nav__link">
+    final_fit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_2" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#predict" title="predict" class="md-nav__link">
     predict
   </a>
@@ -689,7 +729,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_2" title="Args" class="md-nav__link">
+  <a href="#args_3" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -736,7 +776,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_3" title="Args" class="md-nav__link">
+  <a href="#args_4" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -756,7 +796,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_4" title="Args" class="md-nav__link">
+  <a href="#args_5" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -832,9 +872,32 @@ Based on the given dataset, the function will find the best neural architecture 
 <p><strong>time_limit</strong>: The time limit for the search in seconds.</p>
 </li>
 </ul>
+<h3 id="final_fit">final_fit</h3>
+<p>Final training after found the best architecture.</p>
+<h5 id="args_2">Args</h5>
+<ul>
+<li>
+<p><strong>x_train</strong>: A numpy.ndarray of training data.</p>
+</li>
+<li>
+<p><strong>y_train</strong>: A numpy.ndarray of training targets.</p>
+</li>
+<li>
+<p><strong>x_test</strong>: A numpy.ndarray of testing data.</p>
+</li>
+<li>
+<p><strong>y_test</strong>: A numpy.ndarray of testing targets.</p>
+</li>
+<li>
+<p><strong>trainer_args</strong>: A dictionary containing the parameters of the ModelTrainer constructor.</p>
+</li>
+<li>
+<p><strong>retrain</strong>: A boolean of whether reinitialize the weights of the model.</p>
+</li>
+</ul>
 <h3 id="predict">predict</h3>
 <p>Return predict results for the testing data.</p>
-<h5 id="args_2">Args</h5>
+<h5 id="args_3">Args</h5>
 <ul>
 <li><strong>x_test</strong>: An instance of numpy.ndarray containing the testing data.</li>
 </ul>
@@ -844,13 +907,13 @@ Based on the given dataset, the function will find the best neural architecture 
 <h2 id="portableclass">PortableClass</h2>
 <h3 id="init_1"><strong>init</strong></h3>
 <p>Initialize the instance.</p>
-<h5 id="args_3">Args</h5>
+<h5 id="args_4">Args</h5>
 <ul>
 <li><strong>graph</strong>: The graph form of the learned model</li>
 </ul>
 <h3 id="predict_1">predict</h3>
 <p>Return predict results for the testing data.</p>
-<h5 id="args_4">Args</h5>
+<h5 id="args_5">Args</h5>
 <ul>
 <li><strong>x_test</strong>: An instance of numpy.ndarray containing the testing data.</li>
 </ul>
