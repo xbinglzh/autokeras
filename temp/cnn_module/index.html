@@ -444,6 +444,26 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#fit" title="fit" class="md-nav__link">
+    fit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#final_fit" title="final_fit" class="md-nav__link">
     final_fit
   </a>
@@ -452,7 +472,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
+  <a href="#args_1" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -488,9 +508,29 @@
                   <h1>Cnn module</h1>
                 
                 <h2 id="cnnmodule">CnnModule</h2>
+<h3 id="fit">fit</h3>
+<p>Search the best CnnModule.</p>
+<h5 id="args">Args</h5>
+<ul>
+<li>
+<p><strong>n_output_node</strong>: A integer value represent the number of output node in the final layer.</p>
+</li>
+<li>
+<p><strong>input_shape</strong>: A tuple to express the shape of every train entry. For example,MNIST dataset would be (28,28,1)</p>
+</li>
+<li>
+<p><strong>train_data</strong>: A PyTorch DataLoader instance represents the training data</p>
+</li>
+<li>
+<p><strong>test_data</strong>: A PyTorch DataLoader instance represents the testing data</p>
+</li>
+<li>
+<p><strong>time_limit</strong>: A integer value represents the time limit on searching for models.</p>
+</li>
+</ul>
 <h3 id="final_fit">final_fit</h3>
 <p>Final training after found the best architecture.</p>
-<h5 id="args">Args</h5>
+<h5 id="args_1">Args</h5>
 <ul>
 <li>
 <p><strong>trainer_args</strong>: A dictionary containing the parameters of the ModelTrainer constructor.</p>
