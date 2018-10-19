@@ -100,7 +100,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#_validate" tabindex="1" class="md-skip">
+      <a href="../../#read_csv_file" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -335,13 +335,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_validate" title="_validate" class="md-nav__link">
-    _validate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#read_csv_file" title="read_csv_file" class="md-nav__link">
     read_csv_file
   </a>
@@ -451,26 +444,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fit" title="fit" class="md-nav__link">
-    fit
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_4" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#predict" title="predict" class="md-nav__link">
     predict
   </a>
@@ -479,7 +452,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_5" title="Args" class="md-nav__link">
+  <a href="#args_4" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -513,7 +486,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_6" title="Args" class="md-nav__link">
+  <a href="#args_5" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -521,13 +494,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_best_model_id" title="get_best_model_id" class="md-nav__link">
-    get_best_model_id
-  </a>
   
 </li>
         
@@ -574,7 +540,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_7" title="Args" class="md-nav__link">
+  <a href="#args_6" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -735,13 +701,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_validate" title="_validate" class="md-nav__link">
-    _validate
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#read_csv_file" title="read_csv_file" class="md-nav__link">
     read_csv_file
   </a>
@@ -851,26 +810,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fit" title="fit" class="md-nav__link">
-    fit
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_4" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#predict" title="predict" class="md-nav__link">
     predict
   </a>
@@ -879,7 +818,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_5" title="Args" class="md-nav__link">
+  <a href="#args_4" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -913,7 +852,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_6" title="Args" class="md-nav__link">
+  <a href="#args_5" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -921,13 +860,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_best_model_id" title="get_best_model_id" class="md-nav__link">
-    get_best_model_id
-  </a>
   
 </li>
         
@@ -974,7 +906,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_7" title="Args" class="md-nav__link">
+  <a href="#args_6" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -1023,9 +955,7 @@
                 
                   <h1>image_supervised</h1>
                 
-                <h3 id="_validate">_validate</h3>
-<p>Check <code>x_train</code>'s type and the shape of <code>x_train</code>, <code>y_train</code>.</p>
-<h3 id="read_csv_file">read_csv_file</h3>
+                <h3 id="read_csv_file">read_csv_file</h3>
 <p>Read the csv file and returns two separate list containing files name and their labels.</p>
 <h5 id="args">Args</h5>
 <ul>
@@ -1118,30 +1048,9 @@ The classifier will be loaded from the files in 'path' if parameter 'resume' is 
     will use the value of Constant.DATA_AUGMENTATION which is True by default.</p>
 </li>
 </ul>
-<h3 id="fit">fit</h3>
-<p>Find the best neural architecture and train it.
-Based on the given dataset, the function will find the best neural architecture for it. The dataset is in numpy.ndarray format. So they training data should be passed through <code>x_train</code>, <code>y_train</code>.</p>
-<h5 id="args_4">Args</h5>
-<ul>
-<li>
-<p><strong>x</strong>: A numpy.ndarray instance containing the training data.</p>
-</li>
-<li>
-<p><strong>y</strong>: A numpy.ndarray instance containing the label of the training data.</p>
-</li>
-<li>
-<p><strong>x_test</strong>: A numpy.ndarray instance containing the testing data</p>
-</li>
-<li>
-<p><strong>y_test</strong>: A numpy.ndarray instance containing the label of the testing data.</p>
-</li>
-<li>
-<p><strong>time_limit</strong>: The time limit for the search in seconds.</p>
-</li>
-</ul>
 <h3 id="predict">predict</h3>
 <p>Return predict results for the testing data.</p>
-<h5 id="args_5">Args</h5>
+<h5 id="args_4">Args</h5>
 <ul>
 <li><strong>x_test</strong>: An instance of numpy.ndarray containing the testing data.</li>
 </ul>
@@ -1150,7 +1059,7 @@ Based on the given dataset, the function will find the best neural architecture 
 <p>Return the accuracy score between predict value and <code>y_test</code>.</p>
 <h3 id="final_fit">final_fit</h3>
 <p>Final training after found the best architecture.</p>
-<h5 id="args_6">Args</h5>
+<h5 id="args_5">Args</h5>
 <ul>
 <li>
 <p><strong>x_train</strong>: A numpy.ndarray of training data.</p>
@@ -1171,8 +1080,6 @@ Based on the given dataset, the function will find the best neural architecture 
 <p><strong>retrain</strong>: A boolean of whether reinitialize the weights of the model.</p>
 </li>
 </ul>
-<h3 id="get_best_model_id">get_best_model_id</h3>
-<p>Return an integer indicating the id of the best model.</p>
 <h3 id="export_keras_model">export_keras_model</h3>
 <p>Exports the best Keras model to the given filename.</p>
 <h3 id="export_autokeras_model">export_autokeras_model</h3>
@@ -1182,7 +1089,7 @@ Based on the given dataset, the function will find the best neural architecture 
 <p>Initialize the instance. Args: graph: The graph form of the learned model</p>
 <h3 id="predict_1">predict</h3>
 <p>Return predict results for the testing data.</p>
-<h5 id="args_7">Args</h5>
+<h5 id="args_6">Args</h5>
 <ul>
 <li><strong>x_test</strong>: An instance of numpy.ndarray containing the testing data.</li>
 </ul>
