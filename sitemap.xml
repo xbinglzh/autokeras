@@ -11,6 +11,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://autokeras.com/docker/</loc>
+     <lastmod>2018-11-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://autokeras.com/temp/contribute/</loc>
      <lastmod>2018-11-05</lastmod>
      <changefreq>daily</changefreq>
