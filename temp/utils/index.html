@@ -474,6 +474,60 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compute_image_resize_params" title="compute_image_resize_params" class="md-nav__link">
+    compute_image_resize_params
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resize_image_data" title="resize_image_data" class="md-nav__link">
+    resize_image_data
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_2" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_2" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get_system" title="get_system" class="md-nav__link">
     get_system
   </a>
@@ -482,7 +536,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#returns_1" title="Returns" class="md-nav__link">
+  <a href="#returns_3" title="Returns" class="md-nav__link">
     Returns
   </a>
   
@@ -607,6 +661,60 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compute_image_resize_params" title="compute_image_resize_params" class="md-nav__link">
+    compute_image_resize_params
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resize_image_data" title="resize_image_data" class="md-nav__link">
+    resize_image_data
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_2" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_2" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get_system" title="get_system" class="md-nav__link">
     get_system
   </a>
@@ -615,7 +723,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#returns_1" title="Returns" class="md-nav__link">
+  <a href="#returns_3" title="Returns" class="md-nav__link">
     Returns
   </a>
   
@@ -668,9 +776,42 @@
 <p><strong>file_label</strong>: List containing their respective labels.</p>
 </li>
 </ul>
+<h3 id="compute_image_resize_params">compute_image_resize_params</h3>
+<p>Compute median height and width of all images in data. These values are used to resize the images at later point. Number of channels do not change from the original images. Currently, only 2-D images are supported.</p>
+<h5 id="args_1">Args</h5>
+<ul>
+<li><strong>data</strong>: 2-D Image data with shape N x H x W x C.</li>
+</ul>
+<h5 id="returns_1">Returns</h5>
+<ul>
+<li>
+<p><strong>median height</strong>: Median height of all images in the data.</p>
+</li>
+<li>
+<p><strong>median width</strong>: Median width of all images in the data.</p>
+</li>
+</ul>
+<h3 id="resize_image_data">resize_image_data</h3>
+<p>Resize all images in data to size h x w x c, where h is the height, w is the width and c is the number of channels. The number of channels c does not change from data. The function supports only 2-D image data.</p>
+<h5 id="args_2">Args</h5>
+<ul>
+<li>
+<p><strong>data</strong>: 2-D Image data with shape N x H x W x C.</p>
+</li>
+<li>
+<p><strong>h</strong>: Image resize height.</p>
+</li>
+<li>
+<p><strong>w</strong>: Image resize width.</p>
+</li>
+</ul>
+<h5 id="returns_2">Returns</h5>
+<ul>
+<li><strong>data</strong>: Resize data.</li>
+</ul>
 <h3 id="get_system">get_system</h3>
 <p>Get the current system environment. If the current system is not supported, raise an exception.</p>
-<h5 id="returns_1">Returns</h5>
+<h5 id="returns_3">Returns</h5>
                 
                   
                 
