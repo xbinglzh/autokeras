@@ -433,8 +433,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#has_file" title="has_file" class="md-nav__link">
+    has_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pickle_from_file" title="pickle_from_file" class="md-nav__link">
+    pickle_from_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pickle_to_file" title="pickle_to_file" class="md-nav__link">
+    pickle_to_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get_device" title="get_device" class="md-nav__link">
     get_device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temp_folder_generator" title="temp_folder_generator" class="md-nav__link">
+    temp_folder_generator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download_file" title="download_file" class="md-nav__link">
+    download_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download_file_with_extract" title="download_file_with_extract" class="md-nav__link">
+    download_file_with_extract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verbose_print" title="verbose_print" class="md-nav__link">
+    verbose_print
   </a>
   
 </li>
@@ -470,6 +519,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_image" title="read_image" class="md-nav__link">
+    read_image
+  </a>
   
 </li>
       
@@ -620,8 +676,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#has_file" title="has_file" class="md-nav__link">
+    has_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pickle_from_file" title="pickle_from_file" class="md-nav__link">
+    pickle_from_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pickle_to_file" title="pickle_to_file" class="md-nav__link">
+    pickle_to_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#get_device" title="get_device" class="md-nav__link">
     get_device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temp_folder_generator" title="temp_folder_generator" class="md-nav__link">
+    temp_folder_generator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download_file" title="download_file" class="md-nav__link">
+    download_file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download_file_with_extract" title="download_file_with_extract" class="md-nav__link">
+    download_file_with_extract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verbose_print" title="verbose_print" class="md-nav__link">
+    verbose_print
   </a>
   
 </li>
@@ -657,6 +762,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_image" title="read_image" class="md-nav__link">
+    read_image
+  </a>
   
 </li>
       
@@ -754,15 +866,30 @@
                   <h1>utils</h1>
                 
                 <h3 id="ensure_dir">ensure_dir</h3>
-<p>Create directory if it does not exist</p>
+<p>Create directory if it does not exist.</p>
 <h3 id="ensure_file_dir">ensure_file_dir</h3>
-<p>Create path if it does not exist</p>
+<p>Create path if it does not exist.</p>
+<h3 id="has_file">has_file</h3>
+<p>Check if the given path exists.</p>
+<h3 id="pickle_from_file">pickle_from_file</h3>
+<p>Load the pickle file from the provided path and returns the object.</p>
+<h3 id="pickle_to_file">pickle_to_file</h3>
+<p>Save the pickle file to the specified path.</p>
 <h3 id="get_device">get_device</h3>
-<p>If Cuda is available, use Cuda device, else use CPU device When choosing from Cuda devices, this function will choose the one with max memory available</p>
+<p>If CUDA is available, use CUDA device, else use CPU device.
+When choosing from CUDA devices, this function will choose the one with max memory available.</p>
+<h3 id="temp_folder_generator">temp_folder_generator</h3>
+<p>Create and return a temporary directory with the path name '/temp_dir_name/autokeras' (E:g:- /tmp/autokeras).</p>
+<h3 id="download_file">download_file</h3>
+<p>Download the file specified in <code>file_link</code> and saves it in <code>file_path</code>.</p>
+<h3 id="download_file_with_extract">download_file_with_extract</h3>
+<p>Download the file specified in <code>file_link</code>, save to <code>file_path</code> and extract to the directory <code>extract_path</code>.</p>
+<h3 id="verbose_print">verbose_print</h3>
+<p>Print information about the operation performed on father model to obtain current model and father's id.</p>
 <h3 id="validate_xy">validate_xy</h3>
-<p>Check <code>x_train</code>'s type and the shape of <code>x_train</code>, <code>y_train</code>.</p>
+<p>Validate <code>x_train</code>'s type and the shape of <code>x_train</code>, <code>y_train</code>.</p>
 <h3 id="read_csv_file">read_csv_file</h3>
-<p>Read the csv file and returns two separate list containing files name and their labels.</p>
+<p>Read the csv file and returns two separate list containing file names and their labels.</p>
 <h5 id="args">Args</h5>
 <ul>
 <li><strong>csv_file_path</strong>: Path to the CSV file.</li>
@@ -776,8 +903,11 @@
 <p><strong>file_label</strong>: List containing their respective labels.</p>
 </li>
 </ul>
+<h3 id="read_image">read_image</h3>
+<p>Read the image contained in the provided path <code>image_path</code>.</p>
 <h3 id="compute_image_resize_params">compute_image_resize_params</h3>
-<p>Compute median height and width of all images in data. These values are used to resize the images at later point. Number of channels do not change from the original images. Currently, only 2-D images are supported.</p>
+<p>Compute median height and width of all images in data.
+These values are used to resize the images at later point. Number of channels do not change from the original images. Currently, only 2-D images are supported.</p>
 <h5 id="args_1">Args</h5>
 <ul>
 <li><strong>data</strong>: 2-D Image data with shape N x H x W x C.</li>
@@ -792,7 +922,8 @@
 </li>
 </ul>
 <h3 id="resize_image_data">resize_image_data</h3>
-<p>Resize all images in data to size h x w x c, where h is the height, w is the width and c is the number of channels. The number of channels c does not change from data. The function supports only 2-D image data.</p>
+<p>Resize images to provided height and width.
+Resize all images in data to size h x w x c, where h is the height, w is the width and c is the number of channels. The number of channels c does not change from data. The function supports only 2-D image data.</p>
 <h5 id="args_2">Args</h5>
 <ul>
 <li>
