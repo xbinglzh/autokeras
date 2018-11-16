@@ -456,6 +456,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#attributes" title="Attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#fit" title="fit" class="md-nav__link">
     fit
   </a>
@@ -500,6 +507,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cnnmodule" title="CnnModule" class="md-nav__link">
+    CnnModule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mlpmodule" title="MlpModule" class="md-nav__link">
+    MlpModule
+  </a>
+  
+</li>
+      
       
       
       
@@ -520,8 +541,33 @@
                   <h1>Net module</h1>
                 
                 <h2 id="networkmodule">NetworkModule</h2>
+<p>Class to create a network module.</p>
+<h5 id="attributes">Attributes</h5>
+<ul>
+<li>
+<p><strong>loss</strong>: A function taking two parameters, the predictions and the ground truth.</p>
+</li>
+<li>
+<p><strong>metric</strong>: An instance of the Metric subclasses.</p>
+</li>
+<li>
+<p><strong>searcher_args</strong>: A dictionary containing the parameters for the searcher's <strong>init</strong> function.</p>
+</li>
+<li>
+<p><strong>searcher</strong>: An instance of the Searcher class.</p>
+</li>
+<li>
+<p><strong>path</strong>: A string. The path to the directory to save the searcher.</p>
+</li>
+<li>
+<p><strong>verbose</strong>: A boolean. Setting it to true prints to stdout.</p>
+</li>
+<li>
+<p><strong>generators</strong>: A list of instances of the NetworkGenerator class or its subclasses.</p>
+</li>
+</ul>
 <h3 id="fit">fit</h3>
-<p>Search the best CnnModule.</p>
+<p>Search the best network.</p>
 <h5 id="args">Args</h5>
 <ul>
 <li>
@@ -529,13 +575,13 @@
 </li>
 <li>
 <p><strong>input_shape</strong>: A tuple to express the shape of every train entry. For example,
-    MNIST dataset would be (28,28,1)</p>
+    MNIST dataset would be (28,28,1).</p>
 </li>
 <li>
-<p><strong>train_data</strong>: A PyTorch DataLoader instance represents the training data</p>
+<p><strong>train_data</strong>: A PyTorch DataLoader instance representing the training data.</p>
 </li>
 <li>
-<p><strong>test_data</strong>: A PyTorch DataLoader instance represents the testing data</p>
+<p><strong>test_data</strong>: A PyTorch DataLoader instance representing the testing data.</p>
 </li>
 <li>
 <p><strong>time_limit</strong>: A integer value represents the time limit on searching for models.</p>
@@ -552,12 +598,16 @@
 <p><strong>retrain</strong>: A boolean of whether reinitialize the weights of the model.</p>
 </li>
 <li>
-<p><strong>train_data</strong>: A DataLoader instance representing the training data</p>
+<p><strong>train_data</strong>: A DataLoader instance representing the training data.</p>
 </li>
 <li>
-<p><strong>test_data</strong>: A DataLoader instance representing the testing data</p>
+<p><strong>test_data</strong>: A DataLoader instance representing the testing data.</p>
 </li>
 </ul>
+<h2 id="cnnmodule">CnnModule</h2>
+<p>Class to create a CNN module.</p>
+<h2 id="mlpmodule">MlpModule</h2>
+<p>Class to create an MLP module.</p>
                 
                   
                 
