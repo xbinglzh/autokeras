@@ -456,6 +456,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#attributes" title="Attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init" title="init" class="md-nav__link">
+    init
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#fit" title="fit" class="md-nav__link">
     fit
   </a>
@@ -464,7 +491,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
+  <a href="#args_1" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -484,7 +511,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_1" title="Args" class="md-nav__link">
+  <a href="#args_2" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -504,7 +531,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_2" title="Args" class="md-nav__link">
+  <a href="#args_3" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -524,6 +551,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textregressor" title="TextRegressor" class="md-nav__link">
+    TextRegressor
+  </a>
   
 </li>
       
@@ -547,10 +581,50 @@
                   <h1>Text supervised</h1>
                 
                 <h2 id="textclassifier">TextClassifier</h2>
+<p>TextClassifier class.</p>
+<h5 id="attributes">Attributes</h5>
+<ul>
+<li>
+<p><strong>cnn</strong>: CNN module from net_module.py.</p>
+</li>
+<li>
+<p><strong>path</strong>: A path to the directory to save the classifier as well as intermediate results.</p>
+</li>
+<li>
+<p><strong>y_encoder</strong>: Label encoder, used in transform_y or inverse_transform_y for encode the label. For example,
+            if one hot encoder needed, y_encoder can be OneHotEncoder.</p>
+</li>
+<li>
+<p><strong>data_transformer</strong>: A transformer class to process the data. See example as ImageDataTransformer.</p>
+</li>
+<li>
+<p><strong>verbose</strong>: A boolean value indicating the verbosity mode which determines whether the search process
+        will be printed to stdout.</p>
+</li>
+</ul>
+<h3 id="init"><strong>init</strong></h3>
+<p>Initialize the instance.
+The classifier will be loaded from the files in 'path' if parameter 'resume' is True. Otherwise it would create a new one.</p>
+<h5 id="args">Args</h5>
+<ul>
+<li>
+<p><strong>verbose</strong>: A boolean of whether the search process will be printed to stdout.</p>
+</li>
+<li>
+<p><strong>path</strong>: A string. The path to a directory, where the intermediate results are saved.</p>
+</li>
+<li>
+<p><strong>resume</strong>: A boolean. If True, the classifier will continue to previous work saved in path.
+    Otherwise, the classifier will start a new search.</p>
+</li>
+<li>
+<p><strong>searcher_args</strong>: A dictionary containing the parameters for the searcher's <strong>init</strong> function.</p>
+</li>
+</ul>
 <h3 id="fit">fit</h3>
 <p>Find the best neural architecture and train it.
 Based on the given dataset, the function will find the best neural architecture for it. The dataset is in numpy.ndarray format. So they training data should be passed through <code>x_train</code>, <code>y_train</code>.</p>
-<h5 id="args">Args</h5>
+<h5 id="args_1">Args</h5>
 <ul>
 <li>
 <p><strong>x</strong>: A numpy.ndarray instance containing the training data.</p>
@@ -559,18 +633,21 @@ Based on the given dataset, the function will find the best neural architecture 
 <p><strong>y</strong>: A numpy.ndarray instance containing the label of the training data.</p>
 </li>
 <li>
+<p><strong>y_test</strong>: A numpy.ndarray instance containing the testing data.</p>
+</li>
+<li>
+<p><strong>x_test</strong>: A numpy.ndarray instance containing the label of the testing data.</p>
+</li>
+<li>
+<p><strong>batch_size</strong>: int, define the batch size.</p>
+</li>
+<li>
 <p><strong>time_limit</strong>: The time limit for the search in seconds.</p>
-</li>
-<li>
-<p><strong>y_test</strong>: </p>
-</li>
-<li>
-<p><strong>x_test</strong>: </p>
 </li>
 </ul>
 <h3 id="final_fit">final_fit</h3>
 <p>Final training after found the best architecture.</p>
-<h5 id="args_1">Args</h5>
+<h5 id="args_2">Args</h5>
 <ul>
 <li>
 <p><strong>x_train</strong>: A numpy.ndarray of training data.</p>
@@ -593,11 +670,14 @@ Based on the given dataset, the function will find the best neural architecture 
 </ul>
 <h3 id="predict">predict</h3>
 <p>Return predict results for the testing data.</p>
-<h5 id="args_2">Args</h5>
+<h5 id="args_3">Args</h5>
 <ul>
 <li><strong>x_test</strong>: An instance of numpy.ndarray containing the testing data.</li>
 </ul>
 <h5 id="returns">Returns</h5>
+<h2 id="textregressor">TextRegressor</h2>
+<p>TextRegressor class.
+It is used for text regression. It searches convolutional neural network architectures for the best configuration for the text dataset.</p>
                 
                   
                 

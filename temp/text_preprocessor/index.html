@@ -100,7 +100,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#clean_str" tabindex="1" class="md-skip">
+      <a href="#download_pre_train" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -448,6 +448,26 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#download_pre_train" title="download_pre_train" class="md-nav__link">
+    download_pre_train
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#clean_str" title="clean_str" class="md-nav__link">
     clean_str
   </a>
@@ -463,14 +483,109 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes" title="Attributes" class="md-nav__link">
-    Attributes
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_embedding_index" title="read_embedding_index" class="md-nav__link">
+    read_embedding_index
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_2" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load_pretrain" title="load_pretrain" class="md-nav__link">
+    load_pretrain
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_3" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_2" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing" title="processing" class="md-nav__link">
+    processing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_4" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_3" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text_preprocess" title="text_preprocess" class="md-nav__link">
+    text_preprocess
+  </a>
   
 </li>
       
@@ -493,26 +608,96 @@
                 
                   <h1>Text preprocessor</h1>
                 
-                <h3 id="clean_str">clean_str</h3>
-<p>Tokenization/string cleaning for all string. Original taken from https://github.com/yoonkim/CNN_sentence/blob/master/process_data.py</p>
-<h3 id="tokenlize_text">tokenlize_text</h3>
-<p>Tokenlize text class.
-Vectorize a text corpus by transform each text in texts to a sequence of integers.</p>
-<h5 id="attributes">Attributes</h5>
+                <h3 id="download_pre_train">download_pre_train</h3>
+<p>Download pre train file from link in constant.py.</p>
+<h5 id="args">Args</h5>
 <ul>
 <li>
-<p><strong>max_num_words</strong>: int, max number of words in the dictionary</p>
+<p><strong>file_path</strong>: String, contains download file path + file name.</p>
 </li>
 <li>
-<p><strong>max_seq_length</strong>: int, the length of each text sequence, padding if shorter, trim is longer</p>
-</li>
-<li>
-<p><strong>x_train</strong>: list contains text data</p>
-</li>
-<li>
-<p><strong>y_train</strong>: list contains label data</p>
+<p><strong>extract_path</strong>: String extract path name.</p>
 </li>
 </ul>
+<h3 id="clean_str">clean_str</h3>
+<p>Tokenization/string cleaning for all string.
+Original taken from https://github.com/yoonkim/CNN_sentence/blob/master/process_data.py</p>
+<h3 id="tokenlize_text">tokenlize_text</h3>
+<p>Tokenlize text.
+Vectorize a text corpus by transform each text in texts to a sequence of integers.</p>
+<h5 id="args_1">Args</h5>
+<ul>
+<li>
+<p><strong>max_num_words</strong>: Int, max number of words in the dictionary.</p>
+</li>
+<li>
+<p><strong>max_seq_length</strong>: Int, the length of each text sequence, padding if shorter, trim is longer.</p>
+</li>
+<li>
+<p><strong>x_train</strong>: List contains text data.</p>
+</li>
+</ul>
+<h5 id="returns">Returns</h5>
+<ul>
+<li>
+<p><strong>x_train</strong>: Tokenlized input data.</p>
+</li>
+<li>
+<p><strong>word_index</strong>: Dictionary contains word with tokenlized index.</p>
+</li>
+</ul>
+<h3 id="read_embedding_index">read_embedding_index</h3>
+<p>Read pre train file convert to embedding vector.
+Read the pre trained file into a dictionary where key is the word and value is embedding vector.</p>
+<h5 id="args_2">Args</h5>
+<ul>
+<li><strong>extract_path</strong>: String contains pre trained file path.</li>
+</ul>
+<h5 id="returns_1">Returns</h5>
+<ul>
+<li><strong>embedding_index</strong>: Dictionary contains word with pre trained index.</li>
+</ul>
+<h3 id="load_pretrain">load_pretrain</h3>
+<p>Load the pretrain file into embedding weights.
+This method will first generate the embedding index and then generate embedding matrix according to the word_index.</p>
+<h5 id="args_3">Args</h5>
+<ul>
+<li>
+<p><strong>path</strong>: String, path to store the pretrain files.</p>
+</li>
+<li>
+<p><strong>word_index</strong>: Dictionary contains word with tokenlized index.</p>
+</li>
+</ul>
+<h5 id="returns_2">Returns</h5>
+<ul>
+<li><strong>embedding_matrix</strong>: Numpy array as the pretrain model embedding layer weights.</li>
+</ul>
+<h3 id="processing">processing</h3>
+<p>Processing string array with pretrained vectors.
+convert an n dimension string array into n * k * m dimension float numpy array. Each k * m array represents a string. k is the input_length which means an upper bound of the string length, for string shorter than k will be pad and longer string will be cropped. m is defined by the pretrained file.</p>
+<h5 id="args_4">Args</h5>
+<ul>
+<li>
+<p><strong>path</strong>: String, path where the pre trained files stored.</p>
+</li>
+<li>
+<p><strong>word_index</strong>: Dictionary, contains word with tokenlized index.</p>
+</li>
+<li>
+<p><strong>input_length</strong>: Int, an upper bound of the string length.</p>
+</li>
+<li>
+<p><strong>x_train</strong>: String array.</p>
+</li>
+</ul>
+<h5 id="returns_3">Returns</h5>
+<ul>
+<li><strong>x_train</strong>: Numpy array as processed x_train.</li>
+</ul>
+<h3 id="text_preprocess">text_preprocess</h3>
+<p>This is the text preprocess main method.
+It takes an raw string, clean it and processing it into tokenlized numpy array.</p>
                 
                   
                 
