@@ -602,8 +602,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#to_conv_deeper_model" title="to_conv_deeper_model" class="md-nav__link">
-    to_conv_deeper_model
+  <a href="#to_deeper_model" title="to_deeper_model" class="md-nav__link">
+    to_deeper_model
   </a>
   
     <nav class="md-nav">
@@ -642,49 +642,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#to_dense_deeper_model" title="to_dense_deeper_model" class="md-nav__link">
-    to_dense_deeper_model
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_7" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_insert_new_layers" title="_insert_new_layers" class="md-nav__link">
     _insert_new_layers
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_conv_block_end_node" title="_conv_block_end_node" class="md-nav__link">
-    _conv_block_end_node
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_8" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -697,7 +657,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_9" title="Args" class="md-nav__link">
+  <a href="#args_7" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -717,7 +677,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_10" title="Args" class="md-nav__link">
+  <a href="#args_8" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -745,6 +705,20 @@
           <li class="md-nav__item">
   <a href="#produce_keras_model" title="produce_keras_model" class="md-nav__link">
     produce_keras_model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_main_chain_layers" title="get_main_chain_layers" class="md-nav__link">
+    get_main_chain_layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_main_chain" title="get_main_chain" class="md-nav__link">
+    get_main_chain
   </a>
   
 </li>
@@ -1074,8 +1048,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#to_conv_deeper_model" title="to_conv_deeper_model" class="md-nav__link">
-    to_conv_deeper_model
+  <a href="#to_deeper_model" title="to_deeper_model" class="md-nav__link">
+    to_deeper_model
   </a>
   
     <nav class="md-nav">
@@ -1114,49 +1088,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#to_dense_deeper_model" title="to_dense_deeper_model" class="md-nav__link">
-    to_dense_deeper_model
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_7" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_insert_new_layers" title="_insert_new_layers" class="md-nav__link">
     _insert_new_layers
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_conv_block_end_node" title="_conv_block_end_node" class="md-nav__link">
-    _conv_block_end_node
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_8" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1169,7 +1103,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_9" title="Args" class="md-nav__link">
+  <a href="#args_7" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -1189,7 +1123,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_10" title="Args" class="md-nav__link">
+  <a href="#args_8" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -1217,6 +1151,20 @@
           <li class="md-nav__item">
   <a href="#produce_keras_model" title="produce_keras_model" class="md-nav__link">
     produce_keras_model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_main_chain_layers" title="get_main_chain_layers" class="md-nav__link">
+    get_main_chain_layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_main_chain" title="get_main_chain" class="md-nav__link">
+    get_main_chain
   </a>
   
 </li>
@@ -1320,6 +1268,9 @@ Graph extracts the neural architecture graph from a Keras model. Each node in th
 <p><strong>operation_history</strong>: A list saving all the network morphism operations.</p>
 </li>
 <li>
+<p><strong>n_dim</strong>: An integer. If it uses Conv1d, n_dim should be 1.</p>
+</li>
+<li>
 <p><strong>vis</strong>: A dictionary of temporary storage for whether an local operation has been done
     during the network morphism.</p>
 </li>
@@ -1398,7 +1349,7 @@ It is an recursive function with duplication check to avoid deadlock. It searche
 <p><strong>n_add</strong>: The number of dimensions to add.</p>
 </li>
 </ul>
-<h3 id="to_conv_deeper_model">to_conv_deeper_model</h3>
+<h3 id="to_deeper_model">to_deeper_model</h3>
 <p>Insert a relu-conv-bn block after the target block.</p>
 <h5 id="args_5">Args</h5>
 <ul>
@@ -1406,7 +1357,7 @@ It is an recursive function with duplication check to avoid deadlock. It searche
 <p><strong>target_id</strong>: A convolutional layer ID. The new block should be inserted after the block.</p>
 </li>
 <li>
-<p><strong>kernel_size</strong>: An integer. The kernel size of the new convolutional layer.</p>
+<p><strong>new_layer</strong>: An instance of StubLayer subclasses.</p>
 </li>
 </ul>
 <h3 id="to_wider_model">to_wider_model</h3>
@@ -1420,23 +1371,11 @@ It is an recursive function with duplication check to avoid deadlock. It searche
 <p><strong>n_add</strong>: The number of dimensions to add.</p>
 </li>
 </ul>
-<h3 id="to_dense_deeper_model">to_dense_deeper_model</h3>
-<p>Insert a dense layer after the target layer.</p>
-<h5 id="args_7">Args</h5>
-<ul>
-<li><strong>target_id</strong>: The ID of a dense layer.</li>
-</ul>
 <h3 id="_insert_new_layers">_insert_new_layers</h3>
 <p>Insert the new_layers after the node with start_node_id.</p>
-<h3 id="_conv_block_end_node">_conv_block_end_node</h3>
-<p>Get the input node ID of the last layer in the block by layer ID. Return the input node ID of the last layer in the convolutional block.</p>
-<h5 id="args_8">Args</h5>
-<ul>
-<li><strong>layer_id</strong>: the convolutional layer ID.</li>
-</ul>
 <h3 id="to_add_skip_model">to_add_skip_model</h3>
 <p>Add a weighted add skip-connection from after start node to end node.</p>
-<h5 id="args_9">Args</h5>
+<h5 id="args_7">Args</h5>
 <ul>
 <li>
 <p><strong>start_id</strong>: The convolutional layer ID, after which to start the skip-connection.</p>
@@ -1447,7 +1386,7 @@ It is an recursive function with duplication check to avoid deadlock. It searche
 </ul>
 <h3 id="to_concat_skip_model">to_concat_skip_model</h3>
 <p>Add a weighted add concatenate connection from after start node to end node.</p>
-<h5 id="args_10">Args</h5>
+<h5 id="args_8">Args</h5>
 <ul>
 <li>
 <p><strong>start_id</strong>: The convolutional layer ID, after which to start the skip-connection.</p>
@@ -1462,6 +1401,10 @@ It is an recursive function with duplication check to avoid deadlock. It searche
 <p>Build a new torch model based on the current graph.</p>
 <h3 id="produce_keras_model">produce_keras_model</h3>
 <p>Build a new keras model based on the current graph.</p>
+<h3 id="get_main_chain_layers">get_main_chain_layers</h3>
+<p>Return a list of layer IDs in the main chain.</p>
+<h3 id="get_main_chain">get_main_chain</h3>
+<p>Returns the main chain node ID list.</p>
 <h2 id="torchmodel">TorchModel</h2>
 <p>A neural network class using pytorch constructed from an instance of Graph.</p>
                 
