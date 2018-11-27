@@ -907,39 +907,27 @@ When choosing from CUDA devices, this function will choose the one with max memo
 <h3 id="read_image">read_image</h3>
 <p>Read the image contained in the provided path <code>image_path</code>.</p>
 <h3 id="compute_image_resize_params">compute_image_resize_params</h3>
-<p>Compute median height and width of all images in data.
-These values are used to resize the images at later point. Number of channels do not change from the original images. Currently, only 2-D images are supported.</p>
+<p>Compute median dimension of all images in data.
+It used to resize the images later. Number of channels do not change from the original data.</p>
 <h5 id="args_1">Args</h5>
 <ul>
-<li><strong>data</strong>: 2-D Image data with shape N x H x W x C.</li>
+<li><strong>data</strong>: 1-D, 2-D or 3-D images. The Images are expected to have channel last configuration.</li>
 </ul>
 <h5 id="returns_1">Returns</h5>
-<ul>
-<li>
-<p><strong>median height</strong>: Median height of all images in the data.</p>
-</li>
-<li>
-<p><strong>median width</strong>: Median width of all images in the data.</p>
-</li>
-</ul>
 <h3 id="resize_image_data">resize_image_data</h3>
-<p>Resize images to provided height and width.
-Resize all images in data to size h x w x c, where h is the height, w is the width and c is the number of channels. The number of channels c does not change from data. The function supports only 2-D image data.</p>
+<p>Resize images to given dimension.</p>
 <h5 id="args_2">Args</h5>
 <ul>
 <li>
-<p><strong>data</strong>: 2-D Image data with shape N x H x W x C.</p>
+<p><strong>data</strong>: 1-D, 2-D or 3-D images. The Images are expected to have channel last configuration.</p>
 </li>
 <li>
-<p><strong>height</strong>: Image resize height.</p>
-</li>
-<li>
-<p><strong>width</strong>: Image resize width.</p>
+<p><strong>resize_shape</strong>: Image resize dimension.</p>
 </li>
 </ul>
 <h5 id="returns_2">Returns</h5>
 <ul>
-<li><strong>data</strong>: Resize data.</li>
+<li><strong>data</strong>: Reshaped data.</li>
 </ul>
 <h3 id="get_system">get_system</h3>
 <p>Get the current system environment. If the current system is not supported, raise an exception.</p>
