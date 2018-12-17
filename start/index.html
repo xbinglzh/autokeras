@@ -304,6 +304,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#how-to-visualize-the-best-selected-architecture" title="How to visualize the best selected architecture ?" class="md-nav__link">
+    How to visualize the best selected architecture ?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -341,13 +348,6 @@
           <li class="md-nav__item">
   <a href="#how-to-visualize-keras-models" title="How to visualize keras models?" class="md-nav__link">
     How to visualize keras models?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to-visualize-the-best-selected-architecture" title="How to visualize the best selected architecture ?" class="md-nav__link">
-    How to visualize the best selected architecture ?
   </a>
   
 </li>
@@ -578,6 +578,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#how-to-visualize-the-best-selected-architecture" title="How to visualize the best selected architecture ?" class="md-nav__link">
+    How to visualize the best selected architecture ?
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -619,13 +626,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#how-to-visualize-the-best-selected-architecture" title="How to visualize the best selected architecture ?" class="md-nav__link">
-    How to visualize the best selected architecture ?
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -661,6 +661,24 @@
 You need to download the code from the GitHub repo and run the following commands in the project directory.</p>
 <pre><code>pip install -r requirements.txt
 python setup.py install
+</code></pre>
+<p>=======</p>
+<h4 id="how-to-visualize-the-best-selected-architecture">How to visualize the best selected architecture ?</h4>
+<p>While trying to create a model, let's say an Image classifier on MNIST, there is a facility for the user to visualize a .PDF depiction of the best architecture that was chosen by autokeras, after model training is complete. </p>
+<p>Prerequisites : 
+1) graphviz must be installed in your system. Refer <a href="https://graphviz.gitlab.io/download/">Installation Guide</a><br />
+2) Additionally, also install "graphviz" python package using pip / conda</p>
+<p>pip : pip install graphviz</p>
+<p>conda : conda install -c conda-forge python-graphviz</p>
+<p>If the above installations are complete, proceed with the following steps :</p>
+<p>Step 1 : Specify a <em>path</em> before starting your model training</p>
+<pre><code>clf = ImageClassifier(path="~/automodels/",verbose=True, augment=False) # Give a custom path of your choice
+clf.fit(x_train, y_train, time_limit=30 * 60)
+clf.final_fit(x_train, y_train, x_test, y_test, retrain=True)
+</code></pre>
+<p>Step 2 : After the model training is complete, run <em>examples/visualize.py</em>, whilst passing the same <em>path</em> as parameter</p>
+<pre><code>if __name__ == '__main__':
+    visualize('~/automodels/')
 </code></pre>
 <h2 id="example">Example</h2>
 <p>We show an example of image classification on the MNIST dataset, which is a famous benchmark image dataset for hand-written digits classification. Auto-Keras supports different types of data inputs. </p>
@@ -724,23 +742,100 @@ model = load_model('my_model.h5') #See 'How to export keras models?' to generate
 from keras.utils import plot_model
 plot_model(model, to_file='my_model.png')
 </code></pre>
-<h4 id="how-to-visualize-the-best-selected-architecture">How to visualize the best selected architecture ?</h4>
-<p>While trying to create a model, let's say an Image classifier on MNIST, there is a facility for the user to visualize a .PDF depiction of the best architecture that was chosen by autokeras, after model training is complete. </p>
-<p>Prerequisites : 
-1) graphviz must be installed in your system. Refer <a href="https://graphviz.gitlab.io/download/">Installation Guide</a><br />
-2) Additionally, also install "graphviz" python package using pip / conda</p>
-<p>pip : pip install graphviz</p>
-<p>conda : conda install -c conda-forge python-graphviz</p>
-<p>If the above installations are complete, proceed with the following steps :</p>
-<p>Step 1 : Specify a <em>path</em> before starting your model training</p>
-<pre><code>clf = ImageClassifier(path="~/automodels/",verbose=True, augment=False) # Give a custom path of your choice
-clf.fit(x_train, y_train, time_limit=30 * 60)
-clf.final_fit(x_train, y_train, x_test, y_test, retrain=True)
+<h1 id="cnngenerator-tutorial">CnnGenerator tutorial</h1>
+<p><code>CnnGenerator</code> in <code>net_module.py</code> is a child class of <code>Networkmodule</code>. It can generates neural architecture with basic cnn modules
+and the ResNet module. </p>
+<h3 id="examples">Examples</h3>
+<p>Normally, there's two place to call the CnnGenerator, one is call <code>CnnGenerator.fit</code> while the other is <code>CnnGenerator.final_fit</code>.</p>
+<p>For example, in a image classification class <code>ImageClassifier</code>, one can initialize the cnn module as:</p>
+<pre><code class="python">from autokeras import CnnModule
+from autokeras.nn.loss_function import classification_loss
+from autokeras.nn.metric import Accuracy
+
+TEST_FOLDER = &quot;test&quot;
+cnnModule = CnnModule(loss=classification_loss, metric=Accuracy, searcher_args={}, path=TEST_FOLDER, verbose=False)
 </code></pre>
-<p>Step 2 : After the model training is complete, run <em>examples/visualize.py</em>, whilst passing the same <em>path</em> as parameter</p>
-<pre><code>if __name__ == '__main__':
-    visualize('~/automodels/')
+
+<p>Where:
+<em> <code>loss</code> and <code>metric</code> determines by the type of training model(classification or regression or others)
+</em> <code>search_args</code> can be referred in <code>search.py</code>
+<em> <code>path</code> is the path to store the whole searching process and generated model.
+</em> <code>verbose</code> is a boolean. Setting it to true prints to stdout.</p>
+<p>Then, for the searching part, one can call:</p>
+<pre><code class="python">cnnModule.fit(n_output_node, input_shape, train_data, test_data, time_limit=24 * 60 * 60)
 </code></pre>
+
+<p>where:
+<em> n_output_node: A integer value represent the number of output node in the final layer.
+</em> input_shape: A tuple to express the shape of every train entry. For example,
+                MNIST dataset would be (28,28,1).
+<em> train_data: A PyTorch DataLoader instance representing the training data.
+</em> test_data: A PyTorch DataLoader instance representing the testing data.
+* time_limit: A integer value represents the time limit on searching for models.</p>
+<p>And for final testing(testing the best searched model), one can call:</p>
+<pre><code class="python">cnnModule.final_fit(train_data, test_data, trainer_args=None, retrain=False)
+</code></pre>
+
+<p>where:
+<em> train_data: A DataLoader instance representing the training data.
+</em> test_data: A DataLoader instance representing the testing data.
+<em> trainer_args: A dictionary containing the parameters of the ModelTrainer constructor.
+</em> retrain: A boolean of whether reinitialize the weights of the model.</p>
+<h1 id="automated-text-classifier-tutorial">Automated text classifier tutorial</h1>
+<h3 id="introduction">Introduction</h3>
+<p>Class <code>TextClassifier</code> and <code>TextRegressor</code> is designed for automated generate best performance cnn neural architecture
+for a given text dataset. </p>
+<h3 id="example_1">Example</h3>
+<pre><code class="python">    clf = TextClassifier(verbose=True)
+    clf.fit(x=x_train, y=y_train, batch_size=10, time_limit=12 * 60 * 60)
+</code></pre>
+
+<p>After searching the best model, one can call <code>clf.final_fit</code> to test the best model found in searching.</p>
+<h3 id="arguments">Arguments</h3>
+<ul>
+<li>x_train: string format text data</li>
+<li>y_train: int format text label</li>
+</ul>
+<h3 id="notes">Notes:</h3>
+<p>Preprocessing of the text data:
+<em> Class <code>TextClassifier</code> and <code>TextRegressor</code> contains a pre-process of the text data. Which means the input data
+should be in string format. 
+</em> The default pre-process model uses the <a href="https://nlp.stanford.edu/projects/glove/">glove6B model</a> from Stanford NLP. 
+* To change the default setting of the pre-process model, one need to change the corresponding variable:
+<code>EMBEDDING_DIM</code>, <code>PRE_TRAIN_FILE_LINK</code>, <code>PRE_TRAIN_FILE_LINK</code>, <code>PRE_TRAIN_FILE_NAME</code> in <code>constant.py</code>.</p>
+<h1 id="mlpgenerator-tutorial">MlpGenerator tutorial</h1>
+<p><code>MlpGenerator</code> in <code>net_module.py</code> is a child class of <code>Networkmodule</code>. It can generates neural architecture with MLP modules </p>
+<h3 id="examples_1">Examples</h3>
+<p>Normally, there's two place to call the MlpGenerator, one is call <code>MlpGenerator.fit</code> while the other is <code>MlpGenerator.final_fit</code>.</p>
+<p>For example, in a image classification class <code>ImageClassifier</code>, one can initialize the cnn module as:</p>
+<pre><code class="python">self.mlp = MlpGenerator(loss, metric, searcher_args, path, verbose)
+</code></pre>
+
+<p>Where:
+<em> <code>loss</code> and <code>metric</code> determines by the type of training model(classification or regression or others)
+</em> <code>search_args</code> can be referred in <code>search.py</code>
+<em> <code>path</code> is the path to store the whole searching process and generated model.
+</em> <code>verbose</code> is a boolean. Setting it to true prints to stdout.</p>
+<p>Then, for the searching part, one can call:</p>
+<pre><code class="python">self.mlp.fit(n_output_node, input_shape, train_data, test_data, time_limit=24 * 60 * 60)
+</code></pre>
+
+<p>where:
+<em> n_output_node: A integer value represent the number of output node in the final layer.
+</em> input_shape: A tuple to express the shape of every train entry. For example,
+                MNIST dataset would be (28,28,1).
+<em> train_data: A PyTorch DataLoader instance representing the training data.
+</em> test_data: A PyTorch DataLoader instance representing the testing data.
+* time_limit: A integer value represents the time limit on searching for models.</p>
+<p>And for final testing(testing the best searched model), one can call:</p>
+<pre><code class="python">self.mlp.final_fit(train_data, test_data, trainer_args=None, retrain=False)
+</code></pre>
+
+<p>where:
+<em> train_data: A DataLoader instance representing the training data.
+</em> test_data: A DataLoader instance representing the testing data.
+<em> trainer_args: A dictionary containing the parameters of the ModelTrainer constructor.
+</em> retrain: A boolean of whether reinitialize the weights of the model.</p>
                 
                   
                 
