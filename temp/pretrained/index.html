@@ -482,6 +482,46 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#facedetectionpretrained" title="FaceDetectionPretrained" class="md-nav__link">
+    FaceDetectionPretrained
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#predict_1" title="predict" class="md-nav__link">
+    predict
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -509,6 +549,20 @@
 <p>load pretrained model into self.model</p>
 <h3 id="predict">predict</h3>
 <p>Return predict results for the given image Args: x_predict: An instance of numpy.ndarray containing the testing data. Returns: A numpy.ndarray containing the results.</p>
+<h2 id="facedetectionpretrained">FaceDetectionPretrained</h2>
+<p>A class to predict faces using the MTCNN pre-trained model.</p>
+<h3 id="predict_1">predict</h3>
+<p>Predicts faces in an image.</p>
+<h5 id="args">Args</h5>
+<ul>
+<li>
+<p><strong>img_path</strong>: A string. The path to the image on which the prediction is to be done.</p>
+</li>
+<li>
+<p><strong>output_file_path</strong>: A string. The path where the output image is to be saved after the prediction. <code>None</code> by default.</p>
+</li>
+</ul>
+<h5 id="returns">Returns</h5>
                 
                   
                 
