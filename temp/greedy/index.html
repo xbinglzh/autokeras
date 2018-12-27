@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://autokeras.com/temp/grid_search/">
+        <link rel="canonical" href="http://autokeras.com/temp/greedy/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Grid search - Auto-Keras</title>
+        <title>Greedy - Auto-Keras</title>
       
     
     
@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#grid_searcher" tabindex="1" class="md-skip">
+      <a href="#greedyoptimizer" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -127,7 +127,7 @@
                 Auto-Keras
               </span>
               <span class="md-header-nav__topic">
-                Grid search
+                Greedy
               </span>
             
           
@@ -449,66 +449,12 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#grid_searcher" title="Grid_Searcher" class="md-nav__link">
-    Grid_Searcher
+  <a href="#greedyoptimizer" title="GreedyOptimizer" class="md-nav__link">
+    GreedyOptimizer
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#init" title="init" class="md-nav__link">
-    init
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#init_search" title="init_search" class="md-nav__link">
-    init_search
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#search_space_exhausted" title="search_space_exhausted" class="md-nav__link">
-    search_space_exhausted
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#search" title="search" class="md-nav__link">
-    search
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_1" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#generate" title="generate" class="md-nav__link">
@@ -519,7 +465,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_2" title="Args" class="md-nav__link">
+  <a href="#args" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -534,13 +480,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_grid" title="get_grid" class="md-nav__link">
-    get_grid
-  </a>
   
 </li>
         
@@ -566,77 +505,29 @@
               
                 
                 
-                  <h1>Grid search</h1>
+                  <h1>Greedy</h1>
                 
-                <h2 id="grid_searcher">Grid_Searcher</h2>
-<h3 id="init"><strong>init</strong></h3>
-<p>Initialize the Searcher.</p>
+                <h2 id="greedyoptimizer">GreedyOptimizer</h2>
+<h3 id="generate">generate</h3>
+<p>Generate new neighbor architectures from the best model.</p>
 <h5 id="args">Args</h5>
 <ul>
 <li>
-<p><strong>n_output_node</strong>: An integer, the number of classes.</p>
+<p><strong>descriptors</strong>: All the searched neural architectures.</p>
 </li>
 <li>
-<p><strong>input_shape</strong>: A tuple. e.g. (28, 28, 1).</p>
+<p><strong>timeout</strong>: An integer. The time limit in seconds.</p>
 </li>
 <li>
-<p><strong>path</strong>: A string. The path to the directory to save the searcher.</p>
+<p><strong>sync_message</strong>: the Queue for multiprocessing return value.</p>
 </li>
-<li>
-<p><strong>metric</strong>: An instance of the Metric subclasses.</p>
-</li>
-<li>
-<p><strong>loss</strong>: A function taking two parameters, the predictions and the ground truth.</p>
-</li>
-<li>
-<p><strong>generators</strong>: A list of generators used to initialize the search.</p>
-</li>
-<li>
-<p><strong>verbose</strong>: A boolean. Whether to output the intermediate information to stdout.</p>
-</li>
-<li>
-<p><strong>search_space</strong>: A dictionary. Specifies the search dimensions and their possible values</p>
-</li>
-<li>
-<p><strong>trainer_args</strong>: A dictionary. The params for the constructor of ModelTrainer.</p>
-</li>
-</ul>
-<h3 id="init_search">init_search</h3>
-<p>Call the generators to generate the initial architectures for the search.</p>
-<h3 id="search_space_exhausted">search_space_exhausted</h3>
-<p>Check if Grid search has exhausted the search space</p>
-<h3 id="search">search</h3>
-<p>Run the search loop of training, generating and updating once.
-Call the base class implementation for search with</p>
-<h5 id="args_1">Args</h5>
-<ul>
-<li>
-<p><strong>train_data</strong>: An instance of DataLoader.</p>
-</li>
-<li>
-<p><strong>test_data</strong>: An instance of Dataloader.</p>
-</li>
-<li>
-<p><strong>timeout</strong>: An integer, time limit in seconds.</p>
-</li>
-</ul>
-<h3 id="generate">generate</h3>
-<p>Generate the next neural architecture.</p>
-<h5 id="args_2">Args</h5>
-<ul>
-<li><strong>multiprocessing_queue</strong>: the Queue for multiprocessing return value.</li>
 </ul>
 <h5 id="returns">Returns</h5>
 <ul>
-<li>
-<p><strong>other_info</strong>: Always 0.</p>
-</li>
-<li>
-<p><strong>generated_graph</strong>: An instance of Graph.</p>
-</li>
+<li><strong>out</strong>: A list of 2-elements tuple. Each tuple contains
+    an instance of Graph, a morphed neural network with weights
+    and the father node id in the search tree.</li>
 </ul>
-<h3 id="get_grid">get_grid</h3>
-<p>Return the next grid to be searched</p>
                 
                   
                 
