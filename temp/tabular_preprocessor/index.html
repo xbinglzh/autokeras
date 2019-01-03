@@ -503,6 +503,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#extract_data_info" title="extract_data_info" class="md-nav__link">
+    extract_data_info
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_2" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -529,19 +549,23 @@
                 
                 <h2 id="tabularpreprocessor">TabularPreprocessor</h2>
 <h3 id="init"><strong>init</strong></h3>
-<p>This constructor is supposed to initialize data members. Use triple quotes for function documentation.</p>
+<p>Initialization function for tabular preprocessor.</p>
 <h3 id="fit">fit</h3>
 <p>This function should train the model parameters.</p>
 <h5 id="args">Args</h5>
 <ul>
 <li>
-<p><strong>x</strong>: A numpy.ndarray instance containing the training data.</p>
+<p><strong>raw_x</strong>: a numpy.ndarray instance containing the training data.</p>
 </li>
 <li>
-<p><strong>y</strong>: Training label matrix of dim num_train_samples * num_labels.</p>
+<p><strong>y</strong>: training label vector.</p>
 </li>
 <li>
-<p><strong>datainfo</strong>: Meta-features of the dataset, which describe</p>
+<p><strong>time_limit</strong>: remaining time budget.</p>
+</li>
+<li>
+<p><strong>data_info</strong>: meta-features of the dataset, which is an numpy.ndarray describing the
+ feature type of each column in raw_x. The feature type include</p>
 </li>
 </ul>
 <h3 id="encode">encode</h3>
@@ -549,14 +573,18 @@
 <h5 id="args_1">Args</h5>
 <ul>
 <li>
-<p><strong>x</strong>: A numpy.ndarray instance containing the training data.</p>
+<p><strong>raw_x</strong>: a numpy.ndarray instance containing the training/testing data.</p>
 </li>
 <li>
-<p><strong>y</strong>: Training label matrix of dim num_train_samples * num_labels.</p>
+<p><strong>time_limit</strong>: remaining time budget.
+ inputs X and y are numpy arrays.</p>
 </li>
-<li>
-<p><strong>datainfo</strong>: Meta-features of the dataset, which describe</p>
-</li>
+</ul>
+<h3 id="extract_data_info">extract_data_info</h3>
+<p>This function extracts the data info automatically based on the type of each feature in raw_x.</p>
+<h5 id="args_2">Args</h5>
+<ul>
+<li><strong>raw_x</strong>: a numpy.ndarray instance containing the training data.</li>
 </ul>
                 
                   

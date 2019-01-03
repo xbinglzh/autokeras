@@ -530,7 +530,7 @@
                 
                 <h2 id="tabularsupervised">TabularSupervised</h2>
 <h3 id="init"><strong>init</strong></h3>
-<p>This constructor is supposed to initialize data members. Use triple quotes for function documentation.</p>
+<p>Initialization function for tabular supervised learner.</p>
 <h3 id="fit">fit</h3>
 <p>This function should train the model parameters.</p>
 <h5 id="args">Args</h5>
@@ -539,18 +539,22 @@
 <p><strong>x</strong>: A numpy.ndarray instance containing the training data.</p>
 </li>
 <li>
-<p><strong>y</strong>: Training label matrix of dim num_train_samples * num_labels.
- inputs X and y are numpy arrays.</p>
+<p><strong>y</strong>: training label vector.</p>
+</li>
+<li>
+<p><strong>time_limit</strong>: remaining time budget.</p>
+</li>
+<li>
+<p><strong>data_info</strong>: meta-features of the dataset, which is an numpy.ndarray describing the
+ feature type of each column in raw_x. The feature type include</p>
 </li>
 </ul>
 <h3 id="predict">predict</h3>
 <p>This function should provide predictions of labels on (test) data. The function predict eventually casdn return probabilities or continuous values.</p>
 <h2 id="tabularregressor">TabularRegressor</h2>
-<p>TabularRegressor class.
-It is used for tabular data regression with lightgbm regressor.</p>
+<p>TabularRegressor class. It is used for tabular data regression with lightgbm regressor.</p>
 <h2 id="tabularclassifier">TabularClassifier</h2>
-<p>TabularClassifier class.
-It is used for tabular data classification with lightgbm classifier.</p>
+<p>TabularClassifier class. It is used for tabular data classification with lightgbm classifier.</p>
                 
                   
                 
