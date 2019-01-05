@@ -673,6 +673,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#randomsearcher" title="RandomSearcher" class="md-nav__link">
+    RandomSearcher
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate_4" title="generate" class="md-nav__link">
+    generate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_9" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_4" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_2" title="update" class="md-nav__link">
+    update
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_10" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1081,6 +1141,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#randomsearcher" title="RandomSearcher" class="md-nav__link">
+    RandomSearcher
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate_4" title="generate" class="md-nav__link">
+    generate
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_9" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_4" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_2" title="update" class="md-nav__link">
+    update
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_10" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1328,6 +1448,9 @@ Call the base class implementation for search with</p>
 <h5 id="returns_3">Returns</h5>
 <ul>
 <li>
+<p><strong>list of 2-element tuples</strong>: generated_graph and other_info,</p>
+</li>
+<li>
 <p><strong>generated_graph</strong>: An instance of Graph.</p>
 </li>
 <li>
@@ -1336,6 +1459,37 @@ Call the base class implementation for search with</p>
 </ul>
 <h3 id="get_grid">get_grid</h3>
 <p>Return the next grid to be searched</p>
+<h2 id="randomsearcher">RandomSearcher</h2>
+<p>Class to search for neural architectures using Random search strategy. Attributes: search_tree: The network morphism search tree</p>
+<h3 id="generate_4">generate</h3>
+<p>Generate the next neural architecture.</p>
+<h5 id="args_9">Args</h5>
+<ul>
+<li><strong>multiprocessing_queue</strong>: the Queue for multiprocessing return value.</li>
+</ul>
+<h5 id="returns_4">Returns</h5>
+<ul>
+<li>
+<p><strong>list of 2-element tuples</strong>: generated_graph and other_info,</p>
+</li>
+<li>
+<p><strong>generated_graph</strong>: An instance of Graph.</p>
+</li>
+<li>
+<p><strong>other_info</strong>: Anything to be saved in the training queue together with the architecture.</p>
+</li>
+</ul>
+<h3 id="update_2">update</h3>
+<p>Update the controller with evaluation result of a neural architecture.</p>
+<h5 id="args_10">Args</h5>
+<ul>
+<li>
+<p><strong>other_info</strong>: Anything. In our case it is the father ID in the search tree.</p>
+</li>
+<li>
+<p><strong>model_id</strong>: An integer.</p>
+</li>
+</ul>
                 
                   
                 
