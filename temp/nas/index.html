@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://autokeras.com/temp/greedy/">
+        <link rel="canonical" href="http://autokeras.com/temp/nas/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Greedy - Auto-Keras</title>
+        <title>Neural Architecture Search - Auto-Keras</title>
       
     
     
@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#greedyoptimizer" tabindex="1" class="md-skip">
+      <a href="#neural-architecture-search" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -127,7 +127,7 @@
                 Auto-Keras
               </span>
               <span class="md-header-nav__topic">
-                Greedy
+                Neural Architecture Search
               </span>
             
           
@@ -290,16 +290,87 @@
       
       
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Neural Architecture Search
+      </label>
+    
+    <a href="./" title="Neural Architecture Search" class="md-nav__link md-nav__link--active">
+      Neural Architecture Search
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-implement-nas-papers-in-auto-keras" title="Why implement NAS papers in Auto-Keras?" class="md-nav__link">
+    Why implement NAS papers in Auto-Keras?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline-methods-implemented" title="Baseline methods implemented" class="md-nav__link">
+    Baseline methods implemented
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run-the-baseline-methods" title="How to run the baseline methods?" class="md-nav__link">
+    How to run the baseline methods?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-implement-your-own-search" title="How to implement your own search?" class="md-nav__link">
+    How to implement your own search?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Documentation
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         Documentation
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -444,47 +515,37 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#greedyoptimizer" title="GreedyOptimizer" class="md-nav__link">
-    GreedyOptimizer
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#generate" title="generate" class="md-nav__link">
-    generate
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
-    Args
+  <a href="#why-implement-nas-papers-in-auto-keras" title="Why implement NAS papers in Auto-Keras?" class="md-nav__link">
+    Why implement NAS papers in Auto-Keras?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
+      
+        <li class="md-nav__item">
+  <a href="#baseline-methods-implemented" title="Baseline methods implemented" class="md-nav__link">
+    Baseline methods implemented
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run-the-baseline-methods" title="How to run the baseline methods?" class="md-nav__link">
+    How to run the baseline methods?
+  </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-implement-your-own-search" title="How to implement your own search?" class="md-nav__link">
+    How to implement your own search?
+  </a>
   
 </li>
       
@@ -505,29 +566,35 @@
               
                 
                 
-                  <h1>Greedy</h1>
-                
-                <h2 id="greedyoptimizer">GreedyOptimizer</h2>
-<h3 id="generate">generate</h3>
-<p>Generate new neighbor architectures from the best model.</p>
-<h5 id="args">Args</h5>
-<ul>
-<li>
-<p><strong>descriptors</strong>: All the searched neural architectures.</p>
-</li>
-<li>
-<p><strong>timeout</strong>: An integer. The time limit in seconds.</p>
-</li>
-<li>
-<p><strong>sync_message</strong>: the Queue for multiprocessing return value.</p>
-</li>
-</ul>
-<h5 id="returns">Returns</h5>
-<ul>
-<li><strong>out</strong>: A list of 2-elements tuple. Each tuple contains
-    an instance of Graph, a morphed neural network with weights
-    and the father node id in the search tree.</li>
-</ul>
+                <h1 id="neural-architecture-search">Neural Architecture Search</h1>
+<p>To help the researchers to do experiments on neural architecture search (NAS),
+we have implemented several baseline methods using the Auto-Keras framework.
+The implementations are easy since only the core part of the search algorithm is needed.
+All other parts of NAS (e.g. data structures for storing neural architectures, training of the neural networks)
+are done by the Auto-Keras framework.</p>
+<h2 id="why-implement-nas-papers-in-auto-keras">Why implement NAS papers in Auto-Keras?</h2>
+<p>The NAS papers usually evaluate their work with the same dataset (e.g. CIFAR10),
+but they are not directly comparable because of the data preparation and training process are different,
+the influence of which are significant enough to change the rankings of these NAS methods.</p>
+<p>We have implemented some of the NAS methods in the framework.
+More state-of-the-art methods are in progress.
+There are three advantages of implementing the NAS methods in Auto-Keras.
+First, it fairly compares the NAS methods independent from other factors
+(e.g. the choice of optimizer, data augmentation).
+Second, researchers can easily change the experiment datasets used for NAS.
+Many of the currently available NAS implementations couple too much with the dataset used,
+which makes it hard to replace the original dataset with a new one.
+Third, it saves the effort of finding and running code from different sources.
+Different code may have different requirements of dependencies and environments,
+which may conflict with each other.</p>
+<h2 id="baseline-methods-implemented">Baseline methods implemented</h2>
+<p>Description of each baseline method.</p>
+<h2 id="how-to-run-the-baseline-methods">How to run the baseline methods?</h2>
+<p>Code example containing two parts: data preparation, search.
+Should call CnnModule.</p>
+<h2 id="how-to-implement-your-own-search">How to implement your own search?</h2>
+<p>You are welcome to implement your own method for NAS in our framework.
+If it works well, we are happy to merge it into our repo.</p>
                 
                   
                 
@@ -544,6 +611,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../contribute/" title="Contributing Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Contributing Guide
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../supervised/" title="supervised" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                supervised
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
