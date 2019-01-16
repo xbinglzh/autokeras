@@ -101,6 +101,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#inv_preemphasis" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -445,6 +449,95 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inv_preemphasis" title="inv_preemphasis" class="md-nav__link">
+    inv_preemphasis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inv_spectrogram" title="inv_spectrogram" class="md-nav__link">
+    inv_spectrogram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voicegenerator" title="VoiceGenerator" class="md-nav__link">
+    VoiceGenerator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tts" title="tts" class="md-nav__link">
+    tts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -453,7 +546,43 @@
                 
                   <h1>Voice generator</h1>
                 
-                
+                <h3 id="inv_preemphasis">inv_preemphasis</h3>
+<p>Inverse operation of pre-emphasis</p>
+<h5 id="args">Args</h5>
+<ul>
+<li>
+<p><strong>x (1d-array)</strong>: Input signal.</p>
+</li>
+<li>
+<p><strong>coef (float)</strong>: Pre-emphasis coefficient.</p>
+</li>
+</ul>
+<h5 id="returns">Returns</h5>
+<ul>
+<li>
+<p><strong>array</strong>: Output filtered signal.</p>
+</li>
+<li>
+<p><strong>also</strong>: </p>
+</li>
+<li>
+<p>****: func</p>
+</li>
+</ul>
+<h3 id="inv_spectrogram">inv_spectrogram</h3>
+<p>Converts spectrogram to waveform using librosa</p>
+<h2 id="voicegenerator">VoiceGenerator</h2>
+<h3 id="tts">tts</h3>
+<p>Convert text to speech waveform given a deepvoice3 model.</p>
+<h5 id="args_1">Args</h5>
+<ul>
+<li>
+<p><strong>text (str) </strong>: Input text to be synthesized</p>
+</li>
+<li>
+<p><strong>p (float) </strong>: Replace word to pronounciation if p &gt; 0. Default is 0.</p>
+</li>
+</ul>
                 
                   
                 
