@@ -1,0 +1,720 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="http://autokeras.com/temp/modeling/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>Modeling - Auto-Keras</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#009688">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#gelu" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://autokeras.com" title="Auto-Keras" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Auto-Keras
+              </span>
+              <span class="md-header-nav__topic">
+                Modeling
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/jhfjhfj1/autokeras" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://autokeras.com" title="Auto-Keras" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Auto-Keras
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/jhfjhfj1/autokeras" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../start/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contribute/" title="Contributing Guide" class="md-nav__link">
+      Contributing Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../nas/" title="Neural Architecture Search" class="md-nav__link">
+      Neural Architecture Search
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../supervised/" title="supervised" class="md-nav__link">
+      supervised
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../image_supervised/" title="image_supervised" class="md-nav__link">
+      image_supervised
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bayesian/" title="bayesian" class="md-nav__link">
+      bayesian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../search/" title="search" class="md-nav__link">
+      search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../graph/" title="graph" class="md-nav__link">
+      graph
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../preprocessor/" title="preprocessor" class="md-nav__link">
+      preprocessor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_trainer/" title="model_trainer" class="md-nav__link">
+      model_trainer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../utils/" title="utils" class="md-nav__link">
+      utils
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../generator/" title="generator" class="md-nav__link">
+      generator
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gelu" title="gelu" class="md-nav__link">
+    gelu
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bertconfig" title="BertConfig" class="md-nav__link">
+    BertConfig
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init" title="init" class="md-nav__link">
+    init
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_dict" title="from_dict" class="md-nav__link">
+    from_dict
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_json_file" title="from_json_file" class="md-nav__link">
+    from_json_file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_dict" title="to_dict" class="md-nav__link">
+    to_dict
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_json_string" title="to_json_string" class="md-nav__link">
+    to_json_string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bertembeddings" title="BertEmbeddings" class="md-nav__link">
+    BertEmbeddings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pretrainedbertmodel" title="PreTrainedBertModel" class="md-nav__link">
+    PreTrainedBertModel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init_bert_weights" title="init_bert_weights" class="md-nav__link">
+    init_bert_weights
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from_pretrained" title="from_pretrained" class="md-nav__link">
+    from_pretrained
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bertmodel" title="BertModel" class="md-nav__link">
+    BertModel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bertforsequenceclassification" title="BertForSequenceClassification" class="md-nav__link">
+    BertForSequenceClassification
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Modeling</h1>
+                
+                <h3 id="gelu">gelu</h3>
+<p>Implementation of the gelu activation function. For information: OpenAI GPT's gelu is slightly different (and gives slightly different results): 0.5 * x * (1 + torch.tanh(math.sqrt(2 / math.pi) * (x + 0.044715 * torch.pow(x, 3))))</p>
+<h2 id="bertconfig">BertConfig</h2>
+<p>Configuration class to store the configuration of a <code>BertModel</code>.</p>
+<h3 id="init"><strong>init</strong></h3>
+<p>Constructs BertConfig.</p>
+<h5 id="args">Args</h5>
+<ul>
+<li>
+<p><strong>vocab_size_or_config_json_file</strong>: Vocabulary size of <code>inputs_ids</code> in <code>BertModel</code>.</p>
+</li>
+<li>
+<p><strong>hidden_size</strong>: Size of the encoder layers and the pooler layer.</p>
+</li>
+<li>
+<p><strong>num_hidden_layers</strong>: Number of hidden layers in the Transformer encoder.</p>
+</li>
+<li>
+<p><strong>num_attention_heads</strong>: Number of attention heads for each attention layer in
+    the Transformer encoder.</p>
+</li>
+<li>
+<p><strong>intermediate_size</strong>: The size of the "intermediate" (i.e., feed-forward)
+    layer in the Transformer encoder.</p>
+</li>
+<li>
+<p><strong>hidden_act</strong>: The non-linear activation function (function or string) in the
+    encoder and pooler. If string, "gelu", "relu" and "swish" are supported.</p>
+</li>
+<li>
+<p><strong>hidden_dropout_prob</strong>: The dropout probabilitiy for all fully connected
+    layers in the embeddings, encoder, and pooler.</p>
+</li>
+<li>
+<p><strong>attention_probs_dropout_prob</strong>: The dropout ratio for the attention
+    probabilities.</p>
+</li>
+<li>
+<p><strong>max_position_embeddings</strong>: The maximum sequence length that this model might
+    ever be used with. Typically set this to something large just in case
+    (e.g., 512 or 1024 or 2048).</p>
+</li>
+<li>
+<p><strong>type_vocab_size</strong>: The vocabulary size of the <code>token_type_ids</code> passed into
+    <code>BertModel</code>.</p>
+</li>
+<li>
+<p><strong>initializer_range</strong>: The sttdev of the truncated_normal_initializer for
+    initializing all weight matrices.</p>
+</li>
+</ul>
+<h3 id="from_dict">from_dict</h3>
+<p>Constructs a <code>BertConfig</code> from a Python dictionary of parameters.</p>
+<h3 id="from_json_file">from_json_file</h3>
+<p>Constructs a <code>BertConfig</code> from a json file of parameters.</p>
+<h3 id="to_dict">to_dict</h3>
+<p>Serializes this instance to a Python dictionary.</p>
+<h3 id="to_json_string">to_json_string</h3>
+<p>Serializes this instance to a JSON string.</p>
+<h2 id="bertembeddings">BertEmbeddings</h2>
+<p>Construct the embeddings from word, position and token_type embeddings.</p>
+<h2 id="pretrainedbertmodel">PreTrainedBertModel</h2>
+<p>An abstract class to handle weights initialization and a simple interface for dowloading and loading pretrained models.</p>
+<h3 id="init_bert_weights">init_bert_weights</h3>
+<p>Initialize the weights.</p>
+<h3 id="from_pretrained">from_pretrained</h3>
+<p>Instantiate a PreTrainedBertModel from a pre-trained model file or a pytorch state dict. Download and cache the pre-trained model file if needed.
+Params: pretrained_model_name: either: - a str with the name of a pre-trained model to load selected in the list of: . <code>bert-base-uncased</code> . <code>bert-large-uncased</code> . <code>bert-base-cased</code> . <code>bert-base-multilingual</code> . <code>bert-base-chinese</code> - a path or url to a pretrained model archive containing: . <code>bert_config.json</code> a configuration file for the model . <code>pytorch_model.bin</code> a PyTorch dump of a BertForPreTraining instance cache_dir: an optional path to a folder in which the pre-trained models will be cached. state_dict: an optional state dictionnary (collections.OrderedDict object) to use instead of Google pre-trained models <em>inputs, </em>*kwargs: additional input for the specific Bert class (ex: num_labels for BertForSequenceClassification)</p>
+<h2 id="bertmodel">BertModel</h2>
+<p>BERT model ("Bidirectional Embedding Representations from a Transformer").
+Params: config: a BertConfig class instance with the configuration to build a new model  Inputs: <code>input_ids</code>: a torch.LongTensor of shape [batch_size, sequence_length] with the word token indices in the vocabulary(see the tokens preprocessing logic in the scripts <code>extract_features.py</code>, <code>run_classifier.py</code> and <code>run_squad.py</code>) <code>token_type_ids</code>: an optional torch.LongTensor of shape [batch_size, sequence_length] with the token types indices selected in [0, 1]. Type 0 corresponds to a <code>sentence A</code> and type 1 corresponds to a <code>sentence B</code> token (see BERT paper for more details). <code>attention_mask</code>: an optional torch.LongTensor of shape [batch_size, sequence_length] with indices selected in [0, 1]. It's a mask to be used if the input sequence length is smaller than the max input sequence length in the current batch. It's the mask that we typically use for attention when a batch has varying length sentences. <code>output_all_encoded_layers</code>: boolean which controls the content of the <code>encoded_layers</code> output as described below. Default: <code>True</code>.  Outputs: Tuple of (encoded_layers, pooled_output) <code>encoded_layers</code>: controled by <code>output_all_encoded_layers</code> argument: - <code>output_all_encoded_layers=True</code>: outputs a list of the full sequences of encoded-hidden-states at the end of each attention block (i.e. 12 full sequences for BERT-base, 24 for BERT-large), each encoded-hidden-state is a torch.FloatTensor of size [batch_size, sequence_length, hidden_size], - <code>output_all_encoded_layers=False</code>: outputs only the full sequence of hidden-states corresponding to the last attention block of shape [batch_size, sequence_length, hidden_size], <code>pooled_output</code>: a torch.FloatTensor of size [batch_size, hidden_size] which is the output of a classifier pretrained on top of the hidden state associated to the first character of the input (<code>CLF</code>) to train on the Next-Sentence task (see BERT's paper).  Example usage: <code>python # Already been converted into WordPiece token ids input_ids = torch.LongTensor([[31, 51, 99], [15, 5, 0]]) input_mask = torch.LongTensor([[1, 1, 1], [1, 1, 0]]) token_type_ids = torch.LongTensor([[0, 0, 1], [0, 1, 0]])  config = modeling.BertConfig(vocab_size_or_config_json_file=32000, hidden_size=768, num_hidden_layers=12, num_attention_heads=12, intermediate_size=3072)  model = modeling.BertModel(config=config) all_encoder_layers, pooled_output = model(input_ids, token_type_ids, input_mask)</code></p>
+<h2 id="bertforsequenceclassification">BertForSequenceClassification</h2>
+<p>BERT model for classification. This module is composed of the BERT model with a linear layer on top of the pooled output.
+Params: <code>config</code>: a BertConfig class instance with the configuration to build a new model. <code>num_labels</code>: the number of classes for the classifier. Default = 2.  Inputs: <code>input_ids</code>: a torch.LongTensor of shape [batch_size, sequence_length] with the word token indices in the vocabulary(see the tokens preprocessing logic in the scripts <code>extract_features.py</code>, <code>run_classifier.py</code> and <code>run_squad.py</code>) <code>token_type_ids</code>: an optional torch.LongTensor of shape [batch_size, sequence_length] with the token types indices selected in [0, 1]. Type 0 corresponds to a <code>sentence A</code> and type 1 corresponds to a <code>sentence B</code> token (see BERT paper for more details). <code>attention_mask</code>: an optional torch.LongTensor of shape [batch_size, sequence_length] with indices selected in [0, 1]. It's a mask to be used if the input sequence length is smaller than the max input sequence length in the current batch. It's the mask that we typically use for attention when a batch has varying length sentences. <code>labels</code>: labels for the classification output: torch.LongTensor of shape [batch_size] with indices selected in [0, ..., num_labels].  Outputs: if <code>labels</code> is not <code>None</code>: Outputs the CrossEntropy classification loss of the output with the labels. if <code>labels</code> is <code>None</code>: Outputs the classification logits of shape [batch_size, num_labels].  Example usage: <code>python # Already been converted into WordPiece token ids input_ids = torch.LongTensor([[31, 51, 99], [15, 5, 0]]) input_mask = torch.LongTensor([[1, 1, 1], [1, 1, 0]]) token_type_ids = torch.LongTensor([[0, 0, 1], [0, 1, 0]])  config = BertConfig(vocab_size_or_config_json_file=32000, hidden_size=768, num_hidden_layers=12, num_attention_heads=12, intermediate_size=3072)  num_labels = 2  model = BertForSequenceClassification(config, num_labels) logits = model(input_ids, token_type_ids, input_mask)</code></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-44322747-3","autokeras.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+  </body>
+</html>
