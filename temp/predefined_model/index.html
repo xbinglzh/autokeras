@@ -496,8 +496,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#compile" title="compile" class="md-nav__link">
-    compile
+  <a href="#fit" title="fit" class="md-nav__link">
+    fit
   </a>
   
     <nav class="md-nav">
@@ -512,60 +512,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fit" title="fit" class="md-nav__link">
-    fit
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_2" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#predict" title="predict" class="md-nav__link">
-    predict
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_3" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evaluate" title="evaluate" class="md-nav__link">
-    evaluate
-  </a>
   
 </li>
         
@@ -598,14 +544,14 @@
 <h5 id="attributes">Attributes</h5>
 <ul>
 <li>
+<p><strong>graph</strong>: The graph form of the model.</p>
+</li>
+<li>
 <p><strong>y_encoder</strong>: Label encoder, used in transform_y or inverse_transform_y for encode the label. For example,
            if one hot encoder needed, y_encoder can be OneHotEncoder.</p>
 </li>
 <li>
-<p><strong>data_transformer_class</strong>: A transformer class to process the data. See example as ImageDataTransformer.</p>
-</li>
-<li>
-<p><strong>data_transformer</strong>: A instance of data_transformer_class.</p>
+<p><strong>data_transformer</strong>: A instance of transformer to process the data, See example as ImageDataTransformer.</p>
 </li>
 <li>
 <p><strong>verbose</strong>: A boolean of whether the search process will be printed to stdout.</p>
@@ -625,21 +571,9 @@
 <p><strong>input_shape</strong>: A tuple to express the shape of every train entry.</p>
 </li>
 </ul>
-<h3 id="compile">compile</h3>
-<p>Configures the model for training.</p>
-<h5 id="args_1">Args</h5>
-<ul>
-<li>
-<p><strong>loss</strong>: The loss function to train the model. See example as classification_loss.</p>
-</li>
-<li>
-<p><strong>metric</strong>: The metric to be evaluted by the model during training and testing.
-        See example as Accuracy.</p>
-</li>
-</ul>
 <h3 id="fit">fit</h3>
 <p>Trains the model on the dataset given.</p>
-<h5 id="args_2">Args</h5>
+<h5 id="args_1">Args</h5>
 <ul>
 <li>
 <p><strong>x</strong>: A numpy.ndarray instance containing the training data or the training data combined with the
@@ -653,15 +587,6 @@
 <p><strong>trainer_args</strong>: A dictionary containing the parameters of the ModelTrainer constructor.</p>
 </li>
 </ul>
-<h3 id="predict">predict</h3>
-<p>Return predict results for the testing data.</p>
-<h5 id="args_3">Args</h5>
-<ul>
-<li><strong>x_test</strong>: An instance of numpy.ndarray containing the testing data.</li>
-</ul>
-<h5 id="returns">Returns</h5>
-<h3 id="evaluate">evaluate</h3>
-<p>Return the accuracy score between predict value and <code>y_test</code>.</p>
                 
                   
                 
