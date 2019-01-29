@@ -495,27 +495,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get_confirm_token" title="get_confirm_token" class="md-nav__link">
-    get_confirm_token
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#save_response_content" title="save_response_content" class="md-nav__link">
-    save_response_content
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download_file_from_google_drive" title="download_file_from_google_drive" class="md-nav__link">
-    download_file_from_google_drive
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#verbose_print" title="verbose_print" class="md-nav__link">
     verbose_print
   </a>
@@ -638,7 +617,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download_file_from_google_drive_1" title="download_file_from_google_drive" class="md-nav__link">
+  <a href="#download_file_from_google_drive" title="download_file_from_google_drive" class="md-nav__link">
     download_file_from_google_drive
   </a>
   
@@ -779,27 +758,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get_confirm_token" title="get_confirm_token" class="md-nav__link">
-    get_confirm_token
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#save_response_content" title="save_response_content" class="md-nav__link">
-    save_response_content
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#download_file_from_google_drive" title="download_file_from_google_drive" class="md-nav__link">
-    download_file_from_google_drive
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#verbose_print" title="verbose_print" class="md-nav__link">
     verbose_print
   </a>
@@ -922,7 +880,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download_file_from_google_drive_1" title="download_file_from_google_drive" class="md-nav__link">
+  <a href="#download_file_from_google_drive" title="download_file_from_google_drive" class="md-nav__link">
     download_file_from_google_drive
   </a>
   
@@ -978,12 +936,6 @@
 <p>Download the file specified in <code>file_link</code> and saves it in <code>file_path</code>.</p>
 <h3 id="download_file_with_extract">download_file_with_extract</h3>
 <p>Download the file specified in <code>file_link</code>, save to <code>file_path</code> and extract to the directory <code>extract_path</code>.</p>
-<h3 id="get_confirm_token">get_confirm_token</h3>
-<p>If there is a warning when download is requested, return the token value. Otherwise, return None.</p>
-<h3 id="save_response_content">save_response_content</h3>
-<p>Save the HTTP GET response of the download request in the destination.</p>
-<h3 id="download_file_from_google_drive">download_file_from_google_drive</h3>
-<p>Download a file with the specified Google Drive Id and save it to the destination.</p>
 <h3 id="verbose_print">verbose_print</h3>
 <p>Print information about the operation performed on father model to obtain current model and father's id.</p>
 <h3 id="validate_xy">validate_xy</h3>
@@ -1031,7 +983,7 @@ It used to resize the images later. Number of channels do not change from the or
 <h3 id="get_system">get_system</h3>
 <p>Get the current system environment. If the current system is not supported, raise an exception.</p>
 <h5 id="returns_3">Returns</h5>
-<h3 id="download_file_from_google_drive_1">download_file_from_google_drive</h3>
+<h3 id="download_file_from_google_drive">download_file_from_google_drive</h3>
 <p>Downloads a shared file from google drive into a given folder. Optionally unzips it.
 Refact from: https://github.com/ndrplz/google-drive-downloader/blob/master/google_drive_downloader/google_drive_downloader.py  Parameters ---------- file_id: str the file identifier. You can obtain it from the sharable link. dest_path: str the destination where to save the downloaded file. Must be a path (for example: './downloaded_file.txt') overwrite: bool optional, if True forces re-download and overwrite. unzip: bool optional, if True unzips a file. If the file is not a zip file, ignores it.</p>
 <h5 id="returns_4">Returns</h5>
