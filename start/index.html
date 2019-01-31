@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
     
     
       
@@ -64,6 +64,12 @@
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
+    
+    
+      
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44322747-3"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44322747-3")</script>
+      
     
     
   </head>
@@ -482,6 +488,13 @@
           <li class="md-nav__item">
   <a href="#sentiment-analysis-tutorial-source" title="Sentiment Analysis tutorial. [source]" class="md-nav__link">
     Sentiment Analysis tutorial. [source]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-classification-tutorial-source" title="Topic Classification tutorial. [source]" class="md-nav__link">
+    Topic Classification tutorial. [source]
   </a>
   
 </li>
@@ -906,6 +919,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#topic-classification-tutorial-source" title="Topic Classification tutorial. [source]" class="md-nav__link">
+    Topic Classification tutorial. [source]
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1191,11 +1211,11 @@ Finally you can make predictions against an image:</p>
 
 <p>Function <code>detector.predict()</code> requires the path to the image. If the <code>output_file_path</code> is not given, the <code>detector</code> will just return the numerical results as a list of dictionaries. Each dictionary is like {"left": int, "top": int, "width": int, "height": int: "category": str, "confidence": float}, where <code>left</code> and <code>top</code> is the (left, top) coordinates of the bounding box of the object and <code>width</code> and <code>height</code> are width and height of the box. <code>category</code> is a string representing the class the object belongs to, and the confidence can be regarded as the probability that the model believes its prediction is correct. If the <code>output_file_path</code> is given, then the results mentioned above will be plotted and saved in a new image file with suffix "_prediction" into the given <code>output_file_path</code>. If you run the example/object_detection/object_detection_example.py, you will get result
 <code>[{'category': 'person', 'width': 331, 'height': 500, 'left': 17, 'confidence': 0.9741123914718628, 'top': 0}]</code></p>
-<h3 id="sentiment-analysis-tutorial-source">Sentiment Analysis tutorial. <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/pretrained/text_sentiment.py">[source]</a></h3>
-<p>The sentiment analysis module provides an interface to find the sentiment of any text input. The pretrained model is obtained by training <a href="https://arxiv.org/abs/1810.04805">Google AI’s BERT model</a> on <a href="http://ai.stanford.edu/~amaas/data/sentiment/">IMDb dataset</a>. </p>
-<p>Let’s import the <code>SentimentAnalysis</code> module from <em>sentiment_analysis.py</em>. It is derived from the super class <code>Pretrained</code>. </p>
-<pre><code class="python">from autokeras.pretrained.text_sentiment import SentimentAnalysis
-sentiment_cls = SentimentAnalysis()
+<h3 id="sentiment-analysis-tutorial-source">Sentiment Analysis tutorial. <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/pretrained/text_classifier.py">[source]</a></h3>
+<p>The sentiment analysis module provides an interface to find the sentiment of any text. The pretrained model is obtained by training <a href="https://arxiv.org/abs/1810.04805">Google AI’s BERT model</a> on <a href="http://ai.stanford.edu/~amaas/data/sentiment/">IMDb dataset</a>. </p>
+<p>Let’s import the <code>SentimentAnalysis</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class.</p>
+<pre><code class="python">from autokeras.pretrained.text_classifier import SentimentAnalysis
+sentiment_analysis = SentimentAnalysis()
 </code></pre>
 
 <p>During initialization of <code>SentimentAnalysis</code>, the pretrained model is loaded into memory i.e. CPU’s or GPU’s, if available.</p>
@@ -1205,6 +1225,19 @@ sentiment_cls = SentimentAnalysis()
 
 <p><strong>Note:</strong> If the output value of the <code>predict</code> function is close to 0, it implies the statement has negative sentiment, whereas value close to 1 implies positive sentiment.</p>
 <p>If you run <em>sentiment_analysis_example.py</em>, you should get an output value of 0.9 which implies that the input statement <em>The model is working well..</em> has strong positive sentiment.</p>
+<h3 id="topic-classification-tutorial-source">Topic Classification tutorial. <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/pretrained/text_classifier.py">[source]</a></h3>
+<p>The topic classifier module provides an interface to find the topic of any text. The pretrained model is obtained by training <a href="https://arxiv.org/abs/1810.04805">Google AI’s BERT model</a> on <a href="https://www.di.unipi.it/~gulli/AG_corpus_of_news_articles.html">AGNews dataset</a>. </p>
+<p>Let’s import the <code>TopicClassifier</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class. </p>
+<pre><code class="python">from autokeras.pretrained.text_classifier import TopicClassifier
+topic_classifier = TopicClassifier()
+</code></pre>
+
+<p>During initialization of <code>TopicClassifier</code>, the pretrained model is loaded into memory i.e. CPU’s or GPU’s, if available.</p>
+<p>Now, you may directly call the <code>predict</code> function in <code>TopicClassifier</code> class on any input sentence provided as a string as shown below. The function returns one of the fours topics <strong>Business</strong>, <strong>Sci/Tech</strong>, <strong>World</strong> and <strong>Sports</strong>. </p>
+<pre><code class="python">class_name = topic_classifier.predict(&quot;With some more practice, they will definitely make it to finals..&quot;)
+</code></pre>
+
+<p>If you run <em>topic_classifier_example.py</em>, you should see the predict function returns the label <strong>Sports</strong>, which is the predicted label for the input statement.</p>
 <!-- [Data with numpy array (.npy) format.]: https://github.com/jhfjhfj1/autokeras/blob/master/examples/a_simple_example/mnist.py
 [What if your data are raw image files (*e.g.* .jpg, .png, .bmp)?]: https://github.com/jhfjhfj1/autokeras/blob/master/examples/a_simple_example/load_raw_image.py
 [How to export Portable model]: https://github.com/jhfjhfj1/autokeras/blob/master/examples/portable_models/portable_load.py
@@ -1286,15 +1319,9 @@ sentiment_cls = SentimentAnalysis()
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../assets/javascripts/application.a353778b.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-44322747-3","autokeras.com"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
