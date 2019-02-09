@@ -1199,13 +1199,9 @@ for a given tabular dataset. (Currently, theis module only supports lightgbm cla
 detector = ObjectDetector()
 </code></pre>
 
+<p>It will automatically download and load the weights into <code>detector</code>.</p>
 <p><strong>Note:</strong>  the <code>ObjectDetector</code> class can automatically detect the existance of available cuda device(s), and use the device if exists.</p>
-<p>Second, you will want to load the pretrained weights for your model:</p>
-<pre><code class="python">detector.load()
-</code></pre>
-
-<p>This line will automatically download and load the weights into <code>detector</code>.
-Finally you can make predictions against an image:</p>
+<p>Finally you can make predictions against an image:</p>
 <pre><code class="python">    results = detector.predict(&quot;/path/to/images/000001.jpg&quot;, output_file_path=&quot;/path/to/images/&quot;)
 </code></pre>
 
