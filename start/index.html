@@ -337,6 +337,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#enable-multi-gpu-training" title="Enable Multi-GPU Training" class="md-nav__link">
+    Enable Multi-GPU Training
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -764,6 +771,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#enable-multi-gpu-training" title="Enable Multi-GPU Training" class="md-nav__link">
+    Enable Multi-GPU Training
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1038,6 +1052,14 @@ class_dirs = [i for i in os.listdir(path=train_dir) if os.path.isdir(os.path.joi
     train_csv.close()
 </code></pre>
 
+<h3 id="enable-multi-gpu-training">Enable Multi-GPU Training</h3>
+<p>Auto-Keras support multiple GPU training in the default setting. 
+There's no additional step needed to enable multiple GPU training. 
+However, if multiple-GPU training is not a desirable behavior. 
+You can disable it via environmental variable. <code>CUDA_VISIBLE_DEVICES</code>. 
+For example, in your bash: <code>export CUDA_VISIBLE_DEVICES=0</code>. 
+Keep in mind that when using multiple-GPU, make sure batch size is big enough that multiple-gpu context switch overhead won't effect the performance too much. 
+Otherwise multiple-gpu training may be slower than single-GPU training.</p>
 <h2 id="portable-models">Portable Models</h2>
 <h3 id="how-to-export-keras-models">How to export keras models?</h3>
 <pre><code>clf.load_searcher().load_best_model().produce_keras_model().save('my_model.h5')
