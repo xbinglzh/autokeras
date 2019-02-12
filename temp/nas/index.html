@@ -604,8 +604,35 @@ which may conflict with each other.</p>
 <h2 id="how-to-implement-your-own-search">How to implement your own search?</h2>
 <p>To implement your own NAS searcher, you need to implement your own searcher class YOUR_SEARCHER, which is derived 
 from base <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/search.py">Searcher</a> class. For your 
-YOUR_SEARCHER class, you must provide implementation of the abstract method: <a href="https://github.com/jhfjhfj1/autokeras/blob/d6bea7369186df842dfb8ea3ed779cbd1b8f7c40/autokeras/search.py#L223">generate(self, multiprocessing_queue)</a>, 
-which is invoked to generate the next neural architecture.</p>
+YOUR_SEARCHER class, you must provide implementation of the two abstract method: </p>
+<ol>
+<li>
+<p><a href="https://github.com/jhfjhfj1/autokeras/blob/d6bea7369186df842dfb8ea3ed779cbd1b8f7c40/autokeras/search.py#L223">generate(self, multiprocessing_queue)</a>, 
+which is invoked to generate the next neural architecture.
+The return value of the generate function should be two elements.
+The first one is the generated graph.
+The second one is any other information you want to pass to the update function.
+If you have multiple values to pass, you need to put them into one tuple.
+If you don't have any value to pass, you can just put None.</p>
+</li>
+<li>
+<p><a href="https://github.com/jhfjhfj1/autokeras/blob/d6bea7369186df842dfb8ea3ed779cbd1b8f7c40/autokeras/search.py#L238">update(self, other_info, model_id, graph, metric_value)</a>, which is invoked 
+to update the controller with evaluation result of a neural architecture.
+The graph and other_info in the parameters are the corresponding return value of the generate function.
+There is no required return value for this function.</p>
+</li>
+</ol>
+<p>You can refer to the default <a href="https://github.com/jhfjhfj1/autokeras/blob/f455e22c140775975f5061354dc78cdf6b52dc26/autokeras/search.py#L284">BeyasianSearcher</a>
+as an example.
+The <a href="https://github.com/jhfjhfj1/autokeras/blob/d6bea7369186df842dfb8ea3ed779cbd1b8f7c40/autokeras/search.py#L306">generate</a> 
+function returns the generated graph and the father ID of the graph in the search tree. Then when the generated model 
+finish
+training, the father ID 
+(other_info) 
+and ID (model_id) and instance (graph) and metric value (metric_value) of the model are passed to <a href="https://github.com/jhfjhfj1/autokeras/blob/d6bea7369186df842dfb8ea3ed779cbd1b8f7c40/autokeras/search.py#L329">update</a> 
+function to 
+update the controller BayesianOptimizer.</p>
+<p>You can find more example <a href="https://github.com/jhfjhfj1/autokeras/tree/master/nas">here</a>.</p>
 <p>You are welcome to implement your own method for NAS in our framework.
 If it works well, we are happy to merge it into our repo.</p>
                 

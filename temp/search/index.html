@@ -486,6 +486,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#update" title="update" class="md-nav__link">
+    update
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_3" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#add_model" title="add_model" class="md-nav__link">
     add_model
   </a>
@@ -514,7 +534,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_3" title="Args" class="md-nav__link">
+  <a href="#args_4" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -533,7 +553,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update" title="update" class="md-nav__link">
+  <a href="#update_1" title="update" class="md-nav__link">
     update
   </a>
   
@@ -541,7 +561,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_4" title="Args" class="md-nav__link">
+  <a href="#args_5" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -760,6 +780,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#update" title="update" class="md-nav__link">
+    update
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_3" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#add_model" title="add_model" class="md-nav__link">
     add_model
   </a>
@@ -788,7 +828,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_3" title="Args" class="md-nav__link">
+  <a href="#args_4" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -807,7 +847,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update" title="update" class="md-nav__link">
+  <a href="#update_1" title="update" class="md-nav__link">
     update
   </a>
   
@@ -815,7 +855,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#args_4" title="Args" class="md-nav__link">
+  <a href="#args_5" title="Args" class="md-nav__link">
     Args
   </a>
   
@@ -983,6 +1023,23 @@ The function will run the training and generate in parallel. Then it will update
 <p><strong>other_info</strong>: Anything to be saved in the training queue together</p>
 </li>
 </ul>
+<h3 id="update">update</h3>
+<p>Update the controller with evaluation result of a neural architecture.</p>
+<h5 id="args_3">Args</h5>
+<ul>
+<li>
+<p><strong>other_info</strong>: Anything. In the case of default bayesian searcher, it is the father ID in the search tree.</p>
+</li>
+<li>
+<p><strong>model_id</strong>: An integer.</p>
+</li>
+<li>
+<p><strong>graph</strong>: An instance of Graph. The trained neural architecture.</p>
+</li>
+<li>
+<p><strong>metric_value</strong>: The final evaluated metric value.</p>
+</li>
+</ul>
 <h3 id="add_model">add_model</h3>
 <p>Append the information of evaluated architecture to history.</p>
 <h2 id="bayesiansearcher">BayesianSearcher</h2>
@@ -990,7 +1047,7 @@ The function will run the training and generate in parallel. Then it will update
 Attribute: optimizer: An instance of BayesianOptimizer. t_min: A float. The minimum temperature during simulated annealing.</p>
 <h3 id="generate_1">generate</h3>
 <p>Generate the next neural architecture.</p>
-<h5 id="args_3">Args</h5>
+<h5 id="args_4">Args</h5>
 <ul>
 <li><strong>multiprocessing_queue</strong>: the Queue for multiprocessing return value.</li>
 </ul>
@@ -1006,9 +1063,9 @@ Attribute: optimizer: An instance of BayesianOptimizer. t_min: A float. The mini
 <p><strong>other_info</strong>: Anything to be saved in the training queue together with the architecture.</p>
 </li>
 </ul>
-<h3 id="update">update</h3>
+<h3 id="update_1">update</h3>
 <p>Update the controller with evaluation result of a neural architecture.</p>
-<h5 id="args_4">Args</h5>
+<h5 id="args_5">Args</h5>
 <ul>
 <li>
 <p><strong>other_info</strong>: Anything. In our case it is the father ID in the search tree.</p>
