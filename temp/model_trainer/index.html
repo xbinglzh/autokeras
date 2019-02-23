@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
     
     
       
@@ -42,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -67,8 +67,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44322747-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44322747-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-44322747-3", "autokeras.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -128,22 +150,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Auto-Keras
-              </span>
-              <span class="md-header-nav__topic">
-                model_trainer
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Auto-Keras
+            </span>
+            <span class="md-header-nav__topic">
+              model_trainer
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -166,7 +185,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -177,20 +195,18 @@
 
   
 
-
-  <a href="https://github.com/jhfjhfj1/autokeras" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/jhfjhfj1/autokeras" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -226,20 +242,18 @@
 
   
 
-
-  <a href="https://github.com/jhfjhfj1/autokeras" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/jhfjhfj1/autokeras" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -434,29 +448,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes" title="Attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#train_model" title="train_model" class="md-nav__link">
     train_model
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -474,36 +468,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes_1" title="Attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#train_model_1" title="train_model" class="md-nav__link">
     train_model
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_1" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -535,29 +502,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes_2" title="Attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#init" title="init" class="md-nav__link">
     init
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_2" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -582,13 +529,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes_3" title="Attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#on_train_begin" title="on_train_begin" class="md-nav__link">
     on_train_begin
   </a>
@@ -599,26 +539,6 @@
   <a href="#on_epoch_end" title="on_epoch_end" class="md-nav__link">
     on_epoch_end
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_3" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns_1" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -706,29 +626,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes" title="Attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#train_model" title="train_model" class="md-nav__link">
     train_model
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -746,36 +646,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes_1" title="Attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#train_model_1" title="train_model" class="md-nav__link">
     train_model
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_1" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -807,29 +680,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes_2" title="Attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#init" title="init" class="md-nav__link">
     init
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_2" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -854,13 +707,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#attributes_3" title="Attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#on_train_begin" title="on_train_begin" class="md-nav__link">
     on_train_begin
   </a>
@@ -871,26 +717,6 @@
   <a href="#on_epoch_end" title="on_epoch_end" class="md-nav__link">
     on_epoch_end
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_3" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns_1" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -919,174 +745,29 @@
                   <h1>model_trainer</h1>
                 
                 <h2 id="modeltrainerbase">ModelTrainerBase</h2>
-<p>A base class all model trainers will inherit from.</p>
-<h5 id="attributes">Attributes</h5>
-<ul>
-<li>
-<p><strong>device</strong>: A string. Indicating the device to use. 'cuda' or 'cpu'.</p>
-</li>
-<li>
-<p><strong>train_loader</strong>: Training data wrapped in batches in Pytorch Dataloader.</p>
-</li>
-<li>
-<p><strong>test_loader</strong>: Testing data wrapped in batches in Pytorch Dataloader.</p>
-</li>
-<li>
-<p><strong>loss_function</strong>: A function with two parameters (prediction, target).
-    There is no specific requirement for the types of the parameters,
-    as long as they are compatible with the model and the data loaders.
-    The prediction should be the output of the model for a batch.
-    The target should be a batch of targets packed in the data loaders.</p>
-</li>
-<li>
-<p><strong>metric</strong>: It should be a subclass of class autokeras.metric.Metric.
-    In the compute(prediction, target) function, prediction and targets are,
-    all numpy arrays converted from the output of the model and the targets packed in the data loaders.</p>
-</li>
-<li>
-<p><strong>verbose</strong>: Verbosity mode.</p>
-</li>
-</ul>
+<p>A base class all model trainers will inherit from. Attributes: device: A string. Indicating the device to use. 'cuda' or 'cpu'. train_loader: Training data wrapped in batches in Pytorch Dataloader. test_loader: Testing data wrapped in batches in Pytorch Dataloader. loss_function: A function with two parameters (prediction, target). There is no specific requirement for the types of the parameters, as long as they are compatible with the model and the data loaders. The prediction should be the output of the model for a batch. The target should be a batch of targets packed in the data loaders. metric: It should be a subclass of class autokeras.metric.Metric. In the compute(prediction, target) function, prediction and targets are, all numpy arrays converted from the output of the model and the targets packed in the data loaders. verbose: Verbosity mode.</p>
 <h3 id="train_model">train_model</h3>
-<p>Train the model.</p>
-<h5 id="args">Args</h5>
-<ul>
-<li>
-<p><strong>timeout</strong>: timeout in seconds</p>
-</li>
-<li>
-<p><strong>max_iter_num</strong>: int, maximum numer of iteration</p>
-</li>
-<li>
-<p><strong>max_no_improvement_num</strong>: after max_no_improvement_num,
-    if the model still makes no improvement, finish training.</p>
-</li>
-</ul>
+<p>Train the model. Args: timeout: timeout in seconds max_iter_num: int, maximum numer of iteration max_no_improvement_num: after max_no_improvement_num, if the model still makes no improvement, finish training.</p>
 <h2 id="modeltrainer">ModelTrainer</h2>
-<p>A class that is used to train the model.
-This class can train a Pytorch model with the given data loaders. The metric, loss_function, and model must be compatible with each other. Please see the details in the Attributes.</p>
-<h5 id="attributes_1">Attributes</h5>
-<ul>
-<li>
-<p><strong>temp_model_path</strong>: Specify the path where temp model should be stored.</p>
-</li>
-<li>
-<p><strong>model</strong>: An instance of Pytorch Module. The model that will be trained.</p>
-</li>
-<li>
-<p><strong>early_stop</strong>: An instance of class EarlyStop.</p>
-</li>
-<li>
-<p><strong>optimizer</strong>: The optimizer is chosen to use the Pytorch Adam optimizer.</p>
-</li>
-<li>
-<p><strong>current_epoch</strong>: Record the current epoch.</p>
-</li>
-</ul>
+<p>A class that is used to train the model. This class can train a Pytorch model with the given data loaders. The metric, loss_function, and model must be compatible with each other. Please see the details in the Attributes. Attributes: temp_model_path: Specify the path where temp model should be stored. model: An instance of Pytorch Module. The model that will be trained. early_stop: An instance of class EarlyStop. optimizer: The optimizer is chosen to use the Pytorch Adam optimizer. current_epoch: Record the current epoch.</p>
 <h3 id="train_model_1">train_model</h3>
-<p>Train the model.
-Train the model with max_iter_num or max_no_improvement_num is met.</p>
-<h5 id="args_1">Args</h5>
-<ul>
-<li>
-<p><strong>timeout</strong>: timeout in seconds</p>
-</li>
-<li>
-<p><strong>max_iter_num</strong>: An integer. The maximum number of epochs to train the model.
-    The training will stop when this number is reached.</p>
-</li>
-<li>
-<p><strong>max_no_improvement_num</strong>: An integer. The maximum number of epochs when the loss value doesn't decrease.
-    The training will stop when this number is reached.</p>
-</li>
-</ul>
-<h5 id="returns">Returns</h5>
+<p>Train the model. Train the model with max_iter_num or max_no_improvement_num is met. Args: timeout: timeout in seconds max_iter_num: An integer. The maximum number of epochs to train the model. The training will stop when this number is reached. max_no_improvement_num: An integer. The maximum number of epochs when the loss value doesn't decrease. The training will stop when this number is reached. Returns: A tuple of loss values and metric value.</p>
 <h3 id="_train">_train</h3>
 <p>Where the actual train proceed.</p>
 <h3 id="_test">_test</h3>
 <p>Function for evaluation.</p>
 <h2 id="ganmodeltrainer">GANModelTrainer</h2>
-<p>A ModelTrainer especially for the GAN.</p>
-<h5 id="attributes_2">Attributes</h5>
-<ul>
-<li>
-<p><strong>d_model</strong>: A discriminator model.</p>
-</li>
-<li>
-<p><strong>g_model</strong>: A generator model.</p>
-</li>
-<li>
-<p><strong>out_f</strong>: Out file.</p>
-</li>
-<li>
-<p><strong>out_size</strong>: Size of the output image.</p>
-</li>
-<li>
-<p><strong>optimizer_d</strong>: Optimizer for discriminator.</p>
-</li>
-<li>
-<p><strong>optimizer_g</strong>: Optimizer for generator.</p>
-</li>
-</ul>
+<p>A ModelTrainer especially for the GAN. Attributes: d_model: A discriminator model. g_model: A generator model. out_f: Out file. out_size: Size of the output image. optimizer_d: Optimizer for discriminator. optimizer_g: Optimizer for generator.</p>
 <h3 id="init"><strong>init</strong></h3>
-<p>Initialize the GANModelTrainer.</p>
-<h5 id="args_2">Args</h5>
-<ul>
-<li>
-<p><strong>g_model</strong>: The generator model to be trained.</p>
-</li>
-<li>
-<p><strong>d_model</strong>: The discriminator model to be trained.</p>
-</li>
-<li>
-<p><strong>train_data</strong>: the training data.</p>
-</li>
-<li>
-<p><strong>loss_function</strong>: The loss function for both discriminator and generator.</p>
-</li>
-<li>
-<p><strong>verbose</strong>: Whether to output the system output.</p>
-</li>
-<li>
-<p><strong>gen_training_result</strong>: Whether to generate the intermediate result while training.</p>
-</li>
-</ul>
+<p>Initialize the GANModelTrainer. Args: g_model: The generator model to be trained. d_model: The discriminator model to be trained. train_data: the training data. loss_function: The loss function for both discriminator and generator. verbose: Whether to output the system output. gen_training_result: Whether to generate the intermediate result while training.</p>
 <h3 id="_train_1">_train</h3>
 <p>Perform the actual train.</p>
 <h2 id="earlystop">EarlyStop</h2>
-<p>A class check for early stop condition.</p>
-<h5 id="attributes_3">Attributes</h5>
-<ul>
-<li>
-<p><strong>training_losses</strong>: Record all the training loss.</p>
-</li>
-<li>
-<p><strong>minimum_loss</strong>: The minimum loss we achieve so far. Used to compared to determine no improvement condition.</p>
-</li>
-<li>
-<p><strong>no_improvement_count</strong>: Current no improvement count.</p>
-</li>
-<li>
-<p><strong>_max_no_improvement_num</strong>: The maximum number specified.</p>
-</li>
-<li>
-<p><strong>_done</strong>: Whether condition met.</p>
-</li>
-<li>
-<p><strong>_min_loss_dec</strong>: A threshold for loss improvement.</p>
-</li>
-</ul>
+<p>A class check for early stop condition. Attributes: training_losses: Record all the training loss. minimum_loss: The minimum loss we achieve so far. Used to compared to determine no improvement condition. no_improvement_count: Current no improvement count. _max_no_improvement_num: The maximum number specified. _done: Whether condition met. _min_loss_dec: A threshold for loss improvement.</p>
 <h3 id="on_train_begin">on_train_begin</h3>
-<p>Initiate the early stop condition.
-Call on every time the training iteration begins.</p>
+<p>Initiate the early stop condition. Call on every time the training iteration begins.</p>
 <h3 id="on_epoch_end">on_epoch_end</h3>
-<p>Check the early stop condition.
-Call on every time the training iteration end.</p>
-<h5 id="args_3">Args</h5>
-<ul>
-<li><strong>loss</strong>: The loss function achieved by the epoch.</li>
-</ul>
-<h5 id="returns_1">Returns</h5>
+<p>Check the early stop condition. Call on every time the training iteration end. Args: loss: The loss function achieved by the epoch. Returns: True if condition met, otherwise False.</p>
                 
                   
                 
@@ -1150,15 +831,13 @@ Call on every time the training iteration end.</p>
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../assets/javascripts/application.b806dc00.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
