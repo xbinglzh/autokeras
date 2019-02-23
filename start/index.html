@@ -372,13 +372,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-export-keras-models" title="How to export keras models?" class="md-nav__link">
-    How to export keras models?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#how-to-export-portable-model-source" title="How to export Portable model? [source]" class="md-nav__link">
     How to export Portable model? [source]
   </a>
@@ -404,13 +397,6 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-visualize-keras-models" title="How to visualize keras models?" class="md-nav__link">
-    How to visualize keras models?
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#how-to-visualize-the-best-selected-architecture-source" title="How to visualize the best selected architecture? [source]" class="md-nav__link">
@@ -462,13 +448,6 @@
           <li class="md-nav__item">
   <a href="#automated-text-classifier-tutorial-source" title="Automated text classifier tutorial. [source]" class="md-nav__link">
     Automated text classifier tutorial. [source]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#automated-tabular-classifier-tutorial-source" title="Automated tabular classifier tutorial. [source]" class="md-nav__link">
-    Automated tabular classifier tutorial. [source]
   </a>
   
 </li>
@@ -806,13 +785,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-export-keras-models" title="How to export keras models?" class="md-nav__link">
-    How to export keras models?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#how-to-export-portable-model-source" title="How to export Portable model? [source]" class="md-nav__link">
     How to export Portable model? [source]
   </a>
@@ -838,13 +810,6 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-visualize-keras-models" title="How to visualize keras models?" class="md-nav__link">
-    How to visualize keras models?
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#how-to-visualize-the-best-selected-architecture-source" title="How to visualize the best selected architecture? [source]" class="md-nav__link">
@@ -896,13 +861,6 @@
           <li class="md-nav__item">
   <a href="#automated-text-classifier-tutorial-source" title="Automated text classifier tutorial. [source]" class="md-nav__link">
     Automated text classifier tutorial. [source]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#automated-tabular-classifier-tutorial-source" title="Automated tabular classifier tutorial. [source]" class="md-nav__link">
-    Automated tabular classifier tutorial. [source]
   </a>
   
 </li>
@@ -1075,11 +1033,6 @@ For example, in your bash: <code>export CUDA_VISIBLE_DEVICES=0</code>.
 Keep in mind that when using multiple-GPU, make sure batch size is big enough that multiple-gpu context switch overhead won't effect the performance too much. 
 Otherwise multiple-gpu training may be slower than single-GPU training.</p>
 <h2 id="portable-models">Portable Models</h2>
-<h3 id="how-to-export-keras-models">How to export keras models?</h3>
-<pre><code>clf.load_searcher().load_best_model().produce_keras_model().save('my_model.h5')
-</code></pre>
-<p>This uses the keras function model.save() to export a single HDF5 file containing the architecture of the model, the weights of the model, the training configuration, and the state of the optimizer. See https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model</p>
-<p><strong>Note:</strong> This is being built into AutoKeras as ImageClassifier().export_keras_model() </p>
 <h3 id="how-to-export-portable-model-source">How to export Portable model? <a href="https://github.com/jhfjhfj1/autokeras/blob/master/examples/portable_models/portable_load.py">[source]</a></h3>
 <pre><code>from autokeras import ImageClassifier
 clf = ImageClassifier(verbose=True, augment=False)
@@ -1094,13 +1047,6 @@ print(results)
 </code></pre>
 <p>The model will be loaded from the path <code>model_file_name</code> and then you can use the functions listed in <code>PortableImageSupervised</code>.</p>
 <h2 id="model-visualizations">Model Visualizations</h2>
-<h3 id="how-to-visualize-keras-models">How to visualize keras models?</h3>
-<p>This is not specific to AutoKeras, however, the following will generate a .PNG visualization of the best model found by AutoKeras:</p>
-<pre><code>from keras.models import load_model
-model = load_model('my_model.h5') #See 'How to export keras models?' to generate this file before loading it.
-from keras.utils import plot_model
-plot_model(model, to_file='my_model.png')
-</code></pre>
 <h3 id="how-to-visualize-the-best-selected-architecture-source">How to visualize the best selected architecture? <a href="https://github.com/jhfjhfj1/autokeras/blob/master/examples/visualizations/visualize.py">[source]</a></h3>
 <p>While trying to create a model, let's say an Image classifier on MNIST, there is a facility for the user to visualize a .PDF depiction of the best architecture that was chosen by autokeras, after model training is complete. </p>
 <p>Prerequisites : 
@@ -1210,21 +1156,6 @@ should be in string format.
 </em> The default pre-process model uses the <a href="https://nlp.stanford.edu/projects/glove/">glove6B model</a> from Stanford NLP. 
 * To change the default setting of the pre-process model, one need to change the corresponding variable:
 <code>EMBEDDING_DIM</code>, <code>PRE_TRAIN_FILE_LINK</code>, <code>PRE_TRAIN_FILE_LINK</code>, <code>PRE_TRAIN_FILE_NAME</code> in <code>constant.py</code>.</p>
-<h3 id="automated-tabular-classifier-tutorial-source">Automated tabular classifier tutorial. <a href="https://github.com/jhfjhfj1/autokeras/tree/master/examples/task_modules/tabular">[source]</a></h3>
-<p>Class <code>TabularClassifier</code> and <code>TabularRegressor</code> are designed for automated generate best performance shallow/deep architecture
-for a given tabular dataset. (Currently, theis module only supports lightgbm classifier and regressor.)</p>
-<pre><code class="python">    clf = TabularClassifier(verbose=True)
-    clf.fit(x_train, y_train, time_limit=12 * 60 * 60, data_info=datainfo)
-</code></pre>
-
-<ul>
-<li>x_train: string format text data</li>
-<li>y_train: int format text label</li>
-<li>data_info: a numpy.array describing the feature types (time, numerical or categorical) of each column in x_train.</li>
-</ul>
-<p><strong>Notes:</strong> Preprocessing of the tabular data:
-<em> Class <code>[TabularPreprocessor]</code> involves several automated feature preprocessing and engineering operation for tabular data . 
-</em>The input data should be in numpy array format for the class <code>TabularClassifier</code> and <code>TabularRegressor</code> .</p>
 <h2 id="pretrained-models">Pretrained Models</h2>
 <h3 id="object-detection-tutorial-source">Object detection tutorial. <a href="https://github.com/jhfjhfj1/autokeras/blob/master/examples/pretrained_models/object_detection/object_detection_example.py">[source]</a></h3>
 <h4 id="by-wuyang-chen-from-dr-atlas-wangs-group-at-cse-department-texas-am">by Wuyang Chen from <a href="http://www.atlaswang.com/">Dr. Atlas Wang's group</a> at CSE Department, Texas A&amp;M.</h4>
