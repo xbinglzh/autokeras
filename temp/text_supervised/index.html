@@ -492,6 +492,113 @@
     TextClassifier
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" title="Attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init" title="init" class="md-nav__link">
+    init
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit" title="fit" class="md-nav__link">
+    fit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predict" title="predict" class="md-nav__link">
+    predict
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_2" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocess" title="preprocess" class="md-nav__link">
+    preprocess
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_3" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -516,7 +623,74 @@
                 <h2 id="inputfeatures">InputFeatures</h2>
 <p>A single set of features of data.</p>
 <h2 id="textclassifier">TextClassifier</h2>
-<p>TextClassifier class.</p>
+<p>A TextClassifier class based on Google AI's BERT model.</p>
+<h5 id="attributes">Attributes</h5>
+<ul>
+<li>
+<p><strong>device</strong>: Specific hardware for using/running the model. E.g</p>
+</li>
+<li>
+<p><strong>verbose</strong>: Mode of verbosity.</p>
+</li>
+<li>
+<p><strong>bert_model</strong>: Type of BERT model to be used for the classification task. E.g</p>
+</li>
+<li>
+<p><strong>tokenizer</strong>: Tokenizer used with BERT model.</p>
+</li>
+<li>
+<p><strong>num_labels</strong>: Number of output labels for the classification task.</p>
+</li>
+<li>
+<p><strong>output_model_file</strong>: File location to save the trained model.</p>
+</li>
+</ul>
+<h3 id="init"><strong>init</strong></h3>
+<p>Initialize the TextClassifier.</p>
+<h5 id="args">Args</h5>
+<ul>
+<li><strong>verbose</strong>: Mode of verbosity.</li>
+</ul>
+<h3 id="fit">fit</h3>
+<p>Train the text classifier based on the training data.</p>
+<h5 id="args_1">Args</h5>
+<ul>
+<li>
+<p><strong>x</strong>: ndarray containing the train data inputs.</p>
+</li>
+<li>
+<p><strong>y</strong>: ndarray containing the train data outputs/labels.</p>
+</li>
+<li>
+<p><strong>time_limit</strong>: Maximum time allowed for searching. It does not apply for this classifier.</p>
+</li>
+</ul>
+<h3 id="predict">predict</h3>
+<p>Predict the labels for the provided input data.</p>
+<h5 id="args_2">Args</h5>
+<ul>
+<li><strong>x_test</strong>: ndarray containing the test data inputs.</li>
+</ul>
+<h5 id="returns">Returns</h5>
+<h3 id="preprocess">preprocess</h3>
+<p>Preprocess text data.
+Tokenize the input text and convert into features.</p>
+<h5 id="args_3">Args</h5>
+<ul>
+<li><strong>x</strong>: Text input.</li>
+</ul>
+<h5 id="returns_1">Returns</h5>
+<ul>
+<li>
+<p><strong>all_input_ids</strong>: ndarray containing the ids for each token.</p>
+</li>
+<li>
+<p><strong>all_input_masks</strong>: ndarray containing 1's or 0's based on if the tokens are real or padded.</p>
+</li>
+<li>
+<p><strong>all_segment_ids</strong>: ndarray containing all 0's since it is a classification task.</p>
+</li>
+</ul>
                 
                   
                 

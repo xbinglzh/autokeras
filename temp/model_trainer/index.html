@@ -521,6 +521,87 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#berttrainer" title="BERTTrainer" class="md-nav__link">
+    BERTTrainer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" title="Attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init_1" title="init" class="md-nav__link">
+    init
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train_model_2" title="train_model" class="md-nav__link">
+    train_model
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_train_2" title="_train" class="md-nav__link">
+    _train
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_save_model" title="_save_model" class="md-nav__link">
+    _save_model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#earlystop" title="EarlyStop" class="md-nav__link">
     EarlyStop
   </a>
@@ -699,6 +780,87 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#berttrainer" title="BERTTrainer" class="md-nav__link">
+    BERTTrainer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" title="Attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init_1" title="init" class="md-nav__link">
+    init
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#train_model_2" title="train_model" class="md-nav__link">
+    train_model
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_train_2" title="_train" class="md-nav__link">
+    _train
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_save_model" title="_save_model" class="md-nav__link">
+    _save_model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#earlystop" title="EarlyStop" class="md-nav__link">
     EarlyStop
   </a>
@@ -762,6 +924,60 @@
 <p>Initialize the GANModelTrainer. Args: g_model: The generator model to be trained. d_model: The discriminator model to be trained. train_data: the training data. loss_function: The loss function for both discriminator and generator. verbose: Whether to output the system output. gen_training_result: Whether to generate the intermediate result while training.</p>
 <h3 id="_train_1">_train</h3>
 <p>Perform the actual train.</p>
+<h2 id="berttrainer">BERTTrainer</h2>
+<p>A ModelTrainer for the Google AI's BERT model. Currently supports only classification task.</p>
+<h5 id="attributes">Attributes</h5>
+<ul>
+<li>
+<p><strong>model</strong>: Type of BERT model to be used for the task. E.g</p>
+</li>
+<li>
+<p><strong>output_model_file</strong>: File location to save the trained model.</p>
+</li>
+<li>
+<p><strong>num_labels</strong>: Number of output labels for the classification task.</p>
+</li>
+</ul>
+<h3 id="init_1"><strong>init</strong></h3>
+<p>Initialize the BERTTrainer.</p>
+<h5 id="args">Args</h5>
+<ul>
+<li>
+<p><strong>train_data</strong>: the training data.</p>
+</li>
+<li>
+<p><strong>model</strong>: Type of BERT model to be used for the task. E.g</p>
+</li>
+<li>
+<p><strong>output_model_file</strong>: File location to save the trained model.</p>
+</li>
+<li>
+<p><strong>num_labels</strong>: Number of output labels for the classification task.</p>
+</li>
+<li>
+<p><strong>loss_function</strong>: The loss function for the classifier.</p>
+</li>
+</ul>
+<h3 id="train_model_2">train_model</h3>
+<p>Train the model.
+Train the model with max_iter_num.</p>
+<h5 id="args_1">Args</h5>
+<ul>
+<li>
+<p><strong>timeout</strong>: timeout in seconds</p>
+</li>
+<li>
+<p><strong>max_iter_num</strong>: An integer. The maximum number of epochs to train the model.</p>
+</li>
+<li>
+<p><strong>max_no_improvement_num</strong>: An integer. The maximum number of epochs when the loss value doesn't decrease.</p>
+</li>
+</ul>
+<h5 id="returns">Returns</h5>
+<h3 id="_train_2">_train</h3>
+<p>Actual training is performed here.</p>
+<h3 id="_save_model">_save_model</h3>
+<p>Save the trained model to disk.</p>
 <h2 id="earlystop">EarlyStop</h2>
 <p>A class check for early stop condition. Attributes: training_losses: Record all the training loss. minimum_loss: The minimum loss we achieve so far. Used to compared to determine no improvement condition. no_improvement_count: Current no improvement count. _max_no_improvement_num: The maximum number specified. _done: Whether condition met. _min_loss_dec: A threshold for loss improvement.</p>
 <h3 id="on_train_begin">on_train_begin</h3>
