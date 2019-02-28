@@ -129,7 +129,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#inputfeatures" tabindex="1" class="md-skip">
+      <a href="#textclassifier" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -481,13 +481,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inputfeatures" title="InputFeatures" class="md-nav__link">
-    InputFeatures
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#textclassifier" title="TextClassifier" class="md-nav__link">
     TextClassifier
   </a>
@@ -503,8 +496,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#convert_examples_to_features" title="convert_examples_to_features" class="md-nav__link">
-    convert_examples_to_features
+  <a href="#y_predict" title="y_predict" class="md-nav__link">
+    y_predict
   </a>
   
     <nav class="md-nav">
@@ -519,33 +512,6 @@
         
           <li class="md-nav__item">
   <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#y_predict" title="y_predict" class="md-nav__link">
-    y_predict
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_1" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns_1" title="Returns" class="md-nav__link">
     Returns
   </a>
   
@@ -594,9 +560,7 @@
                 
                   <h1>Text classifier</h1>
                 
-                <h2 id="inputfeatures">InputFeatures</h2>
-<p>A single set of features of data.</p>
-<h2 id="textclassifier">TextClassifier</h2>
+                <h2 id="textclassifier">TextClassifier</h2>
 <p>A pre-trained TextClassifier class based on Google AI's BERT model.</p>
 <h5 id="attributes">Attributes</h5>
 <ul>
@@ -607,32 +571,13 @@
 <p><strong>tokenizer</strong>: Tokenizer used with BERT model.</p>
 </li>
 </ul>
-<h3 id="convert_examples_to_features">convert_examples_to_features</h3>
-<p>Convert text examples to BERT specific input format.
-Tokenize the input text and convert into features.</p>
-<h5 id="args">Args</h5>
-<ul>
-<li><strong>examples</strong>: Text data.</li>
-</ul>
-<h5 id="returns">Returns</h5>
-<ul>
-<li>
-<p><strong>all_input_ids</strong>: ndarray containing the ids for each token.</p>
-</li>
-<li>
-<p><strong>all_input_masks</strong>: ndarray containing 1's or 0's based on if the tokens are real or padded.</p>
-</li>
-<li>
-<p><strong>all_segment_ids</strong>: ndarray containing all 0's since it is a classification task.</p>
-</li>
-</ul>
 <h3 id="y_predict">y_predict</h3>
 <p>Predict the labels for the provided input data.</p>
-<h5 id="args_1">Args</h5>
+<h5 id="args">Args</h5>
 <ul>
 <li><strong>x_predict</strong>: ndarray containing the data inputs.</li>
 </ul>
-<h5 id="returns_1">Returns</h5>
+<h5 id="returns">Returns</h5>
 <h2 id="sentimentanalysis">SentimentAnalysis</h2>
 <p>A SentimentAnalysis class inherited from TextClassifier.
 The model is trained on the IMDb dataset. The link for the dataset is given below. http://ai.stanford.edu/~amaas/data/sentiment/</p>
