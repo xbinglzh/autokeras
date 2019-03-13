@@ -913,7 +913,7 @@
 <h2 id="modeltrainer">ModelTrainer</h2>
 <p>A class that is used to train the model. This class can train a Pytorch model with the given data loaders. The metric, loss_function, and model must be compatible with each other. Please see the details in the Attributes. Attributes: temp_model_path: Specify the path where temp model should be stored. model: An instance of Pytorch Module. The model that will be trained. early_stop: An instance of class EarlyStop. optimizer: The optimizer is chosen to use the Pytorch Adam optimizer. current_epoch: Record the current epoch.</p>
 <h3 id="train_model_1">train_model</h3>
-<p>Train the model. Train the model with max_iter_num or max_no_improvement_num is met. Args: timeout: timeout in seconds max_iter_num: An integer. The maximum number of epochs to train the model. The training will stop when this number is reached. max_no_improvement_num: An integer. The maximum number of epochs when the loss value doesn't decrease. The training will stop when this number is reached. Returns: A tuple of loss values and metric value.</p>
+<p>Train the model. Train the model with max_iter_num or max_no_improvement_num is met. Args: lr: learning rate of the traininig timeout: timeout in seconds max_iter_num: An integer. The maximum number of epochs to train the model. The training will stop when this number is reached. max_no_improvement_num: An integer. The maximum number of epochs when the loss value doesn't decrease. The training will stop when this number is reached. Returns: A tuple of loss values and metric value.</p>
 <h3 id="_train">_train</h3>
 <p>Where the actual train proceed.</p>
 <h3 id="_test">_test</h3>
