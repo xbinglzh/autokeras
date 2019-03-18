@@ -1697,17 +1697,17 @@ Inheirits from Supervised class.</p>
 <h5 id="attributes_3">Attributes</h5>
 <ul>
 <li>
-<p><strong>verbose</strong>: A boolean value indicating the verbosity mode.</p>
+<p><strong>verbose</strong>: A boolean of whether the search process will be printed to stdout.</p>
 </li>
 <li>
 <p><strong>path</strong>: A string value indicating the path to the directory where the intermediate model results 
       are stored</p>
 </li>
 <li>
-<p><strong>graph</strong>: DEFINED IN <strong>init</strong>() BUT PURPOSE UNCLEAR</p>
+<p><strong>graph</strong>: The graph form of the learned model.</p>
 </li>
 <li>
-<p><strong>data_transformer</strong>: DEFINED IN <strong>init</strong>() BUT PURPOSE UNCLEAR</p>
+<p><strong>data_transformer</strong>: A transformer class to process the data. (See example <code>ImageDataTransformer</code>.)</p>
 </li>
 </ul>
 <h3 id="init_2"><strong>init</strong></h3>
@@ -1753,7 +1753,7 @@ Predict the labels for the testing data. Calculate the accuracy metric between t
 </li>
 </ul>
 <h2 id="portabledeepsupervised">PortableDeepSupervised</h2>
-<p>The base class for SOMETHING, PURPOSE UNCLEAR DEVELOPERS.
+<p>The basis class for exported keras model
 Inheirits from SingleModelSupervised class and abc module.</p>
 <h5 id="attributes_4">Attributes</h5>
 <ul>
