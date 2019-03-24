@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.0">
     
     
       
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -567,11 +567,12 @@
 <p><strong>graph</strong>: The graph form of the model.</p>
 </li>
 <li>
-<p><strong>y_encoder</strong>: Label encoder, used in transform_y or inverse_transform_y for encode the label. For example,
-           if one hot encoder needed, y_encoder can be OneHotEncoder.</p>
+<p><strong>y_encoder</strong>: Label encoder, used in transform_y or inverse_transform_y for encode the label.
+            For example, if one hot encoder needed, y_encoder can be OneHotEncoder.</p>
 </li>
 <li>
-<p><strong>data_transformer</strong>: A instance of transformer to process the data, See example as ImageDataTransformer.</p>
+<p><strong>data_transformer</strong>: A instance of transformer to process the data,
+                    See example as ImageDataTransformer.</p>
 </li>
 <li>
 <p><strong>verbose</strong>: A boolean of whether the search process will be printed to stdout.</p>
@@ -596,15 +597,15 @@
 <h5 id="args_1">Args</h5>
 <ul>
 <li>
-<p><strong>x</strong>: A numpy.ndarray instance containing the training data or the training data combined with the
-   validation data.</p>
+<p><strong>x_train</strong>: A numpy.ndarray instance containing the training data,
+    or the training data combined with the validation data.</p>
 </li>
 <li>
-<p><strong>y</strong>: A numpy.ndarray instance containing the label of the training data. or the label of the training data
-   combined with the validation label.</p>
+<p><strong>y_train</strong>: A numpy.ndarray instance containing the label of the training data,
+    or the label of the training data combined with the validation label.</p>
 </li>
 <li>
-<p><strong>trainer_args</strong>: A dictionary containing the parameters of the ModelTrainer constructor.</p>
+<p><strong>time_limit</strong>: A dictionary containing the parameters of the ModelTrainer constructor.</p>
 </li>
 </ul>
                 
@@ -641,7 +642,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.d9aa80ab.js"></script>
+      <script src="../../assets/javascripts/application.2ba8dec4.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
