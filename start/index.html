@@ -1109,30 +1109,30 @@ clf.final_fit(x_train, y_train, x_test, y_test, retrain=True)
 </code></pre>
 
 <p>Where:
-<em> <code>loss</code> and <code>metric</code> determines by the type of training model(classification or regression or others)
-</em> <code>search_args</code> can be referred in <code>search.py</code>
-<em> <code>path</code> is the path to store the whole searching process and generated model.
-</em> <code>verbose</code> is a boolean. Setting it to true prints to stdout.</p>
+* <code>loss</code> and <code>metric</code> determines by the type of training model(classification or regression or others)
+* <code>search_args</code> can be referred in <code>search.py</code>
+* <code>path</code> is the path to store the whole searching process and generated model.
+* <code>verbose</code> is a boolean. Setting it to true prints to stdout.</p>
 <p>Then, for the searching part, one can call:</p>
 <pre><code class="python">mlpModule.fit(n_output_node, input_shape, train_data, test_data, time_limit=24 * 60 * 60)
 </code></pre>
 
 <p>where:
-<em> n_output_node: A integer value represent the number of output node in the final layer.
-</em> input_shape: A tuple to express the shape of every train entry. For example,
+* n_output_node: A integer value represent the number of output node in the final layer.
+* input_shape: A tuple to express the shape of every train entry. For example,
                 MNIST dataset would be (28,28,1).
-<em> train_data: A PyTorch DataLoader instance representing the training data.
-</em> test_data: A PyTorch DataLoader instance representing the testing data.
+* train_data: A PyTorch DataLoader instance representing the training data.
+* test_data: A PyTorch DataLoader instance representing the testing data.
 * time_limit: A integer value represents the time limit on searching for models.</p>
 <p>And for final testing(testing the best searched model), one can call:</p>
 <pre><code class="python">mlpModule.final_fit(train_data, test_data, trainer_args=None, retrain=False)
 </code></pre>
 
 <p>where:
-<em> train_data: A DataLoader instance representing the training data.
-</em> test_data: A DataLoader instance representing the testing data.
-<em> trainer_args: A dictionary containing the parameters of the ModelTrainer constructor.
-</em> retrain: A boolean of whether reinitialize the weights of the model.</p>
+* train_data: A DataLoader instance representing the training data.
+* test_data: A DataLoader instance representing the testing data.
+* trainer_args: A dictionary containing the parameters of the ModelTrainer constructor.
+* retrain: A boolean of whether reinitialize the weights of the model.</p>
 <h3 id="cnnmodule-tutorial">CnnModule tutorial.</h3>
 <p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/examples/net_modules/cnn_module.py">[source]</a></p>
 <p><code>CnnGenerator</code> in <code>net_module.py</code> is a child class of <code>Networkmodule</code>. It can generates neural architecture with basic cnn modules
@@ -1148,30 +1148,30 @@ cnnModule = CnnModule(loss=classification_loss, metric=Accuracy, searcher_args={
 </code></pre>
 
 <p>Where:
-<em> <code>loss</code> and <code>metric</code> determines by the type of training model(classification or regression or others)
-</em> <code>search_args</code> can be referred in <code>search.py</code>
-<em> <code>path</code> is the path to store the whole searching process and generated model.
-</em> <code>verbose</code> is a boolean. Setting it to true prints to stdout.</p>
+* <code>loss</code> and <code>metric</code> determines by the type of training model(classification or regression or others)
+* <code>search_args</code> can be referred in <code>search.py</code>
+* <code>path</code> is the path to store the whole searching process and generated model.
+* <code>verbose</code> is a boolean. Setting it to true prints to stdout.</p>
 <p>Then, for the searching part, one can call:</p>
 <pre><code class="python">cnnModule.fit(n_output_node, input_shape, train_data, test_data, time_limit=24 * 60 * 60)
 </code></pre>
 
 <p>where:
-<em> n_output_node: A integer value represent the number of output node in the final layer.
-</em> input_shape: A tuple to express the shape of every train entry. For example,
+* n_output_node: A integer value represent the number of output node in the final layer.
+* input_shape: A tuple to express the shape of every train entry. For example,
                 MNIST dataset would be (28,28,1).
-<em> train_data: A PyTorch DataLoader instance representing the training data.
-</em> test_data: A PyTorch DataLoader instance representing the testing data.
+* train_data: A PyTorch DataLoader instance representing the training data.
+* test_data: A PyTorch DataLoader instance representing the testing data.
 * time_limit: A integer value represents the time limit on searching for models.</p>
 <p>And for final testing(testing the best searched model), one can call:</p>
 <pre><code class="python">cnnModule.final_fit(train_data, test_data, trainer_args=None, retrain=False)
 </code></pre>
 
 <p>where:
-<em> train_data: A DataLoader instance representing the training data.
-</em> test_data: A DataLoader instance representing the testing data.
-<em> trainer_args: A dictionary containing the parameters of the ModelTrainer constructor.
-</em> retrain: A boolean of whether reinitialize the weights of the model.</p>
+* train_data: A DataLoader instance representing the training data.
+* test_data: A DataLoader instance representing the testing data.
+* trainer_args: A dictionary containing the parameters of the ModelTrainer constructor.
+* retrain: A boolean of whether reinitialize the weights of the model.</p>
 <h2 id="task-modules">Task Modules</h2>
 <h3 id="automated-text-classifier-tutorial">Automated text classifier tutorial.</h3>
 <p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/examples/task_modules/text/text.py">[source]</a></p>
@@ -1187,9 +1187,9 @@ for a given text dataset. </p>
 </ul>
 <p>After searching the best model, one can call <code>clf.final_fit</code> to test the best model found in searching.</p>
 <p><strong>Notes:</strong> Preprocessing of the text data:
-<em> Class <code>TextClassifier</code> and <code>TextRegressor</code> contains a pre-process of the text data. Which means the input data
+* Class <code>TextClassifier</code> and <code>TextRegressor</code> contains a pre-process of the text data. Which means the input data
 should be in string format. 
-</em> The default pre-process model uses the <a href="https://nlp.stanford.edu/projects/glove/">glove6B model</a> from Stanford NLP. 
+* The default pre-process model uses the <a href="https://nlp.stanford.edu/projects/glove/">glove6B model</a> from Stanford NLP. 
 * To change the default setting of the pre-process model, one need to change the corresponding variable:
 <code>EMBEDDING_DIM</code>, <code>PRE_TRAIN_FILE_LINK</code>, <code>PRE_TRAIN_FILE_LINK</code>, <code>PRE_TRAIN_FILE_NAME</code> in <code>constant.py</code>.</p>
 <h2 id="pretrained-models">Pretrained Models</h2>
@@ -1262,8 +1262,8 @@ voice_generator.predict(text, &quot;test.wav&quot;)
 <p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/pretrained/voice_recognizer.py">[source]</a></p>
 <p>The voice recognizer is a refactor of <a href="https://github.com/SeanNaren/deepspeech.pytorch">deepspeech</a>. 
 The model structure contains two parts:
-<em> Encoder: Convolutional layer followed by recurrent neural network and then fully convert network. Output is the hidden voice information.
-</em> Decoder: Decode the hidden voice information to the voice wave.</p>
+* Encoder: Convolutional layer followed by recurrent neural network and then fully convert network. Output is the hidden voice information.
+* Decoder: Decode the hidden voice information to the voice wave.</p>
 <p>For more details, please refer the original paper:
 <a href="https://arxiv.org/abs/1512.02595"><strong>Deep Speech 2: End-to-End Speech Recognition in English and Mandarin</strong></a></p>
 <p>Because currently <a href="https://github.com/pytorch/audio">torchaudio</a> does not support pip install. So the current package doesn't support audio parsing part.
