@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://autokeras.com/temp/voice_recognizer/">
+        <link rel="canonical" href="http://autokeras.com/temp/data_transformer/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Voice recognizer - Auto-Keras</title>
+        <title>Data transformer - Auto-Keras</title>
       
     
     
@@ -129,7 +129,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#decoder" tabindex="1" class="md-skip">
+      <a href="#imagedatatransformer" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -154,7 +154,7 @@
               Auto-Keras
             </span>
             <span class="md-header-nav__topic">
-              Voice recognizer
+              Data transformer
             </span>
           
         </div>
@@ -481,20 +481,34 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#decoder" title="Decoder" class="md-nav__link">
-    Decoder
+  <a href="#imagedatatransformer" title="ImageDataTransformer" class="md-nav__link">
+    ImageDataTransformer
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#decode" title="decode" class="md-nav__link">
-    decode
+  <a href="#attributes" title="Attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform_train" title="transform_train" class="md-nav__link">
+    transform_train
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#returns" title="Returns" class="md-nav__link">
@@ -508,36 +522,50 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#transform_test" title="transform_test" class="md-nav__link">
+    transform_test
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#greedydecoder" title="GreedyDecoder" class="md-nav__link">
-    GreedyDecoder
+        
+          <li class="md-nav__item">
+  <a href="#_transform" title="_transform" class="md-nav__link">
+    _transform
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#convert_to_strings" title="convert_to_strings" class="md-nav__link">
-    convert_to_strings
+  <a href="#args_2" title="Args" class="md-nav__link">
+    Args
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#decode_1" title="decode" class="md-nav__link">
-    decode
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#returns_1" title="Returns" class="md-nav__link">
+  <a href="#returns_2" title="Returns" class="md-nav__link">
     Returns
   </a>
   
@@ -554,17 +582,51 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sequencewise" title="SequenceWise" class="md-nav__link">
-    SequenceWise
+  <a href="#multitransformdataset" title="MultiTransformDataset" class="md-nav__link">
+    MultiTransformDataset
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cutout" title="Cutout" class="md-nav__link">
+    Cutout
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#init" title="init" class="md-nav__link">
-    init
+  <a href="#args_3" title="Args" class="md-nav__link">
+    Args
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#call" title="call" class="md-nav__link">
+    call
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_4" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_3" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -590,36 +652,93 @@
               
                 
                 
-                  <h1>Voice recognizer</h1>
+                  <h1>Data transformer</h1>
                 
-                <h2 id="decoder">Decoder</h2>
-<p>Basic decoder class from which all other decoders inherit. Implements several helper functions. Subclasses should implement the decode() method.
-Arguments: labels (string): mapping from integers to characters. blank_index (int, optional): index for the blank '_' character. Defaults to 0. space_index (int, optional): index for the space ' ' character. Defaults to 28.</p>
-<h3 id="decode">decode</h3>
-<p>Given a matrix of character probabilities, returns the decoder's best guess of the transcription
-Arguments: probs: Tensor of character probabilities, where probs[c,t] is the probability of character c at time t sizes(optional): Size of each sequence in the mini-batch</p>
+                <h2 id="imagedatatransformer">ImageDataTransformer</h2>
+<p>Perform basic image transformation and augmentation.</p>
+<h5 id="attributes">Attributes</h5>
+<ul>
+<li>
+<p><strong>max_val</strong>: the maximum value of all data.</p>
+</li>
+<li>
+<p><strong>mean</strong>: the mean value.</p>
+</li>
+<li>
+<p><strong>std</strong>: the standard deviation.</p>
+</li>
+<li>
+<p><strong>augment</strong>: whether to perform augmentation on data.</p>
+</li>
+</ul>
+<h3 id="transform_train">transform_train</h3>
+<p>Transform the training data, perform random cropping data augmentation and basic random flip augmentation.</p>
+<h5 id="args">Args</h5>
+<ul>
+<li>
+<p><strong>data</strong>: Numpy array. The data to be transformed.</p>
+</li>
+<li>
+<p><strong>batch_size</strong>: int batch_size.</p>
+</li>
+<li>
+<p><strong>targets</strong>: the target of training set.</p>
+</li>
+</ul>
 <h5 id="returns">Returns</h5>
+<h3 id="transform_test">transform_test</h3>
+<p>Transform the test data, perform normalization.</p>
+<h5 id="args_1">Args</h5>
 <ul>
-<li><strong>string</strong>: sequence of the model's best guess for the transcription</li>
+<li>
+<p><strong>data</strong>: Numpy array. The data to be transformed.</p>
+</li>
+<li>
+<p><strong>batch_size</strong>: int batch_size.</p>
+</li>
+<li>
+<p><strong>targets</strong>: the target of test set.</p>
+</li>
 </ul>
-<h2 id="greedydecoder">GreedyDecoder</h2>
-<h3 id="convert_to_strings">convert_to_strings</h3>
-<p>Given a list of numeric sequences, returns the corresponding strings</p>
-<h3 id="decode_1">decode</h3>
-<p>Returns the argmax decoding given the probability matrix. Removes repeated elements in the sequence, as well as blanks.
-Arguments: probs: Tensor of character probabilities from the network. Expected shape of seq_length x batch x output_dim sizes(optional): Size of each sequence in the mini-batch</p>
 <h5 id="returns_1">Returns</h5>
+<h3 id="_transform">_transform</h3>
+<p>Perform the actual transformation.</p>
+<h5 id="args_2">Args</h5>
 <ul>
 <li>
-<p><strong>strings</strong>: sequences of the model's best guess for the transcription on inputs</p>
+<p><strong>compose_list</strong>: a list of transforming operation.</p>
 </li>
 <li>
-<p><strong>offsets</strong>: time step per character predicted</p>
+<p><strong>data</strong>: x.</p>
+</li>
+<li>
+<p><strong>targets</strong>: y.</p>
 </li>
 </ul>
-<h2 id="sequencewise">SequenceWise</h2>
-<h3 id="init"><strong>init</strong></h3>
-<p>Collapses input of dim T<em>N</em>H to (T<em>N)</em>H, and applies to a module. Allows handling of variable sequence lengths and minibatch sizes. :param module: Module to apply input to.</p>
+<h5 id="returns_2">Returns</h5>
+<h2 id="multitransformdataset">MultiTransformDataset</h2>
+<p>A class incorporate all transform method into a torch.Dataset class.</p>
+<h2 id="cutout">Cutout</h2>
+<p>Randomly mask out one or more patches from an image.</p>
+<h5 id="args_3">Args</h5>
+<ul>
+<li>
+<p><strong>n_holes (int)</strong>: Number of patches to cut out of each image.</p>
+</li>
+<li>
+<p><strong>length (int)</strong>: The length (in pixels) of each square patch.</p>
+</li>
+</ul>
+<h3 id="call"><strong>call</strong></h3>
+<p>Perform the actual transformation.</p>
+<h5 id="args_4">Args</h5>
+<ul>
+<li><strong>img (Tensor)</strong>: Tensor image of size (C, H, W).</li>
+</ul>
+<h5 id="returns_3">Returns</h5>
+<ul>
+<li><strong>Tensor</strong>: Image with n_holes of dimension length x length cut out of it.</li>
+</ul>
                 
                   
                 

@@ -520,6 +520,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ganmodeltrainer" title="GANModelTrainer" class="md-nav__link">
+    GANModelTrainer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init_1" title="init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_train" title="_train" class="md-nav__link">
+    _train
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -549,6 +576,12 @@
 <ul>
 <li><strong>x_train</strong>: ndarray contained the training data</li>
 </ul>
+<h2 id="ganmodeltrainer">GANModelTrainer</h2>
+<p>A ModelTrainer especially for the GAN. Attributes: d_model: A discriminator model. g_model: A generator model. out_f: Out file. out_size: Size of the output image. optimizer_d: Optimizer for discriminator. optimizer_g: Optimizer for generator.</p>
+<h3 id="init_1"><strong>init</strong></h3>
+<p>Initialize the GANModelTrainer. Args: g_model: The generator model to be trained. d_model: The discriminator model to be trained. train_data: the training data. loss_function: The loss function for both discriminator and generator. verbose: Whether to output the system output. gen_training_result: Whether to generate the intermediate result while training.</p>
+<h3 id="_train">_train</h3>
+<p>Perform the actual train.</p>
                 
                   
                 
