@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://autokeras.com/temp/nas/">
+        <link rel="canonical" href="http://autokeras.com/nas/">
       
       
       
@@ -33,7 +33,7 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
     
     
@@ -42,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -62,7 +62,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
     
@@ -264,7 +264,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -276,7 +276,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../start/" title="Getting Started" class="md-nav__link">
+    <a href="../start/" title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -288,7 +288,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../docker/" title="Docker" class="md-nav__link">
+    <a href="../docker/" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -300,7 +300,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../contribute/" title="Contributing Guide" class="md-nav__link">
+    <a href="../temp/contribute/" title="Contributing Guide" class="md-nav__link">
       Contributing Guide
     </a>
   </li>
@@ -402,7 +402,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../supervised/" title="supervised" class="md-nav__link">
+    <a href="../temp/supervised/" title="supervised" class="md-nav__link">
       supervised
     </a>
   </li>
@@ -414,7 +414,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../image_supervised/" title="image_supervised" class="md-nav__link">
+    <a href="../temp/image_supervised/" title="image_supervised" class="md-nav__link">
       image_supervised
     </a>
   </li>
@@ -426,7 +426,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../bayesian/" title="bayesian" class="md-nav__link">
+    <a href="../temp/bayesian/" title="bayesian" class="md-nav__link">
       bayesian
     </a>
   </li>
@@ -438,7 +438,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../search/" title="search" class="md-nav__link">
+    <a href="../temp/search/" title="search" class="md-nav__link">
       search
     </a>
   </li>
@@ -450,7 +450,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../graph/" title="graph" class="md-nav__link">
+    <a href="../temp/graph/" title="graph" class="md-nav__link">
       graph
     </a>
   </li>
@@ -462,7 +462,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../preprocessor/" title="preprocessor" class="md-nav__link">
+    <a href="../temp/preprocessor/" title="preprocessor" class="md-nav__link">
       preprocessor
     </a>
   </li>
@@ -474,7 +474,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../model_trainer/" title="model_trainer" class="md-nav__link">
+    <a href="../temp/model_trainer/" title="model_trainer" class="md-nav__link">
       model_trainer
     </a>
   </li>
@@ -486,7 +486,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../utils/" title="utils" class="md-nav__link">
+    <a href="../temp/utils/" title="utils" class="md-nav__link">
       utils
     </a>
   </li>
@@ -498,7 +498,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../generator/" title="generator" class="md-nav__link">
+    <a href="../temp/generator/" title="generator" class="md-nav__link">
       generator
     </a>
   </li>
@@ -515,7 +515,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../about/" title="About" class="md-nav__link">
+    <a href="../about/" title="About" class="md-nav__link">
       About
     </a>
   </li>
@@ -611,31 +611,31 @@ which may conflict with each other.</p>
 <p>We have implemented four NAS baseline methods:</p>
 <ol>
 <li>
-<p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/nas/random.py#L8">random search</a>: we explore the search space via morphing the network architectures randomly, so the actual 
+<p><a href="https://github.com/datamllab/autokeras-algorithm/blob/master/nas/random.py#L8">random search</a>: we explore the search space via morphing the network architectures randomly, so the actual 
 performance of the generated neural architecture has no effect on later search.</p>
 </li>
 <li>
-<p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/nas/grid.py#L6">grid search</a>:
+<p><a href="https://github.com/datamllab/autokeras-algorithm/blob/master/nas/grid.py#L6">grid search</a>:
  we manually specified subset of the hyperparameter space to search, i.e., the number of layers and 
 the width of the layers are predefined.</p>
 </li>
 <li>
-<p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/nas/greedy.py#L48">greed search</a>: we explore the search space in a greedy way. The "greedy" here means the base architecture for the 
+<p><a href="https://github.com/datamllab/autokeras-algorithm/blob/master/nas/greedy.py#L48">greed search</a>: we explore the search space in a greedy way. The "greedy" here means the base architecture for the 
 next iteration of search is chosen from those generated by current iteration, the one that have best performance on the training/validation set in our implementation.</p>
 </li>
 <li>
-<p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/search.py#L275">bayesian optimization</a>: it's the default search strategy of Auto-Keras currently. refer <a href="https://arxiv.org/abs/1806.10282">arXiv:1806.10282</a> for more detail. </p>
+<p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/search.py#L275">bayesian optimization</a>: it's the default search strategy of Auto-Keras currently. refer <a href="https://arxiv.org/abs/1806.10282">arXiv:1806.10282</a> for more detail. </p>
 </li>
 </ol>
 <h2 id="how-to-run-the-baseline-methods">How to run the baseline methods?</h2>
-<p>Refer to <a href="https://github.com/jhfjhfj1/autokeras/blob/master/examples/nas/cifar10_tutorial.py"><code>examples/nas/cifar10_tutorial.py</code></a> for more details.</p>
+<p>Refer to <a href="https://github.com/datamllab/autokeras-algorithm/blob/master/examples/cifar10_tutorial.py"><code>examples/nas/cifar10_tutorial.py</code></a> for more details.</p>
 <h2 id="how-to-implement-your-own-search">How to implement your own search?</h2>
 <p>To implement your own NAS searcher, you need to implement your own searcher class YOUR_SEARCHER, which is derived 
-from base <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/search.py"><code>Searcher</code></a> class. For your 
+from base <a href="https://github.com/keras-team/autokeras/blob/master/autokeras/search.py"><code>Searcher</code></a> class. For your 
 <code>YOUR_SEARCHER</code> class, you must provide implementation of the two abstract method: </p>
 <ol>
 <li>
-<p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/search.py#L223"><code>generate(self, multiprocessing_queue)</code></a>, 
+<p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/search.py#L223"><code>generate(self, multiprocessing_queue)</code></a>, 
 which is invoked to generate the next neural architecture.
 The return value of the generate function should be two elements.
 The first one is the generated graph.
@@ -644,23 +644,23 @@ If you have multiple values to pass, you need to put them into one tuple.
 If you don't have any value to pass, you can just put None.</p>
 </li>
 <li>
-<p><a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/search.py#L238"><code>update(self, other_info, model_id, graph, metric_value)</code></a>, which is invoked 
+<p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/search.py#L238"><code>update(self, other_info, model_id, graph, metric_value)</code></a>, which is invoked 
 to update the controller with evaluation result of a neural architecture.
 The graph and other_info in the parameters are the corresponding return value of the generate function.
 There is no required return value for this function.</p>
 </li>
 </ol>
-<p>You can refer to the default <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/search.py#L275"><code>BayesianSearcher</code></a>
+<p>You can refer to the default <a href="https://github.com/keras-team/autokeras/blob/master/autokeras/search.py#L275"><code>BayesianSearcher</code></a>
 as an example.
-The <a href="https://github.com/jhfjhfj1/autokeras/blob/master/autokeras/search.py#L298"><code>generate</code></a> 
+The <a href="https://github.com/keras-team/autokeras/blob/master/autokeras/search.py#L298"><code>generate</code></a> 
 function returns the generated graph and the father ID of the graph in the search tree. Then when the generated model 
 finish
 training, the father ID 
 (<code>other_info</code>) 
-and ID (<code>model_id</code>) and instance (<code>graph</code>) and metric value (<code>metric_value</code>) of the model are passed to <a href="https://github.com/jhfjhfj1/autokeras/blob/d6bea7369186df842dfb8ea3ed779cbd1b8f7c40/autokeras/search.py#L321">update</a> 
+and ID (<code>model_id</code>) and instance (<code>graph</code>) and metric value (<code>metric_value</code>) of the model are passed to <a href="https://github.com/keras-team/autokeras/blob/master/autokeras/search.py#L321">update</a> 
 function to 
 update the controller <code>BayesianOptimizer</code>.</p>
-<p>You can find more example <a href="https://github.com/jhfjhfj1/autokeras/tree/master/nas">here</a>.</p>
+<p>You can find more example <a href="https://github.com/datamllab/autokeras-algorithm/tree/master/nas">here</a>.</p>
 <p>You are welcome to implement your own method for NAS in our framework.
 If it works well, we are happy to merge it into our repo.</p>
                 
@@ -683,7 +683,7 @@ If it works well, we are happy to merge it into our repo.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../contribute/" title="Contributing Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../temp/contribute/" title="Contributing Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -698,7 +698,7 @@ If it works well, we are happy to merge it into our repo.</p>
           </a>
         
         
-          <a href="../supervised/" title="supervised" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../temp/supervised/" title="supervised" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
@@ -732,9 +732,9 @@ If it works well, we are happy to merge it into our repo.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
+      <script src="../assets/javascripts/application.dc02f8ce.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
   </body>
