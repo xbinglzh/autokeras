@@ -481,9 +481,56 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#fit" title="fit" class="md-nav__link">
+    fit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#predict" title="predict" class="md-nav__link">
     predict
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocess" title="preprocess" class="md-nav__link">
+    preprocess
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -552,8 +599,44 @@ GraphAutoModel is a subclass of HyperModel. Besides the HyperModel properties, i
     for storing the search outputs.</p>
 </li>
 </ul>
+<h3 id="fit">fit</h3>
+<p>Search for the best model and hyperparameters for the AutoModel.
+It will search for the best model based on the performances on validation data.</p>
+<h5 id="args">Args</h5>
+<ul>
+<li>
+<p><strong>x</strong>: Any type compatible with Keras training x. Training data x.</p>
+</li>
+<li>
+<p><strong>y</strong>: Any type compatible with Keras training y. Training data y.</p>
+</li>
+<li>
+<p><strong>validation_data</strong>: Tuple of (val_x, val_y). The same type as x and y.
+    Validation set for the search. If not provided, training data will
+    be split for validation.</p>
+</li>
+</ul>
 <h3 id="predict">predict</h3>
 <p>Predict the output for a given testing data.</p>
+<h3 id="preprocess">preprocess</h3>
+<p>Preprocess the data to be ready for the Keras Model.</p>
+<h5 id="args_1">Args</h5>
+<ul>
+<li>
+<p><strong>hp</strong>: HyperParameters. Used to build the HyperModel.</p>
+</li>
+<li>
+<p><strong>x</strong>: Any type compatible with Keras training x. Training data x.</p>
+</li>
+<li>
+<p><strong>y</strong>: Any type compatible with Keras training y. Training data y.</p>
+</li>
+<li>
+<p><strong>validation_data</strong>: Tuple of (val_x, val_y). The same type as x and y.
+    Validation set for the search.</p>
+</li>
+</ul>
+<h5 id="returns">Returns</h5>
 <h2 id="automodel">AutoModel</h2>
 <p>A HyperModel defined by inputs and outputs.
 AutoModel is a subclass of HyperModel. Besides the HyperModel properties, it also has a tuner to tune the HyperModel. The user can use it in a similar way to a Keras model since it also has <code>fit()</code> and  <code>predict()</code> methods.  The user can specify the inputs and outputs of the AutoModel. It will infer the rest of the high-level neural architecture.</p>

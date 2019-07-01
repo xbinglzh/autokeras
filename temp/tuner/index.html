@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://autokeras.com/temp/processor/">
+        <link rel="canonical" href="http://autokeras.com/temp/tuner/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Processor - Auto-Keras</title>
+        <title>Tuner - Auto-Keras</title>
       
     
     
@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#onehotencoder" tabindex="1" class="md-skip">
+      <a href="#autotuner" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -138,7 +138,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Processor
+                Tuner
               
             </span>
           
@@ -461,36 +461,67 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#init" title="init" class="md-nav__link">
-    init
+  <a href="#autotuner" title="AutoTuner" class="md-nav__link">
+    AutoTuner
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run_trial" title="run_trial" class="md-nav__link">
+    run_trial
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_best_hp" title="get_best_hp" class="md-nav__link">
+    get_best_hp
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#randomsearch" title="RandomSearch" class="md-nav__link">
+    RandomSearch
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fit" title="fit" class="md-nav__link">
-    fit
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transform" title="transform" class="md-nav__link">
-    transform
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inverse_transform" title="inverse_transform" class="md-nav__link">
-    inverse_transform
+  <a href="#hyperband" title="HyperBand" class="md-nav__link">
+    HyperBand
   </a>
   
 </li>
@@ -512,23 +543,25 @@
               
                 
                 
-                <h2 id="onehotencoder">OneHotEncoder</h2>
-<p>A class that can format data.
-This class provides ways to transform data's classification label into vector.  # Attributes data: The input data num_classes: The number of classes in the classification problem. labels: The number of labels. label_to_vec: Mapping from label to vector. int_to_label: Mapping from int to label.</p>
-<h3 id="init"><strong>init</strong></h3>
-<p>Initialize a OneHotEncoder</p>
-<h3 id="fit">fit</h3>
-<p>Create mapping from label to vector, and vector to label.</p>
-<h3 id="transform">transform</h3>
-<p>Get vector for every element in the data array.</p>
-<h3 id="inverse_transform">inverse_transform</h3>
-<p>Get label for every element in data.</p>
-<h2 id="normalize">Normalize</h2>
-<p>Perform basic image transformation and augmentation.</p>
-<h1 id="attributes-max_val-the-maximum-value-of-all-data-mean-the-mean-value-std-the-standard-deviation">Attributes max_val: the maximum value of all data. mean: the mean value. std: the standard deviation.</h1>
-<h3 id="transform_1">transform</h3>
-<p>Transform the test data, perform normalization.</p>
-<h1 id="arguments-data-numpy-array-the-data-to-be-transformed-returns-a-dataloader-instance">Arguments data: Numpy array. The data to be transformed.  # Returns A DataLoader instance.</h1>
+                  <h1>Tuner</h1>
+                
+                <h2 id="autotuner">AutoTuner</h2>
+<p>Modified KerasTuner base class to include preprocessing layers.</p>
+<h3 id="run_trial">run_trial</h3>
+<p>Preprocess the x and y before calling the base run_trial.</p>
+<h3 id="get_best_hp">get_best_hp</h3>
+<p>Returns hyperparameters used to build the best model(s).</p>
+<h5 id="args">Args</h5>
+<ul>
+<li><strong>num_models (int, optional)</strong>: Number of best models, whose building
+    HyperParameters to return. Models will be returned in sorted order
+    starting from the best. Defaults to 1.</li>
+</ul>
+<h5 id="returns">Returns</h5>
+<h2 id="randomsearch">RandomSearch</h2>
+<p>KerasTuner RandomSearch with preprocessing layer tuning.</p>
+<h2 id="hyperband">HyperBand</h2>
+<p>KerasTuner Hyperband with preprocessing layer tuning.</p>
                 
                   
                 
