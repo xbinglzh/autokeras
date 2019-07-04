@@ -412,7 +412,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../utils.md" title="utils" class="md-nav__link">
+    <a href="../utils/" title="utils" class="md-nav__link">
       utils
     </a>
   </li>
@@ -525,10 +525,10 @@ This class provides ways to transform data's classification label into vector.  
 <p>Get label for every element in data.</p>
 <h2 id="normalize">Normalize</h2>
 <p>Perform basic image transformation and augmentation.</p>
-<h1 id="attributes-max_val-the-maximum-value-of-all-data-mean-the-mean-value-std-the-standard-deviation">Attributes max_val: the maximum value of all data. mean: the mean value. std: the standard deviation.</h1>
+<h1 id="attributes-mean-tensor-the-mean-value-shape-data-last-dimension-length-std-tensor-the-standard-deviation-shape-is-the-same-as-mean">Attributes mean: Tensor. The mean value. Shape: (data last dimension length,) std: Tensor. The standard deviation. Shape is the same as mean.</h1>
 <h3 id="transform_1">transform</h3>
 <p>Transform the test data, perform normalization.</p>
-<h1 id="arguments-data-numpy-array-the-data-to-be-transformed-returns-a-dataloader-instance">Arguments data: Numpy array. The data to be transformed.  # Returns A DataLoader instance.</h1>
+<h1 id="arguments-data-tensorflow-dataset-the-data-to-be-transformed-returns-a-dataloader-instance">Arguments data: Tensorflow Dataset. The data to be transformed.  # Returns A DataLoader instance.</h1>
                 
                   
                 
