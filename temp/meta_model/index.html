@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://autokeras.com/temp/utils/">
+        <link rel="canonical" href="http://autokeras.com/temp/meta_model/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>utils - Auto-Keras</title>
+        <title>Meta model - Auto-Keras</title>
       
     
     
@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#prepare_preprocess" tabindex="1" class="md-skip">
+      <a href="#assemble" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -138,7 +138,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                utils
+                Meta model
               
             </span>
           
@@ -307,12 +307,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       Documentation
@@ -412,72 +410,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        utils
-      </label>
-    
-    <a href="./" title="utils" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../utils/" title="utils" class="md-nav__link">
       utils
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prepare_preprocess" title="prepare_preprocess" class="md-nav__link">
-    prepare_preprocess
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#is_label" title="is_label" class="md-nav__link">
-    is_label
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -529,15 +466,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prepare_preprocess" title="prepare_preprocess" class="md-nav__link">
-    prepare_preprocess
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#is_label" title="is_label" class="md-nav__link">
-    is_label
+  <a href="#assemble" title="assemble" class="md-nav__link">
+    assemble
   </a>
   
     <nav class="md-nav">
@@ -562,6 +492,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#assembler" title="Assembler" class="md-nav__link">
+    Assembler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update" title="update" class="md-nav__link">
+    update
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_1" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assemble_1" title="assemble" class="md-nav__link">
+    assemble
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#args_2" title="Args" class="md-nav__link">
+    Args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textassembler" title="TextAssembler" class="md-nav__link">
+    TextAssembler
+  </a>
+  
+</li>
+      
       
       
       
@@ -579,17 +576,41 @@
               
                 
                 
-                  <h1>utils</h1>
+                  <h1>Meta model</h1>
                 
-                <h3 id="prepare_preprocess">prepare_preprocess</h3>
-<p>Convert each input to a tf.data.Dataset.</p>
-<h3 id="is_label">is_label</h3>
-<p>Check if the targets are one-hot encoded or plain labels.</p>
+                <h3 id="assemble">assemble</h3>
+<p>Assemble the HyperBlocks based on the dataset and input output nodes.</p>
 <h5 id="args">Args</h5>
 <ul>
-<li><strong>y</strong>: numpy.ndarray. The targets.</li>
+<li>
+<p><strong>inputs</strong>: A list of InputNode. The input nodes of the AutoModel.</p>
+</li>
+<li>
+<p><strong>outputs</strong>: A list of HyperHead. The heads of the AutoModel.</p>
+</li>
+<li>
+<p><strong>dataset</strong>: tf.data.Dataset. The training dataset.</p>
+</li>
 </ul>
 <h5 id="returns">Returns</h5>
+<h2 id="assembler">Assembler</h2>
+<p>Base class for data type specific assemblers.</p>
+<h3 id="update">update</h3>
+<p>Update the assembler sample by sample.</p>
+<h5 id="args_1">Args</h5>
+<ul>
+<li><strong>x</strong>: tf.Tensor. A data instance from input dataset.</li>
+</ul>
+<h3 id="assemble_1">assemble</h3>
+<p>Assemble the HyperBlocks for text input.</p>
+<h5 id="args_2">Args</h5>
+<ul>
+<li><strong>input_node</strong>: HyperNode. The input node for the AutoModel.</li>
+</ul>
+<h5 id="returns_1">Returns</h5>
+<h2 id="textassembler">TextAssembler</h2>
+<p>Selecting the HyperBlocks for text tasks based the training data.
+Implemented according to Google Developer, Machine Learning Guide, Text Classification, Step 2.5: Choose a Model.</p>
                 
                   
                 
@@ -606,41 +627,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../../nas/" title="Neural Architecture Search" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Neural Architecture Search
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../about/" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                About
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

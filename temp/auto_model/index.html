@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#graphautomodel" tabindex="1" class="md-skip">
+      <a href="#automodel" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -466,8 +466,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#graphautomodel" title="GraphAutoModel" class="md-nav__link">
-    GraphAutoModel
+  <a href="#automodel" title="AutoModel" class="md-nav__link">
+    AutoModel
   </a>
   
     <nav class="md-nav">
@@ -540,8 +540,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automodel" title="AutoModel" class="md-nav__link">
-    AutoModel
+  <a href="#graphautomodel" title="GraphAutoModel" class="md-nav__link">
+    GraphAutoModel
   </a>
   
     <nav class="md-nav">
@@ -578,25 +578,24 @@
                 
                   <h1>Auto model</h1>
                 
-                <h2 id="graphautomodel">GraphAutoModel</h2>
-<p>A HyperModel defined by a graph of HyperBlocks.
-GraphAutoModel is a subclass of HyperModel. Besides the HyperModel properties, it also has a tuner to tune the HyperModel. The user can use it in a similar way to a Keras model since it also has <code>fit()</code> and  <code>predict()</code> methods.  The user can specify the high-level neural architecture by connecting the HyperBlocks with the functional API, which is the same as the Keras functional API.</p>
+                <h2 id="automodel">AutoModel</h2>
+<p>A HyperModel defined by inputs and outputs.
+AutoModel is a subclass of HyperModel. Besides the HyperModel properties, it also has a tuner to tune the HyperModel. The user can use it in a similar way to a Keras model since it also has <code>fit()</code> and  <code>predict()</code> methods.  The user can specify the inputs and outputs of the AutoModel. It will infer the rest of the high-level neural architecture.</p>
 <h5 id="attributes">Attributes</h5>
 <ul>
 <li>
-<p><strong>inputs</strong>: A list of or a HyperNode instances.
-    The input node(s) of the GraphAutoModel.</p>
+<p><strong>inputs</strong>: A list of or a HyperNode instance.
+    The input node(s) of the AutoModel.</p>
 </li>
 <li>
-<p><strong>outputs</strong>: A list of or a HyperNode instances.
-    The output node(s) of the GraphAutoModel.</p>
+<p><strong>outputs</strong>: A list of or a HyperHead instance.
+    The output head(s) of the AutoModel.</p>
 </li>
 <li>
 <p><strong>max_trials</strong>: Int. The maximum number of different models to try.</p>
 </li>
 <li>
-<p><strong>directory</strong>: String. The path to the directory
-    for storing the search outputs.</p>
+<p><strong>directory</strong>: String. The path to a directory for storing the search outputs.</p>
 </li>
 </ul>
 <h3 id="fit">fit</h3>
@@ -639,38 +638,35 @@ It will search for the best model based on the performances on validation data.<
 <p><strong>hp</strong>: HyperParameters. Used to build the HyperModel.</p>
 </li>
 <li>
-<p><strong>x</strong>: tensorflow.data.Dataset. Training data x.</p>
+<p><strong>dataset</strong>: tf.data.Dataset. Training data.</p>
 </li>
 <li>
-<p><strong>y</strong>: tensorflow.data.Dataset. Training data y.</p>
-</li>
-<li>
-<p><strong>validation_data</strong>: Tuple of (val_x, val_y). The same type as x and y.
-    Validation set for the search.</p>
+<p><strong>validation_data</strong>: tf.data.Dataset. Validation data.</p>
 </li>
 <li>
 <p><strong>fit</strong>: Boolean. Whether to fit the preprocessing layers with x and y.</p>
 </li>
 </ul>
 <h5 id="returns">Returns</h5>
-<h2 id="automodel">AutoModel</h2>
-<p>A HyperModel defined by inputs and outputs.
-AutoModel is a subclass of HyperModel. Besides the HyperModel properties, it also has a tuner to tune the HyperModel. The user can use it in a similar way to a Keras model since it also has <code>fit()</code> and  <code>predict()</code> methods.  The user can specify the inputs and outputs of the AutoModel. It will infer the rest of the high-level neural architecture.</p>
+<h2 id="graphautomodel">GraphAutoModel</h2>
+<p>A HyperModel defined by a graph of HyperBlocks.
+GraphAutoModel is a subclass of HyperModel. Besides the HyperModel properties, it also has a tuner to tune the HyperModel. The user can use it in a similar way to a Keras model since it also has <code>fit()</code> and  <code>predict()</code> methods.  The user can specify the high-level neural architecture by connecting the HyperBlocks with the functional API, which is the same as the Keras functional API.</p>
 <h5 id="attributes_1">Attributes</h5>
 <ul>
 <li>
-<p><strong>inputs</strong>: A list of or a HyperNode instance.
-    The input node(s) of a the AutoModel.</p>
+<p><strong>inputs</strong>: A list of or a HyperNode instances.
+    The input node(s) of the GraphAutoModel.</p>
 </li>
 <li>
-<p><strong>outputs</strong>: A list of or a HyperHead instance.
-    The output head(s) of the AutoModel.</p>
+<p><strong>outputs</strong>: A list of or a HyperNode instances.
+    The output node(s) of the GraphAutoModel.</p>
 </li>
 <li>
 <p><strong>max_trials</strong>: Int. The maximum number of different models to try.</p>
 </li>
 <li>
-<p><strong>directory</strong>: String. The path to a directory for storing the search outputs.</p>
+<p><strong>directory</strong>: String. The path to the directory
+    for storing the search outputs.</p>
 </li>
 </ul>
                 
