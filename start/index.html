@@ -1197,10 +1197,10 @@ detector = ObjectDetector()
 <p>Function <code>detector.predict()</code> requires the path to the image. If the <code>output_file_path</code> is not given, the <code>detector</code> will just return the numerical results as a list of dictionaries. Each dictionary is like {"left": int, "top": int, "width": int, "height": int: "category": str, "confidence": float}, where <code>left</code> and <code>top</code> is the (left, top) coordinates of the bounding box of the object and <code>width</code> and <code>height</code> are width and height of the box. <code>category</code> is a string representing the class the object belongs to, and the confidence can be regarded as the probability that the model believes its prediction is correct. If the <code>output_file_path</code> is given, then the results mentioned above will be plotted and saved in a new image file with suffix "_prediction" into the given <code>output_file_path</code>. If you run the example/object_detection/object_detection_example.py, you will get result
 <code>[{'category': 'person', 'width': 331, 'height': 500, 'left': 17, 'confidence': 0.9741123914718628, 'top': 0}]</code></p>
 <h3 id="sentiment-analysis-tutorial">Sentiment Analysis tutorial.</h3>
-<p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/text_classifier.py">[source]</a></p>
+<p><a href="https://github.com/keras-team/autokeras/blob/master/examples/pretrained_models/text_models/sentiment_analysis_example.py">[source]</a></p>
 <p>The sentiment analysis module provides an interface to find the sentiment of any text. The pretrained model is obtained by training <a href="https://arxiv.org/abs/1810.04805">Google AI’s BERT model</a> on <a href="http://ai.stanford.edu/~amaas/data/sentiment/">IMDb dataset</a>. </p>
 <p>Let’s import the <code>SentimentAnalysis</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class.</p>
-<pre><code class="python">from autokeras.pretrained.text_classifier import SentimentAnalysis
+<pre><code class="python">from autokeras import SentimentAnalysis
 sentiment_analysis = SentimentAnalysis()
 </code></pre>
 
@@ -1212,10 +1212,10 @@ sentiment_analysis = SentimentAnalysis()
 <p><strong>Note:</strong> If the output value of the <code>predict</code> function is close to 0, it implies the statement has negative sentiment, whereas value close to 1 implies positive sentiment.</p>
 <p>If you run <em>sentiment_analysis_example.py</em>, you should get an output value of 0.9 which implies that the input statement <em>The model is working well..</em> has strong positive sentiment.</p>
 <h3 id="topic-classification-tutorial">Topic Classification tutorial.</h3>
-<p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/text_classifier.py">[source]</a></p>
+<p><a href="https://github.com/keras-team/autokeras/blob/master/examples/pretrained_models/text_models/topic_classifier_example.py">[source]</a></p>
 <p>The topic classifier module provides an interface to find the topic of any text. The pretrained model is obtained by training <a href="https://arxiv.org/abs/1810.04805">Google AI’s BERT model</a> on <a href="https://www.di.unipi.it/~gulli/AG_corpus_of_news_articles.html">AGNews dataset</a>. </p>
 <p>Let’s import the <code>TopicClassifier</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class. </p>
-<pre><code class="python">from autokeras.pretrained.text_classifier import TopicClassifier
+<pre><code class="python">from autokeras import TopicClassifier
 topic_classifier = TopicClassifier()
 </code></pre>
 
@@ -1226,7 +1226,7 @@ topic_classifier = TopicClassifier()
 
 <p>If you run <em>topic_classifier_example.py</em>, you should see the predict function returns the label <strong>Sports</strong>, which is the predicted label for the input statement.</p>
 <h3 id="voice-generator-tutorial">Voice generator tutorial.</h3>
-<p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/voice_generator/voice_generator.py">[source]</a></p>
+<p><a href="https://github.com/keras-team/autokeras/blob/master/examples/pretrained_models/voice_generation/voice_generator_example.py">[source]</a></p>
 <p>The voice generator is a refactor of <a href="https://github.com/r9y9/deepvoice3_pytorch">deepvoice3</a>. 
 The structure contains three main parts:</p>
 <ul>
@@ -1237,7 +1237,7 @@ The structure contains three main parts:</p>
 <p>For more details, please refer the original paper: 
 <a href="https://arxiv.org/pdf/1710.07654.pdf"><strong>Deep Voice 3: Scaling Text-to-Speech with Convolutional Sequence Learning</strong></a></p>
 <p>Example:</p>
-<pre><code class="python">from autokeras.pretrained import VoiceGenerator
+<pre><code class="python">from autokeras import VoiceGenerator
 voice_generator = VoiceGenerator()
 text = &quot;The approximation of pi is 3.14&quot;
 voice_generator.predict(text, &quot;test.wav&quot;)
@@ -1318,7 +1318,7 @@ spect = parser.parse_audio(&quot;test.wav&quot;).contiguous()
 </code></pre>
 
 <p>After this we will have the audio parsed as torch tensor in variable <code>spect</code>. Then we can use the following to recognize the voice:</p>
-<pre><code class="python">from autokeras.pretrained import VoiceRecognizer
+<pre><code class="python">from autokeras import VoiceRecognizer
 voice_recognizer = VoiceRecognizer()
 print(voice_recognizer.predict(audio_data=spect))
 </code></pre>
