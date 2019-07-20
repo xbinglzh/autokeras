@@ -461,67 +461,22 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#autotuner" title="AutoTuner" class="md-nav__link">
-    AutoTuner
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#run_trial" title="run_trial" class="md-nav__link">
     run_trial
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#get_best_hp" title="get_best_hp" class="md-nav__link">
     get_best_hp
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#randomsearch" title="RandomSearch" class="md-nav__link">
-    RandomSearch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hyperband" title="HyperBand" class="md-nav__link">
-    HyperBand
   </a>
   
 </li>
@@ -543,21 +498,13 @@
               
                 
                 
-                  <h1>Tuner</h1>
-                
                 <h2 id="autotuner">AutoTuner</h2>
 <p>Modified KerasTuner base class to include preprocessing layers.</p>
 <h3 id="run_trial">run_trial</h3>
 <p>Preprocess the x and y before calling the base run_trial.</p>
 <h3 id="get_best_hp">get_best_hp</h3>
 <p>Returns hyperparameters used to build the best model(s).</p>
-<h5 id="args">Args</h5>
-<ul>
-<li><strong>num_models (int, optional)</strong>: Number of best models, whose building
-    HyperParameters to return. Models will be returned in sorted order
-    starting from the best. Defaults to 1.</li>
-</ul>
-<h5 id="returns">Returns</h5>
+<h1 id="arguments-num_models-int-optional-number-of-best-models-whose-building-hyperparameters-to-return-models-will-be-returned-in-sorted-order-starting-from-the-best-defaults-to-1-returns-list-of-hyperparameter-instances">Arguments num_models (int, optional): Number of best models, whose building HyperParameters to return. Models will be returned in sorted order starting from the best. Defaults to 1.  # Returns List of HyperParameter instances.</h1>
 <h2 id="randomsearch">RandomSearch</h2>
 <p>KerasTuner RandomSearch with preprocessing layer tuning.</p>
 <h2 id="hyperband">HyperBand</h2>

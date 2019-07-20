@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://autokeras.com/temp/hyper_node/">
+        <link rel="canonical" href="http://autokeras.com/temp/block/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Hyper node - Auto-Keras</title>
+        <title>Block - Auto-Keras</title>
       
     
     
@@ -112,6 +112,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#hyperblock" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -134,7 +138,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Hyper node
+                Block
               
             </span>
           
@@ -450,15 +454,86 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#call" title="call" class="md-nav__link">
+    call
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Hyper node</h1>
-                
-                
+                <h2 id="hyperblock">HyperBlock</h2>
+<p>The base class for different HyperBlock.
+The HyperBlock can be connected together to build the search space for an AutoModel. Notably, many args in the <strong>init</strong> function are defaults to be a tunable variable when not specified by the user.  # Arguments inputs: A list of input node(s) for the HyperBlock. outputs: A list of output node(s) for the HyperBlock.</p>
+<h3 id="call"><strong>call</strong></h3>
+<p>Functional API.</p>
+<h1 id="arguments-inputs-a-list-of-input-nodes-or-a-single-input-node-for-the-block-returns-list-a-list-of-output-nodes-of-the-hyperblock">Arguments inputs: A list of input node(s) or a single input node for the block.  # Returns list: A list of output node(s) of the HyperBlock.</h1>
+<h3 id="build">build</h3>
+<p>Build the HyperBlock into a real Keras Model.
+The subclasses should overide this function and return the output node.  # Arguments hp: Hyperparameters. The hyperparameters for building the model. inputs: A list of input node(s).</p>
+<h2 id="denseblock">DenseBlock</h2>
+<p>HyperBlock for Dense layers.</p>
+<h1 id="arguments-num_layers-int-the-number-of-dense-layers-in-the-block-if-left-unspecified-it-will-be-tuned-automatically-use_bn-boolean-whether-to-use-batchnormalization-layers-if-left-unspecified-it-will-be-tuned-automatically-dropout_rate-float-the-dropout-rate-for-the-layers-if-left-unspecified-it-will-be-tuned-automatically">Arguments num_layers: Int. The number of Dense layers in the block. If left unspecified, it will be tuned automatically. use_bn: Boolean. Whether to use BatchNormalization layers. If left unspecified, it will be tuned automatically. dropout_rate: Float. The dropout rate for the layers. If left unspecified, it will be tuned automatically.</h1>
+<h2 id="rnnblock">RNNBlock</h2>
+<p>An RNN HyperBlock.</p>
+<h1 id="arguments-return_sequences-boolean-whether-to-return-the-last-output-in-the-output-sequence-or-the-full-sequence-defaults-to-false-bidirectional-boolean-bidirectional-rnn-if-left-unspecified-it-will-be-tuned-automatically-num_layers-int-the-number-of-layers-in-rnn-if-left-unspecified-it-will-be-tuned-automatically-layer_type-string-gru-or-lstm-if-left-unspecified-it-will-be-tuned-automatically">Arguments return_sequences: Boolean. Whether to return the last output in the output sequence, or the full sequence. Defaults to False. bidirectional: Boolean. Bidirectional RNN. If left unspecified, it will be tuned automatically. num_layers: Int. The number of layers in RNN. If left unspecified, it will be tuned automatically. layer_type: String. 'gru' or 'lstm'. If left unspecified, it will be tuned automatically.</h1>
+<h2 id="imageblock">ImageBlock</h2>
+<p>HyperBlock for image data.
+The image blocks is a block choosing from ResNetBlock, XceptionBlock, ConvBlock, which is controlled by a hyperparameter, 'block_type'.  # Arguments block_type: String. 'resnet', 'xception', 'vanilla'. The type of HyperBlock to use. If left unspecified, it will be tuned automatically.</p>
+<h2 id="convblock">ConvBlock</h2>
+<p>HyperBlock for vanilla ConvNets.</p>
+<h1 id="arguments-kernel_size-int-if-left-unspecified-it-will-be-tuned-automatically-num_blocks-int-the-number-of-conv-blocks-if-left-unspecified-it-will-be-tuned-automatically-separable-boolean-whether-to-use-separable-conv-layers-if-left-unspecified-it-will-be-tuned-automatically">Arguments kernel_size: Int. If left unspecified, it will be tuned automatically. num_blocks: Int. The number of conv blocks. If left unspecified, it will be tuned automatically. separable: Boolean. Whether to use separable conv layers. If left unspecified, it will be tuned automatically.</h1>
+<h2 id="resnetblock">ResNetBlock</h2>
+<p>HyperBlock for ResNet.</p>
+<h1 id="arguments-version-string-v1-v2-or-next-the-type-of-resnet-to-use-if-left-unspecified-it-will-be-tuned-automatically-pooling-string-avg-max-the-type-of-pooling-layer-to-use-if-left-unspecified-it-will-be-tuned-automatically">Arguments version: String. 'v1', 'v2' or 'next'. The type of ResNet to use. If left unspecified, it will be tuned automatically. pooling: String. 'avg', 'max'. The type of pooling layer to use. If left unspecified, it will be tuned automatically.</h1>
+<h2 id="xceptionblock">XceptionBlock</h2>
+<p>XceptionBlock.
+An Xception structure, used for specifying your model with specific datasets.  The original Xception architecture is from https://arxiv.org/abs/1610.02357. The data first goes through the entry flow, then through the middle flow which is repeated eight times, and finally through the exit flow.  This XceptionBlock returns a similar architecture as Xception except without the last (optional) fully connected layer(s) and logistic regression. The size of this architecture could be decided by <code>HyperParameters</code>, to get an architecture with a half, an identical, or a double size of the original one.  # Arguments activation: String. 'selu' or 'relu'. If left unspecified, it will be tuned automatically. initial_strides: Int. If left unspecified, it will be tuned automatically. num_residual_blocks: Int. If left unspecified, it will be tuned automatically. pooling: String. 'ave', 'flatten', or 'max'. If left unspecified, it will be tuned automatically.</p>
+<h2 id="merge">Merge</h2>
+<p>Merge block to merge multiple nodes into one.</p>
+<h1 id="arguments-merge_type-string-add-or-concatenate-if-left-unspecified-it-will-be-tuned-automatically">Arguments merge_type: String. 'add' or 'concatenate'. If left unspecified, it will be tuned automatically.</h1>
+<h2 id="flatten">Flatten</h2>
+<p>Flatten the input tensor with Keras Flatten layer.</p>
+<h2 id="spatialreduction">SpatialReduction</h2>
+<p>Reduce the dimension of a spatial tensor, e.g. image, to a vector.</p>
+<h1 id="arguments-reduction_type-string-flatten-global_max-or-global_avg-if-left-unspecified-it-will-be-tuned-automatically">Arguments reduction_type: String. 'flatten', 'global_max' or 'global_avg'. If left unspecified, it will be tuned automatically.</h1>
+<h2 id="temporalreduction">TemporalReduction</h2>
+<p>Reduce the dimension of a temporal tensor, e.g. output of RNN, to a vector.</p>
+<h1 id="arguments-reduction_type-string-flatten-global_max-or-global_avg-if-left-unspecified-it-will-be-tuned-automatically_1">Arguments reduction_type: String. 'flatten', 'global_max' or 'global_avg'. If left unspecified, it will be tuned automatically.</h1>
+<h2 id="embeddingblock">EmbeddingBlock</h2>
+<p>Word embedding block for sequences.
+The input should be tokenized sequences with the same length, where each element of a sequence should be the index of the word.  # Arguments pretraining: String. 'random' (use random weights instead any pretrained model), 'glove', 'fasttext' or 'word2vec'. Use pretrained word embedding. If left unspecified, it will be tuned automatically. embedding_dim: Int. If left unspecified, it will be tuned automatically.</p>
+<h2 id="generalblock">GeneralBlock</h2>
+<p>A general neural network block when the input type is unknown.</p>
                 
                   
                 

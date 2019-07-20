@@ -461,109 +461,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#assemble" title="assemble" class="md-nav__link">
-    assemble
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#assembler" title="Assembler" class="md-nav__link">
-    Assembler
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update" title="update" class="md-nav__link">
-    update
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_1" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assemble_1" title="assemble" class="md-nav__link">
-    assemble
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_2" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns_1" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#textassembler" title="TextAssembler" class="md-nav__link">
-    TextAssembler
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -576,38 +475,17 @@
               
                 
                 
-                  <h1>Meta model</h1>
-                
                 <h3 id="assemble">assemble</h3>
 <p>Assemble the HyperBlocks based on the dataset and input output nodes.</p>
-<h5 id="args">Args</h5>
-<ul>
-<li>
-<p><strong>inputs</strong>: A list of InputNode. The input nodes of the AutoModel.</p>
-</li>
-<li>
-<p><strong>outputs</strong>: A list of HyperHead. The heads of the AutoModel.</p>
-</li>
-<li>
-<p><strong>dataset</strong>: tf.data.Dataset. The training dataset.</p>
-</li>
-</ul>
-<h5 id="returns">Returns</h5>
+<h1 id="arguments-inputs-a-list-of-inputnode-the-input-nodes-of-the-automodel-outputs-a-list-of-hyperhead-the-heads-of-the-automodel-dataset-tfdatadataset-the-training-dataset-returns-a-list-of-hypernode-the-output-nodes-of-the-automodel">Arguments inputs: A list of InputNode. The input nodes of the AutoModel. outputs: A list of HyperHead. The heads of the AutoModel. dataset: tf.data.Dataset. The training dataset.  # Returns A list of HyperNode. The output nodes of the AutoModel.</h1>
 <h2 id="assembler">Assembler</h2>
 <p>Base class for data type specific assemblers.</p>
 <h3 id="update">update</h3>
 <p>Update the assembler sample by sample.</p>
-<h5 id="args_1">Args</h5>
-<ul>
-<li><strong>x</strong>: tf.Tensor. A data instance from input dataset.</li>
-</ul>
+<h1 id="arguments-x-tftensor-a-data-instance-from-input-dataset">Arguments x: tf.Tensor. A data instance from input dataset.</h1>
 <h3 id="assemble_1">assemble</h3>
 <p>Assemble the HyperBlocks for text input.</p>
-<h5 id="args_2">Args</h5>
-<ul>
-<li><strong>input_node</strong>: HyperNode. The input node for the AutoModel.</li>
-</ul>
-<h5 id="returns_1">Returns</h5>
+<h1 id="arguments-input_node-hypernode-the-input-node-for-the-automodel-returns-a-hypernode-the-output-node-of-the-assembled-model">Arguments input_node: HyperNode. The input node for the AutoModel.  # Returns A HyperNode. The output node of the assembled model.</h1>
 <h2 id="textassembler">TextAssembler</h2>
 <p>Selecting the HyperBlocks for text tasks based the training data.
 Implemented according to Google Developer, Machine Learning Guide, Text Classification, Step 2.5: Choose a Model.</p>

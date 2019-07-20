@@ -479,111 +479,11 @@
     set_hp
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#update" title="update" class="md-nav__link">
     update
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_1" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transform" title="transform" class="md-nav__link">
-    transform
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#args_2" title="Args" class="md-nav__link">
-    Args
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#returns" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output_types" title="output_types" class="md-nav__link">
-    output_types
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#returns_1" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output_shape" title="output_shape" class="md-nav__link">
-    output_shape
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#returns_2" title="Returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#finalize" title="finalize" class="md-nav__link">
-    finalize
   </a>
   
 </li>
@@ -612,55 +512,25 @@
 Since they are for preprocess data before feeding into the Keras Model, they are not part of the Keras Model. They only pass the inputs directly to outputs.</p>
 <h3 id="set_hp">set_hp</h3>
 <p>Set Hyperparameters for the Preprocessor.
-Since the <code>update</code> and <code>transform</code> function are all for single training instances instead of the entire dataset, the Hyperparameters needs to be set in advance of call them.</p>
-<h5 id="args">Args</h5>
-<ul>
-<li><strong>hp</strong>: Hyperparameters. The hyperparameters for tuning the preprocessor.</li>
-</ul>
+Since the <code>update</code> and <code>transform</code> function are all for single training instances instead of the entire dataset, the Hyperparameters needs to be set in advance of call them.  # Arguments hp: Hyperparameters. The hyperparameters for tuning the preprocessor.</p>
 <h3 id="update">update</h3>
 <p>Incrementally fit the preprocessor with a single training instance.</p>
-<h5 id="args_1">Args</h5>
-<ul>
-<li><strong>x</strong>: EagerTensor. A single instance in the training dataset.</li>
-</ul>
+<h1 id="arguments-x-eagertensor-a-single-instance-in-the-training-dataset">Arguments x: EagerTensor. A single instance in the training dataset.</h1>
 <h3 id="transform">transform</h3>
 <p>Incrementally fit the preprocessor with a single training instance.</p>
-<h5 id="args_2">Args</h5>
-<ul>
-<li><strong>x</strong>: EagerTensor. A single instance in the training dataset.</li>
-</ul>
+<h1 id="arguments-x-eagertensor-a-single-instance-in-the-training-dataset_1">Arguments x: EagerTensor. A single instance in the training dataset.</h1>
 <h5 id="returns">Returns</h5>
 <h3 id="output_types">output_types</h3>
 <p>The output types of the transformed data, e.g. tf.int64.
-The output types are required by tf.py_function, which is used for transform the dataset into a new one with a map function.</p>
-<h5 id="returns_1">Returns</h5>
+The output types are required by tf.py_function, which is used for transform the dataset into a new one with a map function.  # Returns A tuple of data types.</p>
 <h3 id="output_shape">output_shape</h3>
 <p>The output shape of the transformed data.
-The output shape is needed to build the Keras Model from the AutoModel. The output shape of the preprocessor is the input shape of the Keras Model.</p>
-<h5 id="returns_2">Returns</h5>
+The output shape is needed to build the Keras Model from the AutoModel. The output shape of the preprocessor is the input shape of the Keras Model.  # Returns A tuple of int(s) or a TensorShape.</p>
 <h3 id="finalize">finalize</h3>
 <p>Training process of the preprocessor after update with all instances.</p>
 <h2 id="onehotencoder">OneHotEncoder</h2>
 <p>A class that can format data.
-This class provides ways to transform data's classification label into vector.</p>
-<h5 id="attributes">Attributes</h5>
-<ul>
-<li>
-<p><strong>data</strong>: The input data</p>
-</li>
-<li>
-<p><strong>num_classes</strong>: The number of classes in the classification problem.</p>
-</li>
-<li>
-<p><strong>labels</strong>: The number of labels.</p>
-</li>
-<li>
-<p><strong>label_to_vec</strong>: Mapping from label to vector.</p>
-</li>
-<li>
-<p><strong>int_to_label</strong>: Mapping from int to label.</p>
-</li>
-</ul>
+This class provides ways to transform data's classification label into vector.  # Arguments data: The input data num_classes: The number of classes in the classification problem. labels: The number of labels. label_to_vec: Mapping from label to vector. int_to_label: Mapping from int to label.</p>
 <h3 id="init"><strong>init</strong></h3>
 <p>Initialize a OneHotEncoder</p>
 <h3 id="fit">fit</h3>
@@ -671,7 +541,7 @@ This class provides ways to transform data's classification label into vector.</
 <p>Get label for every element in data.</p>
 <h2 id="normalize">Normalize</h2>
 <p>Perform basic image transformation and augmentation.</p>
-<h1 id="attributes-mean-tensor-the-mean-value-shape-data-last-dimension-length-std-tensor-the-standard-deviation-shape-is-the-same-as-mean">Attributes mean: Tensor. The mean value. Shape: (data last dimension length,) std: Tensor. The standard deviation. Shape is the same as mean.</h1>
+<h1 id="arguments-mean-tensor-the-mean-value-shape-data-last-dimension-length-std-tensor-the-standard-deviation-shape-is-the-same-as-mean">Arguments mean: Tensor. The mean value. Shape: (data last dimension length,) std: Tensor. The standard deviation. Shape is the same as mean.</h1>
 <h3 id="transform_2">transform</h3>
 <p>Transform the test data, perform normalization.</p>
 <h1 id="arguments-data-tensorflow-dataset-the-data-to-be-transformed-returns-a-dataloader-instance">Arguments data: Tensorflow Dataset. The data to be transformed.  # Returns A DataLoader instance.</h1>
