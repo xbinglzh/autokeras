@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="http://autokeras.com/temp/utils/">
+        <link rel="canonical" href="http://autokeras.com/temp/graph/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>utils - Auto-Keras</title>
+        <title>graph - Auto-Keras</title>
       
     
     
@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#prepare_preprocess" tabindex="1" class="md-skip">
+      <a href="#graphhypermodel" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -138,7 +138,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                utils
+                graph
               
             </span>
           
@@ -376,11 +376,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../graph/" title="graph" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="graph" class="md-nav__link md-nav__link--active">
       graph
     </a>
+    
   </li>
 
         
@@ -412,20 +421,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="utils" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../utils/" title="utils" class="md-nav__link">
       utils
     </a>
-    
   </li>
 
         
@@ -486,27 +486,32 @@
               
                 
                 
-                <h3 id="prepare_preprocess">prepare_preprocess</h3>
-<p>Convert each input to a tf.data.Dataset.</p>
-<h3 id="is_label">is_label</h3>
-<p>Check if the targets are one-hot encoded or plain labels.</p>
-<h1 id="arguments-y-numpyndarray-the-targets-returns-boolean-whether-the-targets-are-plain-label-not-encoded">Arguments y: numpy.ndarray. The targets.  # Returns Boolean. Whether the targets are plain label, not encoded.</h1>
-<h3 id="pickle_from_file">pickle_from_file</h3>
-<p>Load the pickle file from the provided path and returns the object.</p>
-<h3 id="pickle_to_file">pickle_to_file</h3>
-<p>Save the pickle file to the specified path.</p>
-<h2 id="onehotencoder">OneHotEncoder</h2>
-<p>A class that can format data.
-This class provides ways to transform data's classification label into vector.  # Attributes num_classes: The number of classes in the classification problem.</p>
-<h3 id="fit">fit</h3>
-<p>Create mapping from label to vector, and vector to label.</p>
-<h1 id="arguments-data-list-or-numpyndarray-the-labels">Arguments data: list or numpy.ndarray. The labels.</h1>
-<h3 id="transform">transform</h3>
-<p>Get vector for every element in the data array.</p>
-<h1 id="arguments-data-list-or-numpyndarray-the-labels_1">Arguments data: list or numpy.ndarray. The labels.</h1>
-<h3 id="inverse_transform">inverse_transform</h3>
-<p>Get label for every element in data.</p>
-<h1 id="arguments-data-numpyndarray-the-output-probabilities-of-the-classification-head">Arguments data: numpy.ndarray. The output probabilities of the classification head.</h1>
+                <h2 id="graphhypermodel">GraphHyperModel</h2>
+<p>A HyperModel based on connected HyperBlocks.</p>
+<h1 id="arguments-inputs-a-list-of-input-nodes-for-the-graphhypermodel-outputs-a-list-of-output-nodes-for-the-graphhypermodel-name-string-the-name-of-the-graphhypermodel">Arguments inputs: A list of input node(s) for the GraphHyperModel. outputs: A list of output node(s) for the GraphHyperModel. name: String. The name of the GraphHyperModel.</h1>
+<h3 id="hyper_build">hyper_build</h3>
+<p>Build a GraphHyperModel with no HyperBlock but only Block.</p>
+<h3 id="set_io_shapes">set_io_shapes</h3>
+<p>Set the input and output shapes to the nodes.</p>
+<h5 id="args">Args</h5>
+<ul>
+<li><strong>dataset</strong>: tf.data.Dataset. The input dataset before preprocessing.</li>
+</ul>
+<h3 id="preprocess">preprocess</h3>
+<p>Preprocess the data to be ready for the Keras Model.</p>
+<h1 id="arguments-hp-hyperparameters-used-to-build-the-hypermodel-dataset-tfdatadataset-training-data-validation_data-tfdatadataset-validation-data-fit-boolean-whether-to-fit-the-preprocessing-layers-with-x-and-y-returns-if-validation-data-is-provided-a-tuple-of-two-preprocessed-tfdatadataset-train-validation-otherwise-return-the-training-dataset">Arguments hp: HyperParameters. Used to build the HyperModel. dataset: tf.data.Dataset. Training data. validation_data: tf.data.Dataset. Validation data. fit: Boolean. Whether to fit the preprocessing layers with x and y.  # Returns if validation data is provided. A tuple of two preprocessed tf.data.Dataset, (train, validation). Otherwise, return the training dataset.</h1>
+<h3 id="save_preprocessors">save_preprocessors</h3>
+<p>Save the preprocessors in the hypermodel in a single file.</p>
+<h5 id="args_1">Args</h5>
+<ul>
+<li><strong>path</strong>: String. The path to a single file.</li>
+</ul>
+<h3 id="load_preprocessors">load_preprocessors</h3>
+<p>Load the preprocessors in the hypermodel from a single file.</p>
+<h5 id="args_2">Args</h5>
+<ul>
+<li><strong>path</strong>: String. The path to a single file.</li>
+</ul>
                 
                   
                 
@@ -527,7 +532,7 @@ This class provides ways to transform data's classification label into vector.  
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../preprocessor/" title="preprocessor" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../nas/" title="Neural Architecture Search" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -536,19 +541,19 @@ This class provides ways to transform data's classification label into vector.  
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                preprocessor
+                Neural Architecture Search
               </span>
             </div>
           </a>
         
         
-          <a href="../../about/" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../preprocessor/" title="preprocessor" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                About
+                preprocessor
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
