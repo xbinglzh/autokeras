@@ -10,6 +10,8 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="Documentation for AutoKeras.">
+      
       
         <link rel="canonical" href="http://autokeras.com/">
       
@@ -33,12 +35,12 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="/img/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
-        <title>Auto-Keras</title>
+        <title>AutoKeras</title>
       
     
     
@@ -49,7 +51,7 @@
       
         
         
-        <meta name="theme-color" content="#009688">
+        <meta name="theme-color" content="#ef5350">
       
     
     
@@ -98,7 +100,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
   
     <svg class="md-svg">
       <defs>
@@ -121,9 +123,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://autokeras.com" title="Auto-Keras" class="md-header-nav__button md-logo">
+        <a href="http://autokeras.com" title="AutoKeras" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <img src="/img/logo_white.svg" width="24" height="24">
           
         </a>
       </div>
@@ -134,7 +136,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Auto-Keras
+              AutoKeras
             </span>
             <span class="md-header-nav__topic">
               
@@ -213,12 +215,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://autokeras.com" title="Auto-Keras" class="md-nav__button md-logo">
+    <a href="http://autokeras.com" title="AutoKeras" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <img src="/img/logo_white.svg" width="48" height="48">
       
     </a>
-    Auto-Keras
+    AutoKeras
   </label>
   
     <div class="md-nav__source">
@@ -286,6 +288,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cite-this-work" title="Cite this work" class="md-nav__link">
+    Cite this work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#community" title="Community" class="md-nav__link">
     Community
   </a>
@@ -293,8 +302,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cite-this-work" title="Cite this work" class="md-nav__link">
-    Cite this work
+  <a href="#contributing-code" title="Contributing Code" class="md-nav__link">
+    Contributing Code
   </a>
   
 </li>
@@ -361,7 +370,7 @@
 
 
   <li class="md-nav__item">
-    <a href="temp/contribute/" title="Contributing Guide" class="md-nav__link">
+    <a href="contributing/" title="Contributing Guide" class="md-nav__link">
       Contributing Guide
     </a>
   </li>
@@ -404,8 +413,8 @@
 
 
   <li class="md-nav__item">
-    <a href="temp/supervised.md" title="supervised" class="md-nav__link">
-      supervised
+    <a href="auto_model/" title="auto_model" class="md-nav__link">
+      auto_model
     </a>
   </li>
 
@@ -415,12 +424,19 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="temp/image_supervised.md" title="image_supervised" class="md-nav__link">
-      image_supervised
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      hypermodel
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        hypermodel
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -428,81 +444,14 @@
 
 
   <li class="md-nav__item">
-    <a href="temp/bayesian.md" title="bayesian" class="md-nav__link">
-      bayesian
+    <a href="hypermodel/block/" title="block" class="md-nav__link">
+      block
     </a>
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="temp/search.md" title="search" class="md-nav__link">
-      search
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="temp/graph/" title="graph" class="md-nav__link">
-      graph
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="temp/preprocessor/" title="preprocessor" class="md-nav__link">
-      preprocessor
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="temp/model_trainer.md" title="model_trainer" class="md-nav__link">
-      model_trainer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="temp/utils/" title="utils" class="md-nav__link">
-      utils
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="temp/generator.md" title="generator" class="md-nav__link">
-      generator
-    </a>
+      </ul>
+    </nav>
   </li>
 
         
@@ -556,6 +505,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cite-this-work" title="Cite this work" class="md-nav__link">
+    Cite this work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#community" title="Community" class="md-nav__link">
     Community
   </a>
@@ -563,8 +519,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cite-this-work" title="Cite this work" class="md-nav__link">
-    Cite this work
+  <a href="#contributing-code" title="Contributing Code" class="md-nav__link">
+    Contributing Code
   </a>
   
 </li>
@@ -609,59 +565,54 @@
                 
                   <h1>Home</h1>
                 
-                <p><img src="https://github.com/keras-team/autokeras/blob/master/logo.png?raw=true" alt="drawing" width="400px" style="display: block; margin-left: auto; margin-right: auto"/></p>
-<div style="text-align: center">
-<p>
-<a class="badge-align" href="https://travis-ci.org/keras-team/autokeras"><img alt="Build Status" src="https://travis-ci.org/keras-team/autokeras.svg?branch=master"/></a>
-<a class="badge-align" href="https://www.codacy.com/app/jhfjhfj1/autokeras?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=keras-team/autokeras&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/620bd322918c476aa33230ec911a4301"/></a>
-<a class="badge-align" href="https://www.codacy.com/app/jhfjhfj1/autokeras?utm_source=github.com&utm_medium=referral&utm_content=keras-team/autokeras&utm_campaign=Badge_Coverage"><img src="https://api.codacy.com/project/badge/Coverage/620bd322918c476aa33230ec911a4301"/></a>
-<a class="badge-align" href="https://badge.fury.io/py/autokeras"><img src="https://badge.fury.io/py/autokeras.svg" alt="PyPI version"></a>
-</p>
-</div>
-
+                <p><img src="/img/row_red.svg" alt="drawing" width="400px" style="display: block; margin-left: auto; margin-right: auto"/></p>
+<h2 id="_1"></h2>
 <p>Auto-Keras is an open source software library for automated machine learning (AutoML).
 It is developed by <a href="http://faculty.cs.tamu.edu/xiahu/index.html" target="_blank" rel="nofollow">DATA Lab</a> at Texas A&amp;M University and community contributors.
-The ultimate goal of AutoML is to provide easily accessible deep learning tools to domain experts with limited data science or machine learning background. 
+The ultimate goal of AutoML is to provide easily accessible deep learning tools to domain experts with limited data science or machine learning background.
 Auto-Keras provides functions to automatically search for architecture and hyperparameters of deep learning models.</p>
+<p><strong>Now we are refactoring the code on <code>master</code> branch for the next release.
+Please use the <code>legacy</code> branch if you want to checkout the 0.4 version.</strong></p>
 <h2 id="installation">Installation</h2>
 <p>To install the package, please use the <code>pip</code> installation as follows:</p>
-<pre><code>pip install autokeras
+<pre><code>pip3 install autokeras
 </code></pre>
 <p><strong>Note:</strong> currently, Auto-Keras is only compatible with: <strong>Python 3.6</strong>.</p>
 <h2 id="example">Example</h2>
 <p>Here is a short example of using the package.</p>
-<pre><code>import autokeras as ak
+<pre><code class="python">import autokeras as ak
 
 clf = ak.ImageClassifier()
 clf.fit(x_train, y_train)
 results = clf.predict(x_test)
 </code></pre>
-<h2 id="community">Community</h2>
-<p>You can use Gitter to communicate with people who are also interested in Auto-Keras.</p>
-<p><a href="https://gitter.im/autokeras/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/autokeras/Lobby.svg" alt="Join the chat at https://gitter.im/autokeras/Lobby" style="width: 92px"></a></p>
-<p>You can follow us on Twitter.</p>
-<p><a href="https://twitter.com/autokeras" class="twitter-follow-button" data-show-count="false">Follow @autokeras</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
 <h2 id="cite-this-work">Cite this work</h2>
-<p>Auto-Keras: Efficient Neural Architecture Search with Network Morphism.
-Haifeng Jin, Qingquan Song, and Xia Hu.
-<a href="https://arxiv.org/abs/1806.10282">arXiv:1806.10282</a>.</p>
+<p>Haifeng Jin, Qingquan Song, and Xia Hu. "Auto-keras: An efficient neural architecture search system." Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining. ACM, 2019. (<a href="https://www.kdd.org/kdd2019/accepted-papers/view/auto-keras-an-efficient-neural-architecture-search-system">Download</a>)</p>
 <p>Biblatex entry:</p>
-<pre><code>@online{jin2018efficient,
-  author       = {Haifeng Jin and Qingquan Song and Xia Hu},
-  title        = {Auto-Keras: Efficient Neural Architecture Search with Network Morphism},
-  date         = {2018-06-27},
-  year         = {2018},
-  eprintclass  = {cs.LG},
-  eprinttype   = {arXiv},
-  eprint       = {cs.LG/1806.10282},
+<pre><code>@inproceedings{jin2019auto,
+  title={Auto-Keras: An Efficient Neural Architecture Search System},
+  author={Jin, Haifeng and Song, Qingquan and Hu, Xia},
+  booktitle={Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery \&amp; Data Mining},
+  pages={1946--1956},
+  year={2019},
+  organization={ACM}
 }
 </code></pre>
+<h2 id="community">Community</h2>
+<p>You can use Gitter to communicate with people who are also interested in Auto-Keras.
+<a href="https://gitter.im/autokeras/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/autokeras/Lobby.svg" alt="Join the chat at https://gitter.im/autokeras/Lobby" style="width: 92px"></a></p>
+<p>You can also follow us on Twitter <a href="https://twitter.com/autokeras">@autokeras</a> for the latest news.</p>
+<h2 id="contributing-code">Contributing Code</h2>
+<p>You can follow the <a href="https://autokeras.com/temp/contribute/">Contributing Guide</a> for details.
+The easist way to contribute is to resolve the issues with the "<a href="https://github.com/keras-team/autokeras/labels/call%20for%20contributors">call for contributors</a>" tag.
+They are friendly to beginners.</p>
 <h2 id="support-auto-keras">Support Auto-Keras</h2>
 <p>We accept donations on <a href="https://opencollective.com/autokeras">Open Collective</a>.
 Thank every backer for supporting us!</p>
-<script src="https://opencollective.com/autokeras/banner.js">
-</script>
-
+<p><a href="https://opencollective.com/autokeras/donate" target="_blank">
+  <img src="https://opencollective.com/autokeras/donate/button@2x.png?color=blue" width=200 />
+</a></p>
 <h2 id="disclaimer">DISCLAIMER</h2>
 <p>Please note that this is a <strong>pre-release</strong> version of the Auto-Keras which is still undergoing final testing before its official release. The website, its software and all content found on it are provided on an
 “as is” and “as available” basis. Auto-Keras does <strong>not</strong> give any warranties, whether express or implied, as to the suitability or usability of the website, its software or any of its content. Auto-Keras will <strong>not</strong> be liable for any loss, whether such loss is direct, indirect, special or consequential, suffered by any party as a result of their use of the libraries or content. Any usage of the libraries is done at the user’s own risk and the user will be solely responsible for any damage to any computer system or loss of data that results from such activities. Should you encounter any bugs, glitches, lack of functionality or
@@ -669,7 +620,9 @@ other problems on the website, please let us know immediately so we
 can rectify these accordingly. Your help in this regard is greatly
 appreciated.</p>
 <h2 id="acknowledgements">Acknowledgements</h2>
-<p>The authors gratefully acknowledge the D3M program of the Defense Advanced Research Projects Agency (DARPA) administered through AFRL contract FA8750-17-2-0116; the Texas A&amp;M College of Engineering, and Texas A&amp;M. </p>
+<p>The authors gratefully acknowledge the D3M program of the Defense Advanced Research Projects Agency (DARPA) administered through AFRL contract FA8750-17-2-0116; the Texas A&amp;M College of Engineering, and Texas A&amp;M.</p>
+<script src="https://opencollective.com/autokeras/banner.js">
+</script>
                 
                   
                 

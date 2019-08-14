@@ -10,6 +10,8 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="Documentation for AutoKeras.">
+      
       
         <link rel="canonical" href="http://autokeras.com/start/">
       
@@ -33,12 +35,12 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="/img/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
-        <title>Getting Started - Auto-Keras</title>
+        <title>Getting Started - AutoKeras</title>
       
     
     
@@ -49,7 +51,7 @@
       
         
         
-        <meta name="theme-color" content="#009688">
+        <meta name="theme-color" content="#ef5350">
       
     
     
@@ -98,7 +100,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="teal" data-md-color-accent="teal">
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
   
     <svg class="md-svg">
       <defs>
@@ -121,9 +123,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="http://autokeras.com" title="Auto-Keras" class="md-header-nav__button md-logo">
+        <a href="http://autokeras.com" title="AutoKeras" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <img src="/img/logo_white.svg" width="24" height="24">
           
         </a>
       </div>
@@ -134,7 +136,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              Auto-Keras
+              AutoKeras
             </span>
             <span class="md-header-nav__topic">
               
@@ -213,12 +215,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="http://autokeras.com" title="Auto-Keras" class="md-nav__button md-logo">
+    <a href="http://autokeras.com" title="AutoKeras" class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <img src="/img/logo_white.svg" width="48" height="48">
       
     </a>
-    Auto-Keras
+    AutoKeras
   </label>
   
     <div class="md-nav__source">
@@ -532,7 +534,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../temp/contribute/" title="Contributing Guide" class="md-nav__link">
+    <a href="../contributing/" title="Contributing Guide" class="md-nav__link">
       Contributing Guide
     </a>
   </li>
@@ -575,8 +577,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../temp/supervised.md" title="supervised" class="md-nav__link">
-      supervised
+    <a href="../auto_model/" title="auto_model" class="md-nav__link">
+      auto_model
     </a>
   </li>
 
@@ -586,12 +588,19 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../temp/image_supervised.md" title="image_supervised" class="md-nav__link">
-      image_supervised
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      hypermodel
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        hypermodel
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -599,81 +608,14 @@
 
 
   <li class="md-nav__item">
-    <a href="../temp/bayesian.md" title="bayesian" class="md-nav__link">
-      bayesian
+    <a href="../hypermodel/block/" title="block" class="md-nav__link">
+      block
     </a>
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../temp/search.md" title="search" class="md-nav__link">
-      search
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../temp/graph/" title="graph" class="md-nav__link">
-      graph
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../temp/preprocessor/" title="preprocessor" class="md-nav__link">
-      preprocessor
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../temp/model_trainer.md" title="model_trainer" class="md-nav__link">
-      model_trainer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../temp/utils/" title="utils" class="md-nav__link">
-      utils
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../temp/generator.md" title="generator" class="md-nav__link">
-      generator
-    </a>
+      </ul>
+    </nav>
   </li>
 
         
@@ -1197,10 +1139,10 @@ detector = ObjectDetector()
 <p>Function <code>detector.predict()</code> requires the path to the image. If the <code>output_file_path</code> is not given, the <code>detector</code> will just return the numerical results as a list of dictionaries. Each dictionary is like {"left": int, "top": int, "width": int, "height": int: "category": str, "confidence": float}, where <code>left</code> and <code>top</code> is the (left, top) coordinates of the bounding box of the object and <code>width</code> and <code>height</code> are width and height of the box. <code>category</code> is a string representing the class the object belongs to, and the confidence can be regarded as the probability that the model believes its prediction is correct. If the <code>output_file_path</code> is given, then the results mentioned above will be plotted and saved in a new image file with suffix "_prediction" into the given <code>output_file_path</code>. If you run the example/object_detection/object_detection_example.py, you will get result
 <code>[{'category': 'person', 'width': 331, 'height': 500, 'left': 17, 'confidence': 0.9741123914718628, 'top': 0}]</code></p>
 <h3 id="sentiment-analysis-tutorial">Sentiment Analysis tutorial.</h3>
-<p><a href="https://github.com/keras-team/autokeras/blob/master/examples/pretrained_models/text_models/sentiment_analysis_example.py">[source]</a></p>
+<p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/text_classifier.py">[source]</a></p>
 <p>The sentiment analysis module provides an interface to find the sentiment of any text. The pretrained model is obtained by training <a href="https://arxiv.org/abs/1810.04805">Google AI’s BERT model</a> on <a href="http://ai.stanford.edu/~amaas/data/sentiment/">IMDb dataset</a>. </p>
 <p>Let’s import the <code>SentimentAnalysis</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class.</p>
-<pre><code class="python">from autokeras import SentimentAnalysis
+<pre><code class="python">from autokeras.pretrained.text_classifier import SentimentAnalysis
 sentiment_analysis = SentimentAnalysis()
 </code></pre>
 
@@ -1212,10 +1154,10 @@ sentiment_analysis = SentimentAnalysis()
 <p><strong>Note:</strong> If the output value of the <code>predict</code> function is close to 0, it implies the statement has negative sentiment, whereas value close to 1 implies positive sentiment.</p>
 <p>If you run <em>sentiment_analysis_example.py</em>, you should get an output value of 0.9 which implies that the input statement <em>The model is working well..</em> has strong positive sentiment.</p>
 <h3 id="topic-classification-tutorial">Topic Classification tutorial.</h3>
-<p><a href="https://github.com/keras-team/autokeras/blob/master/examples/pretrained_models/text_models/topic_classifier_example.py">[source]</a></p>
+<p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/text_classifier.py">[source]</a></p>
 <p>The topic classifier module provides an interface to find the topic of any text. The pretrained model is obtained by training <a href="https://arxiv.org/abs/1810.04805">Google AI’s BERT model</a> on <a href="https://www.di.unipi.it/~gulli/AG_corpus_of_news_articles.html">AGNews dataset</a>. </p>
 <p>Let’s import the <code>TopicClassifier</code> module from <em>text_classifier.py</em>. It is derived from the super class <code>TextClassifier</code> which is the child class of <code>Pretrained</code> class. </p>
-<pre><code class="python">from autokeras import TopicClassifier
+<pre><code class="python">from autokeras.pretrained.text_classifier import TopicClassifier
 topic_classifier = TopicClassifier()
 </code></pre>
 
@@ -1226,7 +1168,7 @@ topic_classifier = TopicClassifier()
 
 <p>If you run <em>topic_classifier_example.py</em>, you should see the predict function returns the label <strong>Sports</strong>, which is the predicted label for the input statement.</p>
 <h3 id="voice-generator-tutorial">Voice generator tutorial.</h3>
-<p><a href="https://github.com/keras-team/autokeras/blob/master/examples/pretrained_models/voice_generation/voice_generator_example.py">[source]</a></p>
+<p><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/pretrained/voice_generator/voice_generator.py">[source]</a></p>
 <p>The voice generator is a refactor of <a href="https://github.com/r9y9/deepvoice3_pytorch">deepvoice3</a>. 
 The structure contains three main parts:</p>
 <ul>
@@ -1237,7 +1179,7 @@ The structure contains three main parts:</p>
 <p>For more details, please refer the original paper: 
 <a href="https://arxiv.org/pdf/1710.07654.pdf"><strong>Deep Voice 3: Scaling Text-to-Speech with Convolutional Sequence Learning</strong></a></p>
 <p>Example:</p>
-<pre><code class="python">from autokeras import VoiceGenerator
+<pre><code class="python">from autokeras.pretrained import VoiceGenerator
 voice_generator = VoiceGenerator()
 text = &quot;The approximation of pi is 3.14&quot;
 voice_generator.predict(text, &quot;test.wav&quot;)
@@ -1318,7 +1260,7 @@ spect = parser.parse_audio(&quot;test.wav&quot;).contiguous()
 </code></pre>
 
 <p>After this we will have the audio parsed as torch tensor in variable <code>spect</code>. Then we can use the following to recognize the voice:</p>
-<pre><code class="python">from autokeras import VoiceRecognizer
+<pre><code class="python">from autokeras.pretrained import VoiceRecognizer
 voice_recognizer = VoiceRecognizer()
 print(voice_recognizer.predict(audio_data=spect))
 </code></pre>

@@ -1,0 +1,875 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation for AutoKeras.">
+      
+      
+        <link rel="canonical" href="http://autokeras.com/hypermodel/block/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="/img/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>block - AutoKeras</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-44322747-3", "autokeras.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#block" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://autokeras.com" title="AutoKeras" class="md-header-nav__button md-logo">
+          
+            <img src="/img/logo_white.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              AutoKeras
+            </span>
+            <span class="md-header-nav__topic">
+              
+                block
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/keras-team/autokeras" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://autokeras.com" title="AutoKeras" class="md-nav__button md-logo">
+      
+        <img src="/img/logo_white.svg" width="48" height="48">
+      
+    </a>
+    AutoKeras
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/keras-team/autokeras" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../start/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../contributing/" title="Contributing Guide" class="md-nav__link">
+      Contributing Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../nas/" title="Neural Architecture Search" class="md-nav__link">
+      Neural Architecture Search
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../auto_model/" title="auto_model" class="md-nav__link">
+      auto_model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" checked>
+    
+    <label class="md-nav__link" for="nav-6-2">
+      hypermodel
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        hypermodel
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        block
+      </label>
+    
+    <a href="./" title="block" class="md-nav__link md-nav__link--active">
+      block
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#block" title="Block" class="md-nav__link">
+    Block
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#denseblock" title="DenseBlock" class="md-nav__link">
+    DenseBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rnnblock" title="RNNBlock" class="md-nav__link">
+    RNNBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convblock" title="ConvBlock" class="md-nav__link">
+    ConvBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resnetblock" title="ResNetBlock" class="md-nav__link">
+    ResNetBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xceptionblock" title="XceptionBlock" class="md-nav__link">
+    XceptionBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge" title="Merge" class="md-nav__link">
+    Merge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flatten" title="Flatten" class="md-nav__link">
+    Flatten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flatten-the-input-tensor-with-keras-flatten-layer" title="Flatten the input tensor with Keras Flatten layer." class="md-nav__link">
+    Flatten the input tensor with Keras Flatten layer.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spatialreduction" title="SpatialReduction" class="md-nav__link">
+    SpatialReduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporalreduction" title="TemporalReduction" class="md-nav__link">
+    TemporalReduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embeddingblock" title="EmbeddingBlock" class="md-nav__link">
+    EmbeddingBlock
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#block" title="Block" class="md-nav__link">
+    Block
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#denseblock" title="DenseBlock" class="md-nav__link">
+    DenseBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rnnblock" title="RNNBlock" class="md-nav__link">
+    RNNBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convblock" title="ConvBlock" class="md-nav__link">
+    ConvBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resnetblock" title="ResNetBlock" class="md-nav__link">
+    ResNetBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xceptionblock" title="XceptionBlock" class="md-nav__link">
+    XceptionBlock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#merge" title="Merge" class="md-nav__link">
+    Merge
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flatten" title="Flatten" class="md-nav__link">
+    Flatten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flatten-the-input-tensor-with-keras-flatten-layer" title="Flatten the input tensor with Keras Flatten layer." class="md-nav__link">
+    Flatten the input tensor with Keras Flatten layer.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spatialreduction" title="SpatialReduction" class="md-nav__link">
+    SpatialReduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporalreduction" title="TemporalReduction" class="md-nav__link">
+    TemporalReduction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embeddingblock" title="EmbeddingBlock" class="md-nav__link">
+    EmbeddingBlock
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>block</h1>
+                
+                <p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L19">[source]</a></span></p>
+<h3 id="block">Block</h3>
+<pre><code class="python">autokeras.hypermodel.block.Block(name=None)
+</code></pre>
+
+<p>The base class for different Block.</p>
+<p>The Block can be connected together to build the search space
+for an AutoModel. Notably, many args in the <strong>init</strong> function are defaults to
+be a tunable variable when not specified by the user.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>name</strong>: String. The name of the block. If unspecified, it will be set</li>
+</ul>
+<p>automatically with the class name.</p>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L88">[source]</a></span></p>
+<h3 id="denseblock">DenseBlock</h3>
+<pre><code class="python">autokeras.hypermodel.block.DenseBlock(num_layers=None, use_batchnorm=None, dropout_rate=None)
+</code></pre>
+
+<p>Block for Dense layers.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>num_layers</strong>: Int. The number of Dense layers in the block.
+    If left unspecified, it will be tuned automatically.</li>
+<li><strong>use_bn</strong>: Boolean. Whether to use BatchNormalization layers.
+    If left unspecified, it will be tuned automatically.</li>
+<li><strong>dropout_rate</strong>: Float. The dropout rate for the layers.
+    If left unspecified, it will be tuned automatically.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L137">[source]</a></span></p>
+<h3 id="rnnblock">RNNBlock</h3>
+<pre><code class="python">autokeras.hypermodel.block.RNNBlock(return_sequences=False, bidirectional=None, num_layers=None, layer_type=None)
+</code></pre>
+
+<p>An RNN Block.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>return_sequences</strong>: Boolean. Whether to return the last output in the
+    output sequence, or the full sequence. Defaults to False.</li>
+<li><strong>bidirectional</strong>: Boolean. Bidirectional RNN. If left unspecified, it will be
+    tuned automatically.</li>
+<li><strong>num_layers</strong>: Int. The number of layers in RNN. If left unspecified, it will
+    be tuned automatically.</li>
+<li><strong>layer_type</strong>: String. 'gru' or 'lstm'. If left unspecified, it will be tuned
+    automatically.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L206">[source]</a></span></p>
+<h3 id="convblock">ConvBlock</h3>
+<pre><code class="python">autokeras.hypermodel.block.ConvBlock(kernel_size=None, num_blocks=None, separable=None)
+</code></pre>
+
+<p>Block for vanilla ConvNets.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>kernel_size</strong>: Int. If left unspecified, it will be tuned automatically.</li>
+<li><strong>num_blocks</strong>: Int. The number of conv blocks. If left unspecified, it will be
+    tuned automatically.</li>
+<li><strong>separable</strong>: Boolean. Whether to use separable conv layers.
+    If left unspecified, it will be tuned automatically.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L275">[source]</a></span></p>
+<h3 id="resnetblock">ResNetBlock</h3>
+<pre><code class="python">autokeras.hypermodel.block.ResNetBlock(version=None, pooling=None)
+</code></pre>
+
+<p>Block for ResNet.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>version</strong>: String. 'v1', 'v2' or 'next'. The type of ResNet to use.
+    If left unspecified, it will be tuned automatically.</li>
+<li><strong>pooling</strong>: String. 'avg', 'max'. The type of pooling layer to use.
+    If left unspecified, it will be tuned automatically.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L307">[source]</a></span></p>
+<h3 id="xceptionblock">XceptionBlock</h3>
+<pre><code class="python">autokeras.hypermodel.block.XceptionBlock(activation=None, initial_strides=None, num_residual_blocks=None, pooling=None)
+</code></pre>
+
+<p>XceptionBlock.</p>
+<p>An Xception structure, used for specifying your model with specific datasets.</p>
+<p>The original Xception architecture is from https://arxiv.org/abs/1610.02357.
+The data first goes through the entry flow, then through the middle flow which
+is repeated eight times, and finally through the exit flow.</p>
+<p>This XceptionBlock returns a similar architecture as Xception except without
+the last (optional) fully connected layer(s) and logistic regression.
+The size of this architecture could be decided by <code>HyperParameters</code>, to get an
+architecture with a half, an identical, or a double size of the original one.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>activation</strong>: String. 'selu' or 'relu'. If left unspecified, it will be tuned
+    automatically.</li>
+<li><strong>initial_strides</strong>: Int. If left unspecified, it will be tuned automatically.</li>
+<li><strong>num_residual_blocks</strong>: Int. If left unspecified, it will be tuned
+    automatically.</li>
+<li><strong>pooling</strong>: String. 'ave', 'flatten', or 'max'. If left unspecified, it will be
+    tuned automatically.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L369">[source]</a></span></p>
+<h3 id="merge">Merge</h3>
+<pre><code class="python">autokeras.hypermodel.block.Merge(merge_type=None)
+</code></pre>
+
+<p>Merge block to merge multiple nodes into one.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>merge_type</strong>: String. 'add' or 'concatenate'. If left unspecified, it will be
+    tuned automatically.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L406">[source]</a></span></p>
+<h3 id="flatten">Flatten</h3>
+<pre><code class="python">autokeras.hypermodel.block.Flatten(name=None)
+</code></pre>
+
+<h2 id="flatten-the-input-tensor-with-keras-flatten-layer">Flatten the input tensor with Keras Flatten layer.</h2>
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L418">[source]</a></span></p>
+<h3 id="spatialreduction">SpatialReduction</h3>
+<pre><code class="python">autokeras.hypermodel.block.SpatialReduction(reduction_type)
+</code></pre>
+
+<p>Reduce the dimension of a spatial tensor, e.g. image, to a vector.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>reduction_type</strong>: String. 'flatten', 'global_max' or 'global_avg'.
+    If left unspecified, it will be tuned automatically.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L456">[source]</a></span></p>
+<h3 id="temporalreduction">TemporalReduction</h3>
+<pre><code class="python">autokeras.hypermodel.block.TemporalReduction(reduction_type)
+</code></pre>
+
+<p>Reduce the dimension of a temporal tensor, e.g. output of RNN, to a vector.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>reduction_type</strong>: String. 'flatten', 'global_max' or 'global_avg'. If left
+    unspecified, it will be tuned automatically.</li>
+</ul>
+<hr />
+<p><span style="float:right;"><a href="https://github.com/keras-team/keras/blob/master/autokeras/hypermodel/block.py#L496">[source]</a></span></p>
+<h3 id="embeddingblock">EmbeddingBlock</h3>
+<pre><code class="python">autokeras.hypermodel.block.EmbeddingBlock(pretraining=None, embedding_dim=None)
+</code></pre>
+
+<p>Word embedding block for sequences.</p>
+<p>The input should be tokenized sequences with the same length, where each element
+of a sequence should be the index of the word.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>pretraining</strong>: String. 'random' (use random weights instead any pretrained
+    model), 'glove', 'fasttext' or 'word2vec'. Use pretrained word embedding.
+    If left unspecified, it will be tuned automatically.</li>
+<li><strong>embedding_dim</strong>: Int. If left unspecified, it will be tuned automatically.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../auto_model/" title="auto_model" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                auto_model
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../about/" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                About
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
