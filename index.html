@@ -114,7 +114,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#installation" tabindex="1" class="md-skip">
+      <a href="#autokeras-10-is-coming-soon" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -256,6 +256,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Home
@@ -268,6 +270,8 @@
       
 <nav class="md-nav md-nav--secondary">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
@@ -358,6 +362,18 @@
 
 
   <li class="md-nav__item">
+    <a href="tutorial/" title="Tutorial for 1.0" class="md-nav__link">
+      Tutorial for 1.0
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="docker/" title="Docker" class="md-nav__link">
       Docker
     </a>
@@ -372,18 +388,6 @@
   <li class="md-nav__item">
     <a href="contributing/" title="Contributing Guide" class="md-nav__link">
       Contributing Guide
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="nas/" title="Neural Architecture Search" class="md-nav__link">
-      Neural Architecture Search
     </a>
   </li>
 
@@ -413,30 +417,11 @@
 
 
   <li class="md-nav__item">
-    <a href="auto_model/" title="auto_model" class="md-nav__link">
-      auto_model
+    <a href="task/" title="Task API" class="md-nav__link">
+      Task API
     </a>
   </li>
 
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
-    
-    <label class="md-nav__link" for="nav-6-2">
-      hypermodel
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-6-2">
-        hypermodel
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
         
           
           
@@ -444,14 +429,45 @@
 
 
   <li class="md-nav__item">
-    <a href="hypermodel/block/" title="block" class="md-nav__link">
-      block
+    <a href="auto_model/" title="AutoModel" class="md-nav__link">
+      AutoModel
     </a>
   </li>
 
         
-      </ul>
-    </nav>
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="graph_auto_model/" title="GraphAutoModel" class="md-nav__link">
+      GraphAutoModel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="block/" title="Block" class="md-nav__link">
+      Block
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="head/" title="Head" class="md-nav__link">
+      Head
+    </a>
   </li>
 
         
@@ -485,6 +501,8 @@
                     
 <nav class="md-nav md-nav--secondary">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
@@ -563,19 +581,17 @@
               
                 
                 
-                  <h1>Home</h1>
-                
                 <p><img src="/img/row_red.svg" alt="drawing" width="400px" style="display: block; margin-left: auto; margin-right: auto"/></p>
 <h2 id="_1"></h2>
 <p>Auto-Keras is an open source software library for automated machine learning (AutoML).
 It is developed by <a href="http://faculty.cs.tamu.edu/xiahu/index.html" target="_blank" rel="nofollow">DATA Lab</a> at Texas A&amp;M University and community contributors.
 The ultimate goal of AutoML is to provide easily accessible deep learning tools to domain experts with limited data science or machine learning background.
 Auto-Keras provides functions to automatically search for architecture and hyperparameters of deep learning models.</p>
-<p><strong>Now we are refactoring the code on <code>master</code> branch for the next release.
-Please use the <code>legacy</code> branch if you want to checkout the 0.4 version.</strong></p>
+<h1 id="autokeras-10-is-coming-soon">AutoKeras 1.0 is coming soon!</h1>
 <h2 id="installation">Installation</h2>
 <p>To install the package, please use the <code>pip</code> installation as follows:</p>
-<pre><code>pip3 install autokeras
+<pre><code>pip3 install autokeras # for 0.4 version
+pip3 install git+git://github.com/keras-team/autokeras@master#egg=autokeras # for 1.0 version
 </code></pre>
 <p><strong>Note:</strong> currently, Auto-Keras is only compatible with: <strong>Python 3.6</strong>.</p>
 <h2 id="example">Example</h2>
@@ -587,6 +603,7 @@ clf.fit(x_train, y_train)
 results = clf.predict(x_test)
 </code></pre>
 
+<p>For detailed tutorial, please check <a href="https://autokeras.com/tutorial/">here</a>.</p>
 <h2 id="cite-this-work">Cite this work</h2>
 <p>Haifeng Jin, Qingquan Song, and Xia Hu. "Auto-keras: An efficient neural architecture search system." Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining. ACM, 2019. (<a href="https://www.kdd.org/kdd2019/accepted-papers/view/auto-keras-an-efficient-neural-architecture-search-system">Download</a>)</p>
 <p>Biblatex entry:</p>
