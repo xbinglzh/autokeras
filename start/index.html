@@ -40,7 +40,7 @@
     
     
       
-        <title>Getting Started - AutoKeras</title>
+        <title>Getting Started 0.4 - AutoKeras</title>
       
     
     
@@ -140,7 +140,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Getting Started
+                Getting Started 0.4
               
             </span>
           
@@ -263,9 +263,268 @@
 
 
   <li class="md-nav__item">
-    <a href="../tutorial/" title="Getting Started" class="md-nav__link">
-      Getting Started
+    <a href="../tutorial/" title="Getting Started 1.0" class="md-nav__link">
+      Getting Started 1.0
     </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting Started 0.4
+      </label>
+    
+    <a href="./" title="Getting Started 0.4" class="md-nav__link md-nav__link--active">
+      Getting Started 0.4
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#latest-stable-version-pip-installation" class="md-nav__link">
+    Latest Stable Version (pip installation):
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bleeding-edge-version-manual-installation" class="md-nav__link">
+    Bleeding Edge Version (manual installation):
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-simple-example" class="md-nav__link">
+    A Simple Example
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-with-numpy-array-npy-format" class="md-nav__link">
+    Data with numpy array (.npy) format.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-if-your-data-are-raw-image-files-eg-jpg-png-bmp" class="md-nav__link">
+    What if your data are raw image files (e.g. .jpg, .png, .bmp)?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-multi-gpu-training" class="md-nav__link">
+    Enable Multi-GPU Training
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portable-models" class="md-nav__link">
+    Portable Models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-export-portable-model" class="md-nav__link">
+    How to export Portable model?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-load-exported-portable-model" class="md-nav__link">
+    How to load exported Portable model?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-visualizations" class="md-nav__link">
+    Model Visualizations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-visualize-the-best-selected-architecture" class="md-nav__link">
+    How to visualize the best selected architecture?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#net-modules" class="md-nav__link">
+    Net Modules
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mlpmodule-tutorial" class="md-nav__link">
+    MlpModule tutorial.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnnmodule-tutorial" class="md-nav__link">
+    CnnModule tutorial.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-modules" class="md-nav__link">
+    Task Modules
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automated-text-classifier-tutorial" class="md-nav__link">
+    Automated text classifier tutorial.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pretrained-models" class="md-nav__link">
+    Pretrained Models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-detection-tutorial" class="md-nav__link">
+    Object detection tutorial.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-wuyang-chen-from-dr-atlas-wangs-group-at-cse-department-texas-am" class="md-nav__link">
+    by Wuyang Chen from Dr. Atlas Wang's group at CSE Department, Texas A&amp;M.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sentiment-analysis-tutorial" class="md-nav__link">
+    Sentiment Analysis tutorial.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-classification-tutorial" class="md-nav__link">
+    Topic Classification tutorial.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voice-generator-tutorial" class="md-nav__link">
+    Voice generator tutorial.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#voice-recognizer-tutorial" class="md-nav__link">
+    Voice recognizer tutorial.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -300,13 +559,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Documentation
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         Documentation
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1045,6 +1304,41 @@ cannot perform well on other dataset. </p>
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../tutorial/" title="Getting Started 1.0" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Getting Started 1.0
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Docker
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
