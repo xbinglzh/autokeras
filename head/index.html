@@ -495,7 +495,7 @@
                 
                   <h1>Head</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L58">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L56">[source]</a></span></p>
 <h3 id="classificationhead">ClassificationHead</h3>
 <pre><code class="python">autokeras.hypermodel.head.ClassificationHead(num_classes=None, multi_label=False, loss=None, metrics=None, dropout_rate=None)
 </code></pre>
@@ -508,15 +508,14 @@ classification. Use softmax and categorical crossentropy for multi-class
 <ul>
 <li><strong>num_classes</strong>: Int. Defaults to None. If None, it will infer from the data.</li>
 <li><strong>multi_label</strong>: Boolean. Defaults to False.</li>
-<li><strong>loss</strong>: A Keras loss function. Defaults to None. If None, the loss will be
-    inferred from the AutoModel.</li>
-<li><strong>metrics</strong>: A list of Keras metrics. Defaults to None. If None, the metrics will
-    be inferred from the AutoModel.</li>
+<li><strong>loss</strong>: A Keras loss function. Defaults to use 'binary_crossentropy' or
+    'categorical_crossentropy' based on the number of classes.</li>
+<li><strong>metrics</strong>: A list of Keras metrics. Defaults to use 'accuracy'.</li>
 <li><strong>dropout_rate</strong>: Float. The dropout rate for the layers.
     If left unspecified, it will be tuned automatically.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L124">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L143">[source]</a></span></p>
 <h3 id="regressionhead">RegressionHead</h3>
 <pre><code class="python">autokeras.hypermodel.head.RegressionHead(output_dim=None, loss=None, metrics=None, dropout_rate=None)
 </code></pre>
@@ -528,10 +527,8 @@ classification. Use softmax and categorical crossentropy for multi-class
 <li><strong>output_dim</strong>: Int. The number of output dimensions. Defaults to None.
     If None, it will infer from the data.</li>
 <li><strong>multi_label</strong>: Boolean. Defaults to False.</li>
-<li><strong>loss</strong>: A Keras loss function. Defaults to None. If None, the loss will be
-    inferred from the AutoModel.</li>
-<li><strong>metrics</strong>: A list of Keras metrics. Defaults to None. If None, the metrics will
-    be inferred from the AutoModel.</li>
+<li><strong>loss</strong>: A Keras loss function. Defaults to use 'mean_squared_error'.</li>
+<li><strong>metrics</strong>: A list of Keras metrics. Defaults to use 'mean_squared_error'.</li>
 <li><strong>dropout_rate</strong>: Float. The dropout rate for the layers.
     If left unspecified, it will be tuned automatically.</li>
 </ul>

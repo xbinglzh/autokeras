@@ -579,12 +579,12 @@
                 
                   <h1>Block</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L42">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L49">[source]</a></span></p>
 <h3 id="imageblock">ImageBlock</h3>
 <pre><code class="python">autokeras.hypermodel.hyperblock.ImageBlock(block_type=None, normalize=True, augment=True, seed=None)
 </code></pre>
 
-<p>HyperBlock for image data.</p>
+<p>Block for image data.</p>
 <p>The image blocks is a block choosing from ResNetBlock, XceptionBlock, ConvBlock,
 which is controlled by a hyperparameter, 'block_type'.</p>
 <p><strong>Arguments</strong></p>
@@ -597,19 +597,37 @@ which is controlled by a hyperparameter, 'block_type'.</p>
     it will be tuned automatically.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L97">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L104">[source]</a></span></p>
 <h3 id="textblock">TextBlock</h3>
 <pre><code class="python">autokeras.hypermodel.hyperblock.TextBlock(vectorizer=None, pretraining=None)
 </code></pre>
 
+<p>Block for text data.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>vectorizer</strong>: String. 'sequence' or 'ngram'. If it is 'sequence',
+    TextToIntSequence will be used. If it is 'ngram', TextToNgramVector will
+    be used. If unspecified, it will be tuned automatically.</li>
+<li><strong>pretraining</strong>: Boolean. Whether to use pretraining weights in the N-gram
+    vectorizer. If unspecified, it will be tuned automatically.</li>
+</ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L123">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L139">[source]</a></span></p>
 <h3 id="structureddatablock">StructuredDataBlock</h3>
-<pre><code class="python">autokeras.hypermodel.block.StructuredDataBlock(name=None)
+<pre><code class="python">autokeras.hypermodel.hyperblock.StructuredDataBlock(feature_engineering=True, module_type=None)
 </code></pre>
 
+<p>Block for structured data.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>feature_engineering</strong>: Boolean. Whether to use feature engineering block.
+    Defaults to True. If specified as None, it will be tuned automatically.</li>
+<li><strong>module_type</strong>: String. 'dense' or 'lightgbm'. If it is 'dense', DenseBlock
+    will be used. If it is 'lightgbm', LightGBMBlock will be used. If
+    unspecified, it will be tuned automatically.</li>
+</ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L276">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L281">[source]</a></span></p>
 <h3 id="resnetblock">ResNetBlock</h3>
 <pre><code class="python">autokeras.hypermodel.block.ResNetBlock(version=None, pooling=None)
 </code></pre>
@@ -623,7 +641,7 @@ which is controlled by a hyperparameter, 'block_type'.</p>
     If left unspecified, it will be tuned automatically.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L308">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L313">[source]</a></span></p>
 <h3 id="xceptionblock">XceptionBlock</h3>
 <pre><code class="python">autokeras.hypermodel.block.XceptionBlock(activation=None, initial_strides=None, num_residual_blocks=None, pooling=None)
 </code></pre>
@@ -648,7 +666,7 @@ architecture with a half, an identical, or a double size of the original one.</p
     tuned automatically.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L207">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L212">[source]</a></span></p>
 <h3 id="convblock">ConvBlock</h3>
 <pre><code class="python">autokeras.hypermodel.block.ConvBlock(kernel_size=None, num_blocks=None, separable=None)
 </code></pre>
@@ -663,7 +681,7 @@ architecture with a half, an identical, or a double size of the original one.</p
     If left unspecified, it will be tuned automatically.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L138">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L143">[source]</a></span></p>
 <h3 id="rnnblock">RNNBlock</h3>
 <pre><code class="python">autokeras.hypermodel.block.RNNBlock(return_sequences=False, bidirectional=None, num_layers=None, layer_type=None)
 </code></pre>
@@ -681,7 +699,7 @@ architecture with a half, an identical, or a double size of the original one.</p
     automatically.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L370">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L375">[source]</a></span></p>
 <h3 id="merge">Merge</h3>
 <pre><code class="python">autokeras.hypermodel.block.Merge(merge_type=None)
 </code></pre>

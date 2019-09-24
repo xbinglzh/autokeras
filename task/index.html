@@ -543,7 +543,7 @@
                 
                 <h1 id="task-api">Task API</h1>
 <p>AutoKeras support the following task APIs.</p>
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L14">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L16">[source]</a></span></p>
 <h3 id="imageclassifier">ImageClassifier</h3>
 <pre><code class="python">autokeras.task.ImageClassifier(num_classes=None, multi_label=False, loss=None, metrics=None, name='image_classifier', max_trials=100, directory=None, seed=None)
 </code></pre>
@@ -553,10 +553,9 @@
 <ul>
 <li><strong>num_classes</strong>: Int. Defaults to None. If None, it will infer from the data.</li>
 <li><strong>multi_label</strong>: Boolean. Defaults to False.</li>
-<li><strong>loss</strong>: A Keras loss function. Defaults to None. If None, the loss will be
-    inferred from the AutoModel.</li>
-<li><strong>metrics</strong>: A list of Keras metrics. Defaults to None. If None, the metrics will
-    be inferred from the AutoModel.</li>
+<li><strong>loss</strong>: A Keras loss function. Defaults to use 'binary_crossentropy' or
+    'categorical_crossentropy' based on the number of classes.</li>
+<li><strong>metrics</strong>: A list of Keras metrics. Defaults to use 'accuracy'.</li>
 <li><strong>name</strong>: String. The name of the AutoModel. Defaults to 'image_classifier'.</li>
 <li><strong>max_trials</strong>: Int. The maximum number of different Keras Models to try.
     The search may finish before reaching the max_trials. Defaults to 100.</li>
@@ -566,7 +565,7 @@
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L52">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L53">[source]</a></span></p>
 <h3 id="imageregressor">ImageRegressor</h3>
 <pre><code class="python">autokeras.task.ImageRegressor(output_dim=None, loss=None, metrics=None, name='image_regressor', max_trials=100, directory=None, seed=None)
 </code></pre>
@@ -577,10 +576,8 @@
 <li><strong>output_dim</strong>: Int. The number of output dimensions. Defaults to None.
     If None, it will infer from the data.</li>
 <li><strong>multi_label</strong>: Boolean. Defaults to False.</li>
-<li><strong>loss</strong>: A Keras loss function. Defaults to None. If None, the loss will be
-    inferred from the AutoModel.</li>
-<li><strong>metrics</strong>: A list of Keras metrics. Defaults to None. If None, the metrics will
-    be inferred from the AutoModel.</li>
+<li><strong>loss</strong>: A Keras loss function. Defaults to use 'mean_squared_error'.</li>
+<li><strong>metrics</strong>: A list of Keras metrics. Defaults to use 'mean_squared_error'.</li>
 <li><strong>name</strong>: String. The name of the AutoModel. Defaults to 'image_regressor'.</li>
 <li><strong>max_trials</strong>: Int. The maximum number of different Keras Models to try.
     The search may finish before reaching the max_trials. Defaults to 100.</li>
@@ -590,7 +587,7 @@
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L97">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L96">[source]</a></span></p>
 <h3 id="textclassifier">TextClassifier</h3>
 <pre><code class="python">autokeras.task.TextClassifier(num_classes=None, multi_label=False, loss=None, metrics=None, name='text_classifier', max_trials=100, directory=None, seed=None)
 </code></pre>
@@ -600,10 +597,9 @@
 <ul>
 <li><strong>num_classes</strong>: Int. Defaults to None. If None, it will infer from the data.</li>
 <li><strong>multi_label</strong>: Boolean. Defaults to False.</li>
-<li><strong>loss</strong>: A Keras loss function. Defaults to None. If None, the loss will be
-    inferred from the AutoModel.</li>
-<li><strong>metrics</strong>: A list of Keras metrics. Defaults to None. If None, the metrics will
-    be inferred from the AutoModel.</li>
+<li><strong>loss</strong>: A Keras loss function. Defaults to use 'binary_crossentropy' or
+    'categorical_crossentropy' based on the number of classes.</li>
+<li><strong>metrics</strong>: A list of Keras metrics. Defaults to use 'accuracy'.</li>
 <li><strong>name</strong>: String. The name of the AutoModel. Defaults to 'text_classifier'.</li>
 <li><strong>max_trials</strong>: Int. The maximum number of different Keras Models to try.
     The search may finish before reaching the max_trials. Defaults to 100.</li>
@@ -613,7 +609,7 @@
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L135">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L133">[source]</a></span></p>
 <h3 id="textregressor">TextRegressor</h3>
 <pre><code class="python">autokeras.task.TextRegressor(output_dim=None, loss=None, metrics=None, name='text_regressor', max_trials=100, directory=None, seed=None)
 </code></pre>
@@ -624,10 +620,8 @@
 <li><strong>output_dim</strong>: Int. The number of output dimensions. Defaults to None.
     If None, it will infer from the data.</li>
 <li><strong>multi_label</strong>: Boolean. Defaults to False.</li>
-<li><strong>loss</strong>: A Keras loss function. Defaults to None. If None, the loss will be
-    inferred from the AutoModel.</li>
-<li><strong>metrics</strong>: A list of Keras metrics. Defaults to None. If None, the metrics will
-    be inferred from the AutoModel.</li>
+<li><strong>loss</strong>: A Keras loss function. Defaults to use 'mean_squared_error'.</li>
+<li><strong>metrics</strong>: A list of Keras metrics. Defaults to use 'mean_squared_error'.</li>
 <li><strong>name</strong>: String. The name of the AutoModel. Defaults to 'text_regressor'.</li>
 <li><strong>max_trials</strong>: Int. The maximum number of different Keras Models to try.
     The search may finish before reaching the max_trials. Defaults to 100.</li>
