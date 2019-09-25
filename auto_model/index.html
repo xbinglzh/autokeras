@@ -608,7 +608,7 @@ For the last case, <code>validation_steps</code> must be provided.</p>
 <p>Predict the output for a given testing data.</p>
 <p><strong>Arguments</strong></p>
 <ul>
-<li><strong>x</strong>: tf.data.Dataset or numpy.ndarray. Testing data.</li>
+<li><strong>x</strong>: Any allowed types according to the input node. Testing data.</li>
 <li><strong>batch_size</strong>: Int. Defaults to 32.</li>
 <li><strong>**kwargs</strong>: Any arguments supported by keras.Model.predict.</li>
 </ul>
