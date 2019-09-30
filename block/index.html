@@ -614,7 +614,7 @@ which is controlled by a hyperparameter, 'block_type'.</p>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/hyperblock.py#L139">[source]</a></span></p>
 <h3 id="structureddatablock">StructuredDataBlock</h3>
-<pre><code class="python">autokeras.hypermodel.hyperblock.StructuredDataBlock(feature_engineering=True, module_type=None)
+<pre><code class="python">autokeras.hypermodel.hyperblock.StructuredDataBlock(feature_engineering=True, module_type=None, seed=None)
 </code></pre>
 
 <p>Block for structured data.</p>
@@ -625,6 +625,7 @@ which is controlled by a hyperparameter, 'block_type'.</p>
 <li><strong>module_type</strong>: String. 'dense' or 'lightgbm'. If it is 'dense', DenseBlock
     will be used. If it is 'lightgbm', LightGBMBlock will be used. If
     unspecified, it will be tuned automatically.</li>
+<li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/block.py#L281">[source]</a></span></p>
