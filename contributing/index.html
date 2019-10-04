@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="/img/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -430,6 +430,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pre-commit-hook" class="md-nav__link">
+    pre-commit hook
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -694,6 +701,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pre-commit-hook" class="md-nav__link">
+    pre-commit hook
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -849,7 +863,8 @@ Please make sure the code coverage percentage does not decrease after your contr
 otherwise, the code will not be merged.</p>
 <h2 id="developer-tools-guide">Developer Tools Guide</h2>
 <p>We highly recommend you to use <a href="https://www.jetbrains.com/pycharm/">Pycharm</a> 
-and <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a>.</p>
+and <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a> 
+as well as a pre-commit hook.</p>
 <h3 id="pycharm">Pycharm</h3>
 <p>Pycharm is the best IDE for large project development in Python.
 We recommend you <a href="https://www.jetbrains.com/help/pycharm/running-inspections.html">inspect the code</a>
@@ -862,6 +877,11 @@ and only install the packages required by autokeras with the corresponding versi
 The virtualenv should be created based on Python 3.6 interpreter.
 Use pycharm to select the 
 <a href="https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html">virtualenv as interpreter</a>.</p>
+<h3 id="pre-commit-hook">pre-commit hook</h3>
+<p>You can make git run <code>flake8</code> before every commit automatically. It will make you go faster by
+avoiding pushing commit which are not passing the flake8 tests. To do this, 
+open <code>.git/hooks/pre-commit</code> with a text editor and write <code>flake8</code> inside. If the <code>flake8</code> doesn't
+pass, the commit will be aborted.</p>
 <h2 id="reusable-code-guide">Reusable Code Guide</h2>
 <p>You may checkout this code review <a href="https://youtu.be/PWdfY0DmjCo">video</a> to get familiar with the code structure.
 Other than the base classes you have to extend,
@@ -949,7 +969,7 @@ To be in the list, you need to meet the following requirments.
       
     </div>
     
-      <script src="../assets/javascripts/application.c648116f.js"></script>
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
