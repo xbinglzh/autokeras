@@ -495,7 +495,7 @@
                 
                   <h1>Head</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L73">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L34">[source]</a></span></p>
 <h3 id="classificationhead">ClassificationHead</h3>
 <pre><code class="python">autokeras.hypermodel.head.ClassificationHead(num_classes=None, multi_label=False, loss=None, metrics=None, dropout_rate=None)
 </code></pre>
@@ -504,31 +504,38 @@
 <p>Use sigmoid and binary crossentropy for binary classification and multi-label
 classification. Use softmax and categorical crossentropy for multi-class
 (more than 2) classification. Use Accuracy as metrics by default.</p>
+<p>The targets passing to the head would have to be tf.data.Dataset, np.ndarray,
+pd.DataFrame or pd.Series. The targets can be raw labels, one-hot encoded for
+multi-class classification, or encoded to a single column for binary
+classification.</p>
+<p>The raw labels will be encoded to one column if two classes were found,
+or one-hot encoded if more than two classes were found.</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li><strong>num_classes</strong>: Int. Defaults to None. If None, it will infer from the data.</li>
 <li><strong>multi_label</strong>: Boolean. Defaults to False.</li>
-<li><strong>loss</strong>: A Keras loss function. Defaults to use 'binary_crossentropy' or
-    'categorical_crossentropy' based on the number of classes.</li>
+<li><strong>loss</strong>: A Keras loss function. Defaults to use <code>binary_crossentropy</code> or
+    <code>categorical_crossentropy</code> based on the number of classes.</li>
 <li><strong>metrics</strong>: A list of Keras metrics. Defaults to use 'accuracy'.</li>
 <li><strong>dropout_rate</strong>: Float. The dropout rate for the layers.
     If left unspecified, it will be tuned automatically.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L162">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/hypermodel/head.py#L179">[source]</a></span></p>
 <h3 id="regressionhead">RegressionHead</h3>
 <pre><code class="python">autokeras.hypermodel.head.RegressionHead(output_dim=None, loss=None, metrics=None, dropout_rate=None)
 </code></pre>
 
 <p>Regression Dense layers.</p>
-<p>Use mean squared error as metrics and loss by default.</p>
+<p>The targets passing to the head would have to be tf.data.Dataset, np.ndarray,
+pd.DataFrame or pd.Series.</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li><strong>output_dim</strong>: Int. The number of output dimensions. Defaults to None.
     If None, it will infer from the data.</li>
 <li><strong>multi_label</strong>: Boolean. Defaults to False.</li>
-<li><strong>loss</strong>: A Keras loss function. Defaults to use 'mean_squared_error'.</li>
-<li><strong>metrics</strong>: A list of Keras metrics. Defaults to use 'mean_squared_error'.</li>
+<li><strong>loss</strong>: A Keras loss function. Defaults to use <code>mean_squared_error</code>.</li>
+<li><strong>metrics</strong>: A list of Keras metrics. Defaults to use <code>mean_squared_error</code>.</li>
 <li><strong>dropout_rate</strong>: Float. The dropout rate for the layers.
     If left unspecified, it will be tuned automatically.</li>
 </ul>
