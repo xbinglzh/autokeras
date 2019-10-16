@@ -535,7 +535,7 @@
                 
                   <h1>GraphAutoModel</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L281">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L278">[source]</a></span></p>
 <h2 id="graphautomodel-class">GraphAutoModel class</h2>
 <pre><code class="python">autokeras.auto_model.GraphAutoModel(inputs, outputs, name='graph_auto_model', max_trials=100, directory=None, seed=None)
 </code></pre>
@@ -564,7 +564,7 @@ the Keras functional API.</p>
 <hr />
 <h2 id="graphautomodel-methods">GraphAutoModel methods</h2>
 <h3 id="fit">fit</h3>
-<pre><code class="python">fit(x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None)
+<pre><code class="python">fit(x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, objective='val_loss')
 </code></pre>
 
 <p>Search for the best model and hyperparameters for the AutoModel.</p>
@@ -591,23 +591,13 @@ validation data.</p>
     The validation data is selected from the last samples
     in the <code>x</code> and <code>y</code> data provided, before shuffling. This argument is
     not supported when <code>x</code> is a dataset.</li>
-<li>
-<p><strong>validation_data</strong>: Data on which to evaluate
-    the loss and any model metrics at the end of each epoch.
-    The model will not be trained on this data.
-    <code>validation_data</code> will override <code>validation_split</code>.
-    <code>validation_data</code> could be:</p>
-<ul>
-<li>tuple <code>(x_val, y_val)</code> of Numpy arrays or tensors</li>
-<li>tuple <code>(x_val, y_val, val_sample_weights)</code> of Numpy arrays</li>
-<li>dataset or a dataset iterator</li>
-</ul>
-<p>For the first two cases, <code>batch_size</code> must be provided.
-For the last case, <code>validation_steps</code> must be provided.</p>
-</li>
-<li>
-<p><strong>**kwargs</strong>: Any arguments supported by keras.Model.fit.</p>
-</li>
+<li><strong>validation_data</strong>: Data on which to evaluate the loss and any model metrics
+    at the end of each epoch. The model will not be trained on this data.
+    <code>validation_data</code> will override <code>validation_split</code>. The type of the
+    validation data should be the same as the training data.</li>
+<li><strong>objective</strong>: String. Name of model metric to minimize
+    or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
+<li><strong>**kwargs</strong>: Any arguments supported by keras.Model.fit.</li>
 </ul>
 <hr />
 <h3 id="predict">predict</h3>
