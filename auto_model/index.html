@@ -589,11 +589,15 @@ validation data.</p>
     on this data at the end of each epoch.
     The validation data is selected from the last samples
     in the <code>x</code> and <code>y</code> data provided, before shuffling. This argument is
-    not supported when <code>x</code> is a dataset.</li>
+    not supported when <code>x</code> is a dataset.
+    The best model found would be fit on the entire dataset including the
+    validation data.</li>
 <li><strong>validation_data</strong>: Data on which to evaluate the loss and any model metrics
     at the end of each epoch. The model will not be trained on this data.
     <code>validation_data</code> will override <code>validation_split</code>. The type of the
-    validation data should be the same as the training data.</li>
+    validation data should be the same as the training data.
+    The best model found would be fit on the training dataset without the
+    validation data.</li>
 <li><strong>objective</strong>: String. Name of model metric to minimize
     or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
 <li><strong>**kwargs</strong>: Any arguments supported by keras.Model.fit.</li>
