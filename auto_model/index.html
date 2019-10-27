@@ -537,7 +537,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L12">[source]</a></span></p>
 <h2 id="automodel-class">AutoModel class</h2>
-<pre><code class="python">autokeras.auto_model.AutoModel(inputs, outputs, name='auto_model', max_trials=100, directory=None, seed=None)
+<pre><code class="python">autokeras.auto_model.AutoModel(inputs, outputs, name='auto_model', max_trials=100, directory=None, objective='val_loss', seed=None)
 </code></pre>
 
 <p>A Model defined by inputs and outputs.</p>
@@ -558,12 +558,14 @@ the rest of the high-level neural architecture.</p>
 <li><strong>directory</strong>: String. The path to a directory for storing the search outputs.
     Defaults to None, which would create a folder with the name of the
     AutoModel in the current directory.</li>
+<li><strong>objective</strong>: String. Name of model metric to minimize
+    or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
 <h2 id="automodel-methods">AutoModel methods</h2>
 <h3 id="fit">fit</h3>
-<pre><code class="python">fit(x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, objective='val_loss')
+<pre><code class="python">fit(x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None)
 </code></pre>
 
 <p>Search for the best model and hyperparameters for the AutoModel.</p>
@@ -598,8 +600,6 @@ validation data.</p>
     validation data should be the same as the training data.
     The best model found would be fit on the training dataset without the
     validation data.</li>
-<li><strong>objective</strong>: String. Name of model metric to minimize
-    or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
 <li><strong>**kwargs</strong>: Any arguments supported by keras.Model.fit.</li>
 </ul>
 <hr />

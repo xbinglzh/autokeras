@@ -545,7 +545,7 @@
 <p>AutoKeras support the following task APIs.</p>
 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L16">[source]</a></span></p>
 <h3 id="imageclassifier">ImageClassifier</h3>
-<pre><code class="python">autokeras.task.ImageClassifier(num_classes=None, multi_label=False, loss=None, metrics=None, name='image_classifier', max_trials=100, directory=None, seed=None)
+<pre><code class="python">autokeras.task.ImageClassifier(num_classes=None, multi_label=False, loss=None, metrics=None, name='image_classifier', max_trials=100, directory=None, objective='val_loss', seed=None)
 </code></pre>
 
 <p>AutoKeras image classification class.</p>
@@ -562,12 +562,14 @@
 <li><strong>directory</strong>: String. The path to a directory for storing the search outputs.
     Defaults to None, which would create a folder with the name of the
     AutoModel in the current directory.</li>
+<li><strong>objective</strong>: String. Name of model metric to minimize
+    or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L54">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L58">[source]</a></span></p>
 <h3 id="imageregressor">ImageRegressor</h3>
-<pre><code class="python">autokeras.task.ImageRegressor(output_dim=None, loss=None, metrics=None, name='image_regressor', max_trials=100, directory=None, seed=None)
+<pre><code class="python">autokeras.task.ImageRegressor(output_dim=None, loss=None, metrics=None, name='image_regressor', max_trials=100, directory=None, objective='val_loss', seed=None)
 </code></pre>
 
 <p>AutoKeras image regression class.</p>
@@ -584,12 +586,14 @@
 <li><strong>directory</strong>: String. The path to a directory for storing the search outputs.
     Defaults to None, which would create a folder with the name of the
     AutoModel in the current directory.</li>
+<li><strong>objective</strong>: String. Name of model metric to minimize
+    or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L98">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L106">[source]</a></span></p>
 <h3 id="textclassifier">TextClassifier</h3>
-<pre><code class="python">autokeras.task.TextClassifier(num_classes=None, multi_label=False, loss=None, metrics=None, name='text_classifier', max_trials=100, directory=None, seed=None)
+<pre><code class="python">autokeras.task.TextClassifier(num_classes=None, multi_label=False, loss=None, metrics=None, name='text_classifier', max_trials=100, directory=None, objective='val_loss', seed=None)
 </code></pre>
 
 <p>AutoKeras text classification class.</p>
@@ -606,12 +610,14 @@
 <li><strong>directory</strong>: String. The path to a directory for storing the search outputs.
     Defaults to None, which would create a folder with the name of the
     AutoModel in the current directory.</li>
+<li><strong>objective</strong>: String. Name of model metric to minimize
+    or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
-<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L136">[source]</a></span></p>
+<p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/task.py#L148">[source]</a></span></p>
 <h3 id="textregressor">TextRegressor</h3>
-<pre><code class="python">autokeras.task.TextRegressor(output_dim=None, loss=None, metrics=None, name='text_regressor', max_trials=100, directory=None, seed=None)
+<pre><code class="python">autokeras.task.TextRegressor(output_dim=None, loss=None, metrics=None, name='text_regressor', max_trials=100, directory=None, objective='val_loss', seed=None)
 </code></pre>
 
 <p>AutoKeras text regression class.</p>
@@ -628,6 +634,8 @@
 <li><strong>directory</strong>: String. The path to a directory for storing the search outputs.
     Defaults to None, which would create a folder with the name of the
     AutoModel in the current directory.</li>
+<li><strong>objective</strong>: String. Name of model metric to minimize
+    or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <h3 id="coming-soon">Coming Soon:</h3>

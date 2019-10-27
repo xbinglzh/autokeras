@@ -535,7 +535,7 @@
                 
                   <h1>GraphAutoModel</h1>
                 
-                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L268">[source]</a></span></p>
+                <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L269">[source]</a></span></p>
 <h2 id="graphautomodel-class">GraphAutoModel class</h2>
 <pre><code class="python">autokeras.auto_model.GraphAutoModel(inputs, outputs, name='graph_auto_model', max_trials=100, directory=None, seed=None)
 </code></pre>
@@ -564,7 +564,7 @@ the Keras functional API.</p>
 <hr />
 <h2 id="graphautomodel-methods">GraphAutoModel methods</h2>
 <h3 id="fit">fit</h3>
-<pre><code class="python">fit(x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None, objective='val_loss')
+<pre><code class="python">fit(x=None, y=None, epochs=None, callbacks=None, validation_split=0, validation_data=None)
 </code></pre>
 
 <p>Search for the best model and hyperparameters for the AutoModel.</p>
@@ -599,8 +599,6 @@ validation data.</p>
     validation data should be the same as the training data.
     The best model found would be fit on the training dataset without the
     validation data.</li>
-<li><strong>objective</strong>: String. Name of model metric to minimize
-    or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
 <li><strong>**kwargs</strong>: Any arguments supported by keras.Model.fit.</li>
 </ul>
 <hr />
