@@ -537,7 +537,7 @@
                 
                 <p><span style="float:right;"><a href="https://github.com/keras-team/autokeras/blob/master/autokeras/auto_model.py#L269">[source]</a></span></p>
 <h2 id="graphautomodel-class">GraphAutoModel class</h2>
-<pre><code class="python">autokeras.auto_model.GraphAutoModel(inputs, outputs, name='graph_auto_model', max_trials=100, directory=None, seed=None)
+<pre><code class="python">autokeras.auto_model.GraphAutoModel(inputs, outputs, name='graph_auto_model', max_trials=100, directory=None, objective='val_loss', seed=None)
 </code></pre>
 
 <p>A HyperModel defined by a graph of HyperBlocks.</p>
@@ -559,6 +559,8 @@ the Keras functional API.</p>
 <li><strong>directory</strong>: String. The path to a directory for storing the search outputs.
     Defaults to None, which would create a folder with the name of the
     AutoModel in the current directory.</li>
+<li><strong>objective</strong>: String. Name of model metric to minimize
+    or maximize, e.g. 'val_accuracy'. Defaults to 'val_loss'.</li>
 <li><strong>seed</strong>: Int. Random seed.</li>
 </ul>
 <hr />
